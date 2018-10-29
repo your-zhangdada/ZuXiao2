@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/view_bg"
+    tools:context=".activitys.user.set.SettingActivity">
+
+    <include
+        android:id="@+id/inv_setting"
+        layout="@layout/common_top_view" />
+
+    <RelativeLayout
+        android:id="@+id/rv_message"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_43"
+        android:layout_below="@id/inv_setting"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tv_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:text="@string/message_open" />
+
+        <ImageView
+            android:id="@+id/im_message"
+            android:layout_width="@dimen/dp_10"
+            android:layout_height="@dimen/dp_10"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:src="@mipmap/back_right" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rv_clean_up_caching"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_43"
+        android:layout_below="@id/rv_message"
+        android:layout_marginTop="@dimen/dp_5"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:text="@string/cler" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:text="0.0M" />
+
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/v"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:layout_below="@id/rv_clean_up_caching"
+        android:background="@color/v_bg" />
+
+    <RelativeLayout
+        android:id="@+id/rv_check_version"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_43"
+        android:layout_below="@id/v"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:text="@string/check_version" />
+
+        <TextView
+            android:id="@+id/tv_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:text="当前版本是v1.0.0" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rv_about_us"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_43"
+        android:layout_marginTop="@dimen/dp_5"
+        android:layout_below="@id/rv_check_version"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tv_about_us"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:text="@string/about_us" />
+
+        <ImageView
+            android:id="@+id/im_about_us"
+            android:layout_width="@dimen/dp_10"
+            android:layout_height="@dimen/dp_10"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:src="@mipmap/back_right" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rv_out_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rv_about_us"
+        android:layout_marginRight="@dimen/dp_30"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:layout_marginTop="@dimen/dp_81">
+
+        <Button
+            android:id="@+id/bt_out_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/out_login"
+            android:background="@color/app_same"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+</RelativeLayout>
