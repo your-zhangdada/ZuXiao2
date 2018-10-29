@@ -28,5 +28,8 @@ public class Urls {
     public final static String FL_TWO = "productType/findById";
     //收货地址
     public final static String HOME_DZ = "address/list";
+    //分类列表
+    public final static String FINC_URL = "product/findProduct";
+
 
 }

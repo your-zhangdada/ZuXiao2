@@ -39,6 +39,7 @@ public class FicationFragment extends BaseFragment<FLPresenter> implements IFLCo
     private CategropListAdapter categropListAdapter;
     private RightRecyclerAdapter rightRecyclerAdapter;
     private LinearLayoutManager linearLayoutManager;
+    private int oneid;
 
 
     @Override
@@ -60,6 +61,8 @@ int type = 0;
         category_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //一级列表id
+                oneid = data.get(position).getId();
                 list.clear();
                 type = position;
                 categropListAdapter.notifyDataSetChanged();
@@ -79,6 +82,7 @@ int type = 0;
     public void showFLList(Frist frist) {
         data.addAll( frist.getData());
         //二级也面默认展示数据
+        oneid = frist.getData().get(0).getId();
         presenter.getFLTwo(frist.getData().get(0).getId());
         categropListAdapter.notifyDataSetChanged();
     }
@@ -96,6 +100,7 @@ int type = 0;
             public void onItemClick(int ppp) {
                 Intent intent = new Intent(getActivity(), FincActivity.class);
                 Second.DataBean.ItemsBean itemsBean = list.get(ppp);
+                intent.putExtra("oneid",oneid+"");
                 intent.putExtra("sp",itemsBean);
                 startActivity(intent);
             }

@@ -49,7 +49,6 @@ public class RightRecyclerAdapter extends RecyclerView.Adapter<RightRecyclerAdap
             @Override
             public void onClick(View view) { //点击事件
                 onclicklinster.onItemClick(position);
-                Toast.makeText(context, position+"条", Toast.LENGTH_SHORT).show();
 //                Intent intent = new Intent(context, FincActivity.class);
 //                Second.DataBean.ItemsBean itemsBean = list.get(position);
 //                intent.putExtra("itemsBean",itemsBean);

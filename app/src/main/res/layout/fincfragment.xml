@@ -3,39 +3,90 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <include
-        android:id="@+id/inv_f"
-        layout="@layout/common_top_white_view" />
-        <LinearLayout
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_50">
-            <TextView
-                android:id="@+id/tv_comprehensive"
-            android:layout_width="@dimen/dp_0"
-            android:layout_weight="1"
-                android:gravity="center"
-            android:layout_height="wrap_content"
-            android:text="综合排序"/>
-            <TextView
-                android:id="@+id/tv_salesvolume"
-                android:layout_width="@dimen/dp_0"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:layout_height="wrap_content"
-                android:text="按销量"/>
-            <TextView
-                android:id="@+id/tv_price"
-                android:layout_width="@dimen/dp_0"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:layout_height="wrap_content"
-                android:text="按价格"/>
-        </LinearLayout>
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/screenRecycler"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-    </android.support.v7.widget.RecyclerView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_54"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/finc_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:src="@mipmap/back_left_blank" />
+
+        <TextView
+            android:id="@+id/finc_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text=""
+            android:textColor="@color/tb_text"
+            android:textSize="@dimen/dp_20" />
+
+        <TextView
+            android:id="@+id/finc_shaixuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_20"
+            android:text="筛选"
+            android:textColor="@color/tb_text" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tv_comprehensive"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="综合排序" />
+
+        <TextView
+            android:id="@+id/tv_salesvolume"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="按销量" />
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="按价格" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/finc_tishi"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="暂无数据"
+        android:textSize="22sp"
+        android:gravity="center"
+        android:visibility="gone"/>
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/screenRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fff"
+            android:overScrollMode="never" />
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 </LinearLayout>
