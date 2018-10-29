@@ -150,14 +150,14 @@ public class PassWordLoginActivity extends BaseActivity<PassLoginPresenter> impl
         if (passLoginBean.getMsg().equals("ok")){
             String s = phone.getText().toString();
             String s1 = password.getText().toString();
-            String userName = SpUtils.getUserName();
-            String userPhone = SpUtils.getUserPhone();
-            if (s==userName&&s1==userPhone){
+          /*  String userName = SpUtils.getUserName();
+            String userPhone = SpUtils.getUserPhone();*/
+            //if (s==userName&&s1==userPhone){
                 Intent intent = new Intent(PassWordLoginActivity.this, MainActivity.class);
                 startActivity(intent);
                 Toast.makeText(this, "登录成功", Toast.LENGTH_SHORT).show();
                 this.finish();
-            }
+           // }
         }
     }
 

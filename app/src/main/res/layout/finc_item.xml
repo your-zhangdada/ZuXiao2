@@ -3,10 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
-<include
-    android:id="@+id/in_finc"
-    layout="@layout/common_top_view"
-    ></include>
+
 <RelativeLayout
     android:gravity="center"
     android:layout_width="match_parent"
@@ -28,50 +25,22 @@
         android:layout_marginTop="@dimen/dp_9"
         android:layout_toRightOf="@+id/im_iphones"
         android:layout_below="@+id/tv_jx_iphoneX"
-        android:layout_width="@dimen/dp_36"
+        android:layout_width="wrap_content"
         android:layout_height="@dimen/dp_13"
         android:text="免押金"
         android:gravity="center"
+        android:background="@drawable/getcode_shape"
         android:textSize="@dimen/dp_9"/>
-    <TextView
-        android:id="@+id/tv_set"
-        android:layout_marginTop="@dimen/dp_9"
-        android:layout_toRightOf="@+id/tv_myj"
-        android:layout_below="@+id/tv_jx_iphoneX"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/dp_13"
-        android:text="免费维修"
-        android:gravity="center"
-        android:layout_marginLeft="@dimen/dp_10"
-        android:textSize="@dimen/dp_9"/>
-    <TextView
-        android:id="@+id/tv_bg_iphone"
-        android:layout_marginTop="@dimen/dp_9"
-        android:layout_toRightOf="@+id/tv_set"
-        android:layout_below="@+id/tv_jx_iphoneX"
-        android:layout_width="wrap_content"
-        android:layout_marginLeft="@dimen/dp_10"
-        android:layout_height="@dimen/dp_13"
-        android:text="比购机省3200元"
-        android:gravity="center"
-        android:textSize="@dimen/dp_9"/>
+
     <TextView
         android:id="@+id/tv_yuezu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="月租金：  256.00"
-        android:textColor="@color/back"
+        android:text="日租金：  256.00"
+        android:textColor="@color/red"
         android:layout_marginTop="@dimen/dp_9"
-        android:layout_below="@+id/tv_bg_iphone"
+        android:layout_below="@+id/tv_myj"
         android:layout_toRightOf="@+id/im_iphones"/>
-    <TextView
-        android:id="@+id/tv_shopin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="商品原价：8888.00"
-        android:textSize="@dimen/dp_11"
-        android:layout_marginTop="@dimen/dp_9"
-        android:layout_toRightOf="@+id/im_iphones"
-        android:layout_below="@+id/tv_yuezu"/>
+
 </RelativeLayout>
 </LinearLayout>

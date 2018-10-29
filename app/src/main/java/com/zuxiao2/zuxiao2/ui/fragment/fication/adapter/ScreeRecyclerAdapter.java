@@ -9,15 +9,17 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.zuxiao2.zuxiao2.R;
-import com.zuxiao2.zuxiao2.bean.Second;
+import com.zuxiao2.zuxiao2.bean.FincBean;
+import com.zuxiao2.zuxiao2.utils.GlideImageLoader;
 
 import java.util.List;
 
 public class ScreeRecyclerAdapter extends RecyclerView.Adapter<ScreeRecyclerAdapter.Holder> {
     Context context;
-    List<Second.DataBean.ItemsBean.SpecificationBean> itemsBean;
-    public ScreeRecyclerAdapter(Context context, List<Second.DataBean.ItemsBean.SpecificationBean> itemsBean) {
+    List<FincBean.DataBean.ListBean> itemsBean;
+    public ScreeRecyclerAdapter(Context context, List<FincBean.DataBean.ListBean> itemsBean) {
         this.context = context;
         this.itemsBean = itemsBean;
     }
@@ -32,7 +34,10 @@ public class ScreeRecyclerAdapter extends RecyclerView.Adapter<ScreeRecyclerAdap
 
     @Override
     public void onBindViewHolder(@NonNull ScreeRecyclerAdapter.Holder holder, int i) {
-            holder.tv_jx_iphoneX.setText(itemsBean.get(i).getName());
+        Glide.with(context).load(itemsBean.get(i).getPic()).into(holder.im_iphones);
+        holder.tv_jx_iphoneX.setText(itemsBean.get(i).getName());
+        holder.tv_myj.setText(itemsBean.get(i).getTag());
+        holder.tv_yuezu.setText("日租金： "+itemsBean.get(i).getShowPrice());
     }
 
     @Override
@@ -42,16 +47,13 @@ public class ScreeRecyclerAdapter extends RecyclerView.Adapter<ScreeRecyclerAdap
 
     public class Holder extends RecyclerView.ViewHolder {
        ImageView im_iphones;
-       TextView tv_jx_iphoneX,tv_myj,tv_set,tv_bg_iphone,tv_yuezu,tv_shopin;
+       TextView tv_jx_iphoneX,tv_myj,tv_yuezu;
         public Holder(@NonNull View itemView) {
             super(itemView);
             im_iphones =  itemView.findViewById(R.id.im_iphones);
             tv_jx_iphoneX =  itemView.findViewById(R.id.tv_jx_iphoneX);
             tv_myj =  itemView.findViewById(R.id.tv_myj);
-            tv_set =  itemView.findViewById(R.id.tv_set);
-            tv_bg_iphone =  itemView.findViewById(R.id.tv_bg_iphone);
             tv_yuezu =  itemView.findViewById(R.id.tv_yuezu);
-            tv_shopin =  itemView.findViewById(R.id.tv_shopin);
         }
     }
 }
