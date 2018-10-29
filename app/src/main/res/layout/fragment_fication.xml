@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<!--分类-->
+
+
+    <include
+        android:id="@+id/inv_setting"
+        layout="@layout/common_top_white_view" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/inv_setting"
+        android:orientation="horizontal">
+
+
+        <ListView
+            android:id="@+id/category_listview"
+            android:layout_width="@dimen/dp_82"
+            android:layout_height="match_parent"
+            android:choiceMode="singleChoice">
+
+        </ListView>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/lv_right"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_20"
+        android:layout_weight="2">
+
+    </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+
+</RelativeLayout>

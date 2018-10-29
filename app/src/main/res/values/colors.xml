@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="titleText">#666666</color>
+    <color name="titleThem">#51BF85</color>
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="bg_regist_bg">#51BF85</color>
+    <color name="hui">#553b3a3a</color>
+    <color name="bg_shape">#999999</color>
+    <color name="card_shape">#D8D8D8</color>
+    <color name="getcode_shape">#51BF85</color>
+    <color name="white">#FFFFFF</color>
+    <color name="huise">#D2D2D2</color>
+    <color name="xieyi">#51BF85</color>
+    <!--注册-->
+    <color name="view_back">#CCCCCC</color>
+    <color name="v">#F8F8F8</color>
+
+    <color name="bt_regist_back">#EEEEEE</color>
+    <color name="bttext_regist_back">#999999</color>
+    <color name="tv_getcode_color">#51BF85</color>
+
+    <color name="regist_service_textcolor">#51BF85</color>
+    <!--denglu-->
+    <color name="lg_back">#51BF85</color>
+    <color name="app_same">#51BF85</color>
+
+    <color name="gb_huangse">#F8B940</color>
+    <color name="lg_pass">#51BF85</color>
+    <color name="view_bg">#EEEEEE</color>
+    <color name="v_bg">#E1E1E1</color>
+    <color name="tb_text">#999999</color>
+    <color name="my_v">#EEEEEE</color>
+    <color name="sk_bg">#D5D4D2</color>
+    <color name="red">#FF4343</color>
+    <color name="v_bank">#333333</color>
+    <color name="home_back">#F5F5F5</color>
+    <color name="ed">#dedce0</color>
+    <color name="pop_bg">#553b3a3a</color>
+    <color name="fen">#FF0000</color>
+    <color name="unrd">#F7F5F5</color>
+    <color name="chrd">#D3D3D3</color>
+    <color name="back">#000000</color>
+</resources>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+<!--搜索-->
+    <RelativeLayout
+        android:id="@+id/inv_sousuo"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_54"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/im_shousuo_fanhui"
+            android:layout_width="@dimen/dp_9"
+            android:layout_height="@dimen/dp_17"
+            android:layout_marginLeft="@dimen/dp_13"
+            android:layout_marginTop="@dimen/dp_32"
+            android:layout_marginBottom="@dimen/dp_13"
+            android:src="@mipmap/back_left_blank"/>
+        <EditText
+            android:id="@+id/ed_sousou"
+            android:layout_width="@dimen/dp_270"
+            android:layout_height="@dimen/dp_29"
+            android:layout_marginTop="@dimen/dp_27"
+            android:layout_marginLeft="@dimen/dp_19"
+            android:layout_toRightOf="@+id/im_shousuo_fanhui"
+            android:background="@drawable/bg_shapes"
+            android:hint="     搜索你想要的产品"
+            android:textSize="@dimen/dp_12"
+            android:layout_marginBottom="@dimen/dp_6"/>
+
+        <TextView
+            android:id="@+id/tv_sousou"
+            android:layout_width="@dimen/dp_29"
+            android:layout_height="@dimen/dp_15"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/dp_320"
+            android:layout_marginRight="@dimen/dp_10"
+            android:text="@string/title_sousou"
+            android:textSize="@dimen/dp_13"
+            android:layout_marginTop="@dimen/dp_32"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:background="@color/bt_regist_back"
+        android:layout_below="@id/inv_sousuo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dp_6">
+        <TextView
+            android:id="@+id/tv_lishi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_21"
+            android:textSize="@dimen/dp_10"
+            android:text="@string/act_wrap_sousou"/>
+        <TextView
+            android:id="@+id/kong"
+            android:layout_width="@dimen/dp_260"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tv_lishi"/>
+
+        <ImageView
+            android:id="@+id/im_lajitong"
+            android:layout_width="@dimen/dp_12"
+            android:layout_height="@dimen/dp_13"
+            android:src="@mipmap/lajitong"
+            android:layout_toRightOf="@+id/kong"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_15"/>
+
+        <!--自定义 搜索 下面的列表-->
+        <RelativeLayout
+            android:layout_marginTop="@dimen/dp_14"
+            android:layout_below="@id/im_lajitong"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+          <com.zuxiao2.zuxiao2.view.WrapLayout
+              android:id="@+id/sousou_wrap"
+              android:layout_marginLeft="@dimen/dp_12"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+          </com.zuxiao2.zuxiao2.view.WrapLayout>
+
+            <TextView
+                android:id="@+id/remen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/remen_sousou"
+                android:layout_marginTop="@dimen/dp_234"
+                android:layout_marginLeft="@dimen/dp_13"/>
+
+            <com.zuxiao2.zuxiao2.view.WrapLayout
+                android:layout_marginLeft="@dimen/dp_12"
+                android:id="@+id/remensousou_text"
+                android:layout_below="@id/remen"
+                android:layout_marginTop="@dimen/dp_13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tv_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </com.zuxiao2.zuxiao2.view.WrapLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

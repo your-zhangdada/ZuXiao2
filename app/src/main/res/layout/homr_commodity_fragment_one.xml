@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <!--首页商品列表  左边-->
+    <RelativeLayout
+        android:layout_marginLeft="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_19"
+        android:layout_width="@dimen/dp_170"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/im_liebiao_zuo"
+            android:layout_width="@dimen/dp_170"
+            android:layout_height="@dimen/dp_149"
+            android:src="@drawable/ic_launcher_background"/>
+
+        <TextView
+            android:id="@+id/tv_tongyong_zuo"
+            android:layout_below="@+id/im_liebiao_zuo"
+            android:layout_width="@dimen/dp_154"
+            android:layout_height="@dimen/dp_14"
+            android:textSize="@dimen/dp_14"
+            android:text="通用汽车后视摄像头自..."
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_17"
+            android:ellipsize="end"/>
+        <TextView
+            android:id="@+id/tv_price_zuo"
+            android:layout_marginTop="@dimen/dp_14"
+            android:layout_below="@+id/tv_tongyong_zuo"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_width="@dimen/dp_72"
+            android:layout_height="@dimen/dp_15"
+            android:textSize="@dimen/dp_14"
+            android:text="￥3.00 /天"/>
+
+    <LinearLayout
+        android:layout_marginBottom="@dimen/dp_7"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_19"
+        android:layout_below="@id/tv_price_zuo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_baoyou_zuo"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_width="@dimen/dp_22"
+            android:layout_height="@dimen/dp_11"
+            android:text="包邮"
+            android:textSize="@dimen/dp_10"/>
+        <TextView
+            android:id="@+id/tv_xiaoliang_zuo"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_11"
+            android:text="销量:123"
+            android:textSize="@dimen/dp_10"/>
+        <TextView
+            android:id="@+id/tv_kucunz_zuo"
+            android:layout_marginLeft="@dimen/dp_18"
+        android:layout_width="@dimen/dp_45"
+        android:layout_height="@dimen/dp_11"
+        android:text="库存：23"
+        android:textSize="@dimen/dp_10"/>
+
+    </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

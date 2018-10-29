@@ -1,0 +1,582 @@
+<resources>
+    <string name="app_name">租小二</string>
+    <string name="kefu">010-85270315</string>
+    <string name="zhanghao">付款账号</string>
+    <string name="kefuphone">01085270315</string>
+    <string name="no">暂无数据</string>
+    <string name="skip">跳过</string>
+    <string name="no_login">未登录，请先登录</string>
+
+    <string name="app_exit">再次点击将退出程序</string>
+    <string name="phone_nonull">手机号不能为空</string>
+    <string name="fourg">  4G   </string>
+    <string name="eig">  128G  </string>
+    <string name="fi">  5.1寸</string>
+    <string name="twog">256G</string>
+    <string name="sixg">64G</string>
+    <string name="newphone">新机体验</string>
+    <string name="tongzhi">通知</string>
+    <string name="first">首页</string>
+    <string name="fenlei">分类</string>
+    <string name="my">我的</string>
+    <string name="im_in">立即进入</string>
+    <string name="yaojin">*设备押金：</string>
+    <string name="zongzujin">*总租金：</string>
+    <string name="color">颜色</string>
+    <string name="rongliang">容量</string>
+    <string name="zuqi">租期/天</string>
+    <string name="shuliang">数量/台</string>
+    <string name="fuwu">*服务：免费维修，专业团队随时待命，24小时客服电话，企业免押金</string>
+
+    <string name="location_shousuo">城市名,拼音首字母......</string>
+    <string name="gedcode_sucess">验证码发送成功</string>
+    <string name="gedcode_fual">验证码发送失败</string>
+    <string name="app_froget_password">重置密码</string>
+    <string name="no_responce">服务器异常，请稍后重试</string>
+
+    <string name="app_regist">注册</string>
+    <string name="add_addresss">添加新地址</string>
+
+
+    <string name="app_hint_phone">请输入手机号</string>
+    <string name="app_hint_code">请输入验证码</string>
+    <string name="app_hint_password">请输入密码</string>
+
+    <string name="app_getcode">获取验证码</string>
+    <string name="app_regist_text">立即注册</string>
+    <string name="app_regist_button_text">登录或注册即同意租小二</string>
+    <string name="app_regist_service_text">《用户服务协议》</string>
+
+    <string name="app_login">登录</string>
+    <string name="app_login_text">立即登录</string>
+    <string name="no_code">收不到验证码？试试</string>
+    <string name="pass_login">密码登录</string>
+    <string name="pass_ba">吧</string>
+    <string name="or">   —   OR —   </string>
+
+
+    <string name="app_pass_login">登录</string>
+    <string name="froget_pass">忘记密码?</string>
+    <string name="code_login">验证码登录</string>
+
+    <string name="merchant_entry">商家入驻</string>
+    <string name="wall_text">我的钱包</string>
+    <string name="mydata_text">我的资料</string>
+    <string name="identity_text">身份认证</string>
+    <string name="invoice_text">我的发票</string>
+    <string name="release_text">我的发布</string>
+    <string name="receiv_address">收货地址</string>
+    <string name="inviting_friends">邀请好友</string>
+    <string name="contacct_customer">联系客服</string>
+    <string name="invoice">发票</string>
+    <string name="creat_time">创建时间：</string>
+
+
+    <string name="setting">设置</string>
+    <string name="message_open">新信息提醒</string>
+    <string name="cler">清除缓存</string>
+
+    <string name="check_version">版本更新</string>
+    <string name="about_us">关于我们</string>
+    <string name="out_login">退出登录</string>
+    <string name="out_login_success">退出登录成功</string>
+
+    <string name="resetting">立即重置</string>
+
+    <string name="myorder">我的订单</string>
+    <string name="my_order">我的订单</string>
+    <string name="my_equipment">我的设备</string>
+    <string name="my_repair">维修售后</string>
+
+    <string name="order_all">全部</string>
+    <string name="order_completed_all">已完成</string>
+    <string name="order_goodreceived">待收货</string>
+    <string name="order_pendingdelivery">待发货</string>
+    <string name="order_pendingpayment">待付款</string>
+    <string name="heise">黑色</string>
+    <string name="yinse">银色</string>
+    <string name="jinse">金色</string>
+
+
+    <string name="my_data_title">个人资料</string>
+
+    <string name="my_data_im_text">头像</string>
+    <string name="my_data_name_text">昵称</string>
+    <string name="my_data_phone_text">手机号</string>
+    <string name="my_data_sex_text">性别</string>
+    <string name="my_data_age_text">生日</string>
+    <string name="my_data_nl_text">年龄</string>
+    <string name="my_data_wechat_text">绑定微信</string>
+    <string name="my_data_wechat_no_text">绑定微信</string>
+    <string name="my_data_industry_text">行业</string>
+    <string name="my_data_industry_text_">互联网</string>
+    <string name="my_data_company_text">公司</string>
+    <string name="my_data_company_text_">北京互联网公司</string>
+    <string name="my_data_position_text">职位</string>
+    <string name="my_data_position_text_">职位</string>
+
+
+    <string name="my_invoice">我的发票</string>
+
+
+    <string name="my_eq">我的设备</string>
+    <string name="my_maintentsnce">维修售后</string>
+    <string name="type_">[机型]</string>
+
+
+    <string name="my_address">我的收货地址</string>
+    <string name="my_rel">我的发布</string>
+    <string name="my_rel_finish">已完成</string>
+    <string name="one">先拍人相面</string>
+    <string name="two">再拍国徽面</string>
+    <string name="three_">拍摄手持身份证照片</string>
+    <string name="id_tv">身份证认证</string>
+    <string name="shebaoka">社保卡</string>
+    <string name="gudingzichan">固定资产</string>
+    <string name="weituo_id">委托人身份证</string>
+    <string name="weituo_book">委托书</string>
+    <string name="faren_id">法人身份证</string>
+    <string name="yingyezhizhao">营业执照</string>
+    <string name="student_renzheng">学生认证</string>
+    <string name="zhima">芝麻信用</string>
+    <string name="please_input_name">请输入收货人名字</string>
+    <string name="please_input_phone">请输入手机号</string>
+    <string name="please_input_apart">请选择区域</string>
+    <string name="please_input_address">请输入详细地址</string>
+    <string name="please_input_address_after">请填写信息再后提交</string>
+
+
+    <string name="hot_rent_list">热租榜单</string>
+    <string name="hot_rent_list_more">更多</string>
+    <string name="fruit_and_powder">果粉热区</string>
+    <string name="hot_national_machine">热门国机</string>
+    <string name="office_selection">办公精选</string>
+    <string name="my_wall_title">我的钱包</string>
+    <string name="my_bank_card">我的银行卡</string>
+    <string name="present_record">提现记录</string>
+    <string name="account_record">到账记录</string>
+    <string name="present_progress">提现进度</string>
+    <string name="name_address">王先生</string>
+    <string name="ed">编辑</string>
+    <string name="moren">默认</string>
+
+    <string name="balance">我的余额（元）</string>
+    <string name="recently_estimated_price">最近估机价格</string>
+    <string name="recent_detection_price">最近检测价格 </string>
+    <string name="immediate_cash">立即提现</string>
+
+
+    <string name="about_us_title">关于我们</string>
+    <string name="about_us_cotext">关于我们标语</string>
+    <string name="user_user_protocol">《租小二用户协议》</string>
+    <string name="company_name">北京千百亿科技发展有限公司</string>
+
+    <string name="add_bank_card_title">添加银行卡</string>
+    <string name="setting_title">设置</string>
+    <string name="receive_new_messages">接收新消息</string>
+    <string name="voice">声音</string>
+    <string name="new_message_hints">新消息提示音</string>
+    <string name="shock">震动</string>
+
+    <string name="title">标题</string>
+    <string name="title_hint">品牌品类型号更容易被买家搜索到</string>
+    <string name="title_sousou">搜索</string>
+    <string name="act_wrap_sousou">历史搜索</string>
+    <string name="remen_sousou">热门搜索</string>
+
+    <string name="add_bank_card">添加银行卡</string>
+    <string name="bind_your_bank_card">请绑定您的银行卡</string>
+    <string name="the_name_of_the_cardholder">持卡人姓名：</string>
+    <string name="bank_card_number">银行卡卡号：</string>
+    <string name="bt_bind_cord">下一步</string>
+    <string name="activity">活动</string>
+    <string name="phone">手机号</string>
+    <string name="phone_num">188****888</string>
+    <string name="change_phone_num">更换手机号</string>
+    <string name="phone_num_title">手机号</string>
+    <string name="exchange">更换手机号</string>
+    <string name="code">验证码</string>
+    <string name="no_getcode">收不到验证码？试一试密码更换吧！请</string>
+    <string name="password_change">输入密码</string>
+    <string name="password">密码</string>
+    <string name="name">姓名</string>
+    <string name="id_card">身份证号</string>
+    <string name="id_card_au">身份证认证</string>
+    <string name="confirm_the_replacement">确认更换</string>
+    <string name="personal_nickname">个人昵称</string>
+    <string name="company_nickname">公司昵称</string>
+    <string name="save">保存</string>
+    <string name="set_head">设置头像</string>
+    <string name="photo_upload">拍照上传</string>
+    <string name="photo_file">相册选择</string>
+    <string name="select_indeustry_information">选择行业信息</string>
+    <string name="phone_title">手机</string>
+    <string name="screen">筛选</string>
+    <string name="boy">男</string>
+    <string name="gril">女</string>
+    <string name="cancal">取消</string>
+    <string name="dentity_authen">身份认证</string>
+    <string name="id_card_authon">身份证认证</string>
+    <string name="jingxuan">精选</string>
+    <string name="myname">我是昵称</string>
+
+    <string name="water_drop_credit">水滴信用</string>
+
+
+    <string name="product_details">产品详情</string>
+    <string name="receiving_address">收货地址</string>
+    <string name="receiving_man">收货人：</string>
+    <string name="receiving_man_phone">手机号：</string>
+    <string name="address">所在地区：</string>
+    <string name="hint_address">详细地址：如街道、门牌、小区、楼栋号、单元室等</string>
+    <string name="hint_p">描述下商品使用感受吧</string>
+    <string name="default_address">默认地址</string>
+    <string name="dele_defalt_address">删除地址</string>
+    <string name="save_address">保存地址</string>
+
+    <string name="pay_success">支付成功</string>
+    <string name="seller_has_shipped">卖家已发货</string>
+    <string name="address_">北京市中关村中心大街8号楼303室</string>
+    <string name="receiving_address_">收货地址:</string>
+    <string name="tv_good">数量</string>
+    <string name="tv_good_num">一台</string>
+    <string name="tv_payment_totalsl">付款总计</string>
+    <string name="tv_payment_totalsl_num">¥9792.00</string>
+    <string name="bt_view_details_order">查看订单详情</string>
+
+    <string name="details_invoice">发票详情</string>
+    <string name="invoice_status">发票状态:</string>
+    <string name="invoice_finish">已开票</string>
+    <string name="order_number">订单编号：</string>
+    <string name="order_number_num">712666888888999</string>
+    <string name="order_time">下单时间：</string>
+    <string name="order_number_time">2018-07-10  15:30:26 </string>
+    <string name="order_type">发票类型：</string>
+    <string name="order_type_tv">电子普通发票</string>
+
+    <string name="invoice_head">发票抬头：</string>
+    <string name="invoice_heads">发票抬头</string>
+    <string name="invoice_info">收票人信息</string>
+    <string name="invoice_head_tv">公司名字</string>
+
+    <string name="taxpayer_identification">纳税人识别号：</string>
+    <string name="taxpayer_identification_tv">123243345446565657</string>
+
+    <string name="invoices_raised">发票抬头：</string>
+    <string name="invoices_raised_tv">商品明细</string>
+
+    <string name="refund_application">退款申请</string>
+
+    <string name="product_name">Apple iphoneX 64G 黑色</string>
+    <string name="product_names">Apple iphoneX</string>
+    <string name="product_info">规格：</string>
+    <string name="product_info_tv">黑色 64G * 1台</string>
+    <string name="tv_lease_mons">租期截止：</string>
+    <string name="tv_lease_mons_tv">2019-07-08</string>
+    <string name="ser">服务：</string>
+    <string name="first_time">首发时间：</string>
+    <string name="first_time_tv">2019-10-6</string>
+    <string name="ser_tv">企业免押金,免费维修</string>
+    <string name="check_login">点击登录</string>
+
+    <string name="lease_term">租期：</string>
+    <string name="lease_month">12个月</string>
+    <string name="lease_mon">租金：</string>
+    <string name="lease_mons">月租金：</string>
+    <string name="lease_money">316.00/月</string>
+    <string name="lease_moneys">￥316.00</string>
+    <string name="lease_moneys_">￥316.00/天</string>
+    <string name="chose_reson">请选择原因</string>
+    <string name="type">类型：</string>
+    <string name="type_tv">手机</string>
+    <string name="goods_yuanjia">商品原价：</string>
+
+
+    <string name="refund_amount">退款金额</string>
+    <string name="refund_amount_money">¥9792.00</string>
+    <string name="refund_amount_tv">退款金额包括：押金(￥</string>
+    <string name="deposit">6000.00</string>
+    <string name="deposit_">) +租金（￥</string>
+    <string name="rent">3792.00</string>
+    <string name="rent_">) +邮费（￥</string>
+    <string name="postage">0.00</string>
+    <string name="postage_">)</string>
+
+
+    <string name="refunds">退款说明：</string>
+    <string name="ok">选填</string>
+    <string name="bt_submission">提交申请</string>
+    <string name="rent_tv">租金费用</string>
+    <string name="rent_nn">租金</string>
+    <string name="rent_ff">¥316.00/月*12期</string>
+
+    <string name="shipping_method">邮寄方式</string>
+    <string name="shipping_method_tv">包邮</string>
+
+    <string name="deposit_cost">押金费用</string>
+    <string name="payment_of_deposit">需支付押金</string>
+    <string name="tv_payment_of_deposit_tv">¥6000.00</string>
+
+    <string name="tv_payment_totalslnum_tv_">¥9292.00</string>
+    <string name="trade_number">交易时间：</string>
+    <string name="trade_number_tv">23344545656676678</string>
+
+    <string name="application_refund">申请退款</string>
+    <string name="content_constum">联系客服</string>
+    <string name="order_deatails">订单详情</string>
+    <string name="wait_payment">等待付款</string>
+    <string name="wait_buyer_payment">等待买家付款</string>
+    <string name="last_time">剩余时间:</string>
+    <string name="last_time_tv">23:59:35</string>
+
+
+    <string name="transaction_closure">交易关闭</string>
+
+
+    <string name="tv_process_processing">小二正在快速处理中</string>
+    <string name="tv_process_processing_">您已成功发起退款申请，请耐心等待小二处理</string>
+    <string name="tv_hope">1、小二同意或者超时未处理，系统将将退款给您</string>
+    <string name="tv_hope_two">2、如果小二拒绝，您可以修改退款申请后再次发起，小二会重新处理。</string>
+    <string name="updata">修改申请</string>
+    <string name="clear">撤销退款</string>
+    <string name="info">退款信息</string>
+    <string name="refunds_">退款金额：</string>
+    <string name="reason_">退款原因：</string>
+    <string name="reason_tv">不想买了</string>
+    <string name="refund_type">退款类型：</string>
+    <string name="refund_type_">仅退款</string>
+
+    <string name="goods_type">商品状态：</string>
+    <string name="goods_type_">卖家已发货，买家未收货</string>
+
+    <string name="refund_dis">退款描述：</string>
+    <string name="refund_dis_">确实是点错了</string>
+
+    <string name="confirmation_order">确认订单</string>
+    <string name="no_order">您的列表暂无订单</string>
+
+    <string name="add_address">添加地址</string>
+    <string name="all_rent">总租金</string>
+
+    <string name="accident_insurance">意外保险</string>
+    <string name="accident_insurance_">意外险金额为：￥</string>
+    <string name="accident_insurance_money">50</string>
+
+
+    <string name="invoice_type">发票类型</string>
+    <string name="selection">选填</string>
+    <string name="leave_message">我要留言</string>
+    <string name="leave_message_hint">请输入您的留言：如需要装什么样子的系统及软件</string>
+    <string name="tv_pay_stly">支付方式</string>
+    <string name="tv_pay_balance">余额支付</string>
+    <string name="tv_pay_wechat">微信支付</string>
+    <string name="tv_pay_alipay">支付宝支付</string>
+    <string name="alipay">支付宝</string>
+    <string name="igree">我已同意</string>
+    <string name="user_protocol">《租小二用户协议》</string>
+    <string name="tv_mm">租金+押金+意外险</string>
+    <string name="tv_all">总计:</string>
+    <string name="tv_all_tv">￥7980.00</string>
+    <string name="bt_immediate_payment">立即支付</string>
+    <string name="queren_pay">确认支付</string>
+
+    <string name="new_machine_experience">新机体验</string>
+    <string name="rental_procedure">租赁流程</string>
+
+    <string name="tv">请完成身份认证</string>
+    <string name="tv_">享受更多优惠</string>
+    <string name="tv_student">您好，您需要上传学生证照，请根据提示完成认证吧!</string>
+    <string name="certificate_students">学生证认证</string>
+
+    <string name="upload_immediately">立即上传</string>
+    <string name="social_security_card_certification">社保卡认证</string>
+    <string name="social_security_card_certification_toast">您好，您需要上传社保卡照片，请根据提示完成认证吧!</string>
+    <string name="certifi">委托书认证</string>
+    <string name="certificate__entrustment">您好，您需要上传您的委托书原件照片与扫描件</string>
+    <string name="fixedasset_authentication">固定资产认证</string>
+    <string name="business_license_certification">营业执照认证</string>
+    <string name="id_certification">您好，您需要上传身份证正反面和手持身份证照片，请根据提示完成认证吧！</string>
+
+    <string name="fixedasset_authentication_tv">您好，您需要上传您的固定资产证明，如房产证、交通工具照片、机械机器等单位价值5000以上，并在使用过程中能保持实物状态的固定资产</string>
+    <string name="pd_name">Apple iphoneX</string>
+    <string name="month">月租:</string>
+    <string name="month_money">¥ 316.00</string>
+
+
+    <string name="mark">市场价: </string>
+    <string name="mark_money">8800.00</string>
+    <string name="freight">免运费</string>
+    <string name="month_ok">月成交</string>
+    <string name="month_ok_num">2783笔</string>
+    <string name="place_delivery">北京</string>
+    <string name="phone_good">手机优品</string>
+    <string name="phone_good_">省心省钱买好货</string>
+    <string name="three">3天发货</string>
+    <string name="fif">15天内免费维修</string>
+    <string name="free_shipping">包邮</string>
+    <string name="im_hava">马上拥有</string>
+
+    <string name="business">您好，您需要上传您的营业执照照片与扫描件</string>
+    <string name="sharing_courtesy">分享有礼</string>
+    <string name="recovery_love">爱心回收</string>
+    <string name="smallsecond_recovery">小二回收</string>
+    <string name="ed_info_hint">请输入您的爱心留言</string>
+    <string name="tv_name">您的姓名：</string>
+    <string name="tv_phone">您的联系方式：</string>
+    <string name="tv_add">您的地址：</string>
+    <string name="bt_sub_love">立即提交</string>
+
+    <string name="goods_staty">商品状态:</string>
+    <string name="goods_staty_finish">已完成</string>
+    <string name="bt_delete">删除订单</string>
+    <string name="inthelease">租赁中</string>
+    <string name="maintenance_after_sale">维修售后</string>
+
+    <string name="sold_out">待售出</string>
+    <string name="price">售价：</string>
+    <string name="price_tv">2560.00</string>
+    <string name="edit">编辑</string>
+    <string name="dele">删除</string>
+    <string name="fin">已完成</string>
+    <string name="all_in">总计：</string>
+    <string name="dele_this">删除该商品</string>
+
+
+    <string name="equipment_return">设备归还</string>
+    <string name="statement">声明：如果在租赁期未满时退租，应支付出租方剩余租金额50%的违约金，由承租方承担退货运费。剩余租期不满一个月退租按满月收租。</string>
+    <string name="num">数量：</string>
+    <string name="ppp">需付押金</string>
+    <string name="myj">以免押金</string>
+    <string name="ywx">我是关于意外险的描述，我是关于意外险的描述，我是关于意外险的描述，我是关于意外险的描述，</string>
+    <string name="rv_lease_surplus">租期剩余</string>
+    <string name="rv_lease_surplus_tv">设备租期剩余时间</string>
+    <string name="rv_lease_surplus_tv_time">29天</string>
+    <string name="rv_refundable_amount">退还金额</string>
+    <string name="rv_refundable_amount_tv">设备退还金额</string>
+    <string name="rv_refundable_amount_tv_num">押金:￥6000.00</string>
+    <string name="myteturn">提前归还</string>
+    <string name="yretm">我要续租</string>
+    <string name="tv_lasttime">租期剩余：</string>
+    <string name="tv_last_day">25天</string>
+    <string name="yajin">押金：</string>
+    <string name="mianyajin">免押金</string>
+    <string name="sfym">实付押金</string>
+    <string name="maintenance_comp">电脑维修</string>
+    <string name="maintenance_type">维修方式:</string>
+    <string name="on_siterepair">上门维修</string>
+    <string name="finish">已完成</string>
+    <string name="back_frist">返回首页</string>
+    <string name="qly">请输入你的留言信息</string>
+    <string name="add_dz">添加收货地址</string>
+    <string name="goods_received">待收货</string>
+    <string name="pending_delivery">待发货</string>
+    <string name="pending_payment">待付款</string>
+
+
+    <string name="in_lease">租赁中</string>
+    <string name="maintenance">维修中</string>
+    <string name="in_refunds">退款中</string>
+
+
+    <string name="application_invoices">申请发票</string>
+    <string name="confirmation_receipt">确认收货</string>
+    <string name="look_logistics">查看物流</string>
+    <string name="reminding_shipments">提醒发货</string>
+    <string name="immediate_payment">立即付款</string>
+    <string name="cancellation_order">取消订单</string>
+    <string name="content_">联系客服</string>
+    <string name="view_details">查看详情</string>
+    <string name="after_sale">维修售后</string>
+    <string name="returns">我要归还</string>
+    <string name="renew_rent">我要续租</string>
+    <string name="details_refunds">退款详情</string>
+    <string name="refunds_success">退款成功</string>
+    <string name="refunds_finish">退款已完成</string>
+    <string name="refunds_info">退款信息</string>
+
+
+    <string name="transaction_completion_">去评价一下本次的购物体验吧</string>
+    <string name="lijiupload">立即上传</string>
+
+
+    <string name="in">设备租赁中</string>
+    <string name="ed_tv">您可以在这里上传照片哦</string>
+
+
+    <string name="to_evaluate">去评价</string>
+    <string name="look_evaluate">查看我的评价</string>
+    <string name="details_evaluate">评价详情</string>
+    <string name="all_evaluate">总评价</string>
+    <string name="hint_evaluate">请您将产品的更多评价留下来吧</string>
+    <string name="liji_evaluate">立即评价</string>
+    <string name="go_audit">去审核</string>
+
+
+    <string name="transaction_completion">交易完成</string>
+    <string name="evaluation_completion">评价完成</string>
+
+
+    <string name="my_message">我的消息</string>
+    <string name="my_message_tv">您还没有收到消息</string>
+    <string name="my_message_title">消息标题</string>
+    <string name="my_add_address_tv">您还没有收货地址，快去添加吧</string>
+
+
+    <string name="wx">微信</string>
+    <string name="wxcode">朋友圈</string>
+    <string name="qq">QQ</string>
+    <string name="qqcode">QQ空间</string>
+    <string name="cancel">取消</string>
+
+
+    <string name="account_amount">到账金额</string>
+    <string name="account_amount_money">+3000.00</string>
+    <string name="account_amount_data">2017-07-08</string>
+    <string name="account_cash">到账金额</string>
+
+    <string name="mysell">我要出售</string>
+    <string name="myrent">我要出租</string>
+    <string name="imageup">图片上传</string>
+    <string name="produce_image">请上传您的产品图片</string>
+    <string name="sb">提交</string>
+    <string name="lo">北京市昌平区</string>
+    <string name="p">价格：</string>
+    <string name="p_m">￥3600.00</string>
+    <string name="tv_type">分类：</string>
+    <string name="tv_type_tv">手机 iPhone</string>
+    <string name="tv_transaction">交易方式：</string>
+    <string name="fabu">确认发布</string>
+    <string name="one_rent">1个月起租</string>
+    <string name="maiduan">买断价格：</string>
+    <string name="maiduanno">无</string>
+    <string name="goods">商品形式：</string>
+    <string name="tv_chexiao">您好！您撤销退款后，订单将恢复为正常状态！</string>
+    <string name="tv_ok">确定</string>
+    <string name="in_type">发票类型</string>
+    <string name="in_ph">收票人手机：</string>
+    <string name="in_eml">收票人邮箱：</string>
+    <string name="in_con">发票内容</string>
+    <string name="in_hint_eml">用来接收电子发票邮箱（选填）</string>
+    <string name="in_type_info">*电子普通发票与纸质普通发票具备同等法律效力，可支持报销入账</string>
+    <string name="in_con_info">*发票内容将显示详细商品名称与价格信息</string>
+    <string name="in_con_bt">商品明细</string>
+    <string name="bt_ok">确定</string>
+    <string name="person">个人</string>
+    <string name="com">单位</string>
+    <string name="dianzi">电子普通发票</string>
+    <string name="zengzhi">增值税专用发票</string>
+    <string name="com_name">请填写单位名称</string>
+    <string name="com_number">请填写纳税人编号</string>
+    <string name="type_tvs">分类</string>
+    <string name="ca_liyou">请选择取消订单的理由</string>
+    <string name="no_rent">我不想租了</string>
+    <string name="no_rent_info">信息填写错误</string>
+    <string name="no_rent_re">租金太贵了</string>
+    <string name="no_rent_other">其他原因</string>
+    <string name="s">精选</string>
+    <string name="guihuan_tv">声明：如果在租赁期限未满时退租，应支付出租方剩余租金额50%的违约金， 由承租方承担退货运费。剩余租期不满一个月退租按满月</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
