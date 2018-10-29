@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activitys.user.set.MeassgeSettingActivity">
+    tools:context=".ui.fragment.mine.activity.MeassgeSettingActivity">
 
     <include
         android:id="@+id/inc_login"
@@ -26,7 +26,7 @@
                 android:textSize="@dimen/dp_14"
                 android:layout_centerVertical="true"
                 android:text="@string/receive_new_messages"/>
-            <SeekBar
+            <Switch
                 android:id="@+id/sb_receive_new_message"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -58,7 +58,7 @@
                 android:textSize="@dimen/dp_14"
                 android:layout_centerVertical="true"
                 android:text="@string/voice"/>
-            <SeekBar
+            <Switch
                 android:id="@+id/sb_voice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -90,7 +90,7 @@
                 android:textSize="@dimen/dp_14"
                 android:layout_centerVertical="true"
                 android:text="@string/new_message_hints"/>
-            <SeekBar
+            <Switch
                 android:id="@+id/sb_new_message_hints"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -122,8 +122,10 @@
                 android:layout_marginLeft="@dimen/dp_20"
                 android:textSize="@dimen/dp_14"
                 android:layout_centerVertical="true"
-                android:text="@string/new_message_hints"/>
-            <SeekBar
+                android:text="@string/shock"/>
+
+
+            <Switch
                 android:id="@+id/sb_shock"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

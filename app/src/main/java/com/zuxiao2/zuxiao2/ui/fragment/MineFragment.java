@@ -9,13 +9,14 @@ import com.zuxiao2.zuxiao2.R;
 import com.zuxiao2.zuxiao2.base.BaseFragment;
 import com.zuxiao2.zuxiao2.login.LoginActivity;
 import com.zuxiao2.zuxiao2.ui.fragment.mine.activity.MyorderActivity;
+import com.zuxiao2.zuxiao2.ui.fragment.mine.activity.SettingActivity;
 
 /** 我的页面
  * A simple {@link Fragment} subclass.
  */
 public class MineFragment extends BaseFragment implements View.OnClickListener {
     TextView user_name;
-    private ImageView im_order,im_equipment,im_re;
+    private ImageView im_order,im_equipment,im_re,im_setting;
 
     @Override
     protected int getCreateView() {
@@ -24,6 +25,8 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
 
     @Override
     protected void initView(View view) {
+        im_setting = view.findViewById(R.id.im_setting);
+        im_setting.setOnClickListener(this);
         //点击登录
         user_name = view.findViewById(R.id.user_name);
         user_name.setOnClickListener(this);
@@ -46,6 +49,10 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()){
+            case R.id.im_setting:
+                Intent setting = new Intent(getContext(), SettingActivity.class);
+                startActivity(setting);
+                break;
             case R.id.user_name:
                 Intent login = new Intent(getContext(), LoginActivity.class);
                 startActivity(login);

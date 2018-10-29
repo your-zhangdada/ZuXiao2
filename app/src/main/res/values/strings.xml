@@ -76,7 +76,7 @@
     <string name="message_open">新信息提醒</string>
     <string name="cler">清除缓存</string>
 
-    <string name="check_version">版本更新</string>
+    <string name="check_version">检测更新</string>
     <string name="about_us">关于我们</string>
     <string name="out_login">退出登录</string>
     <string name="out_login_success">退出登录成功</string>

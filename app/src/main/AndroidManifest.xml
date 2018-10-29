@@ -38,6 +38,8 @@
         <activity android:name=".ui.guide.SplashActivity" />
         <activity android:name=".ui.guide.HandlerActivity"/>
         <activity android:name=".ui.fragment.fication.activity.FincActivity"/>
+        <activity android:name=".ui.fragment.mine.activity.SettingActivity"/>
+        <activity android:name=".ui.fragment.mine.activity.MeassgeSettingActivity"></activity>
     </application>
 
 </manifest>

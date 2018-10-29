@@ -32,4 +32,6 @@ public class Urls {
     public final static String FINC_URL = "product/findProduct";
 
 
+    //热门搜索
+    public final static String SOUSOU = "hotSearch/list";
 }
