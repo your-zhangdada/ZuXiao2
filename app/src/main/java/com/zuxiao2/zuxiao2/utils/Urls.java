@@ -30,8 +30,8 @@ public class Urls {
     public final static String HOME_DZ = "address/list";
     //分类列表
     public final static String FINC_URL = "product/findProduct";
+    //分类侧滑品牌
+    public final static String FINCPINPAI_URL = "brand/find";
 
 
-    //热门搜索
-    public final static String SOUSOU = "hotSearch/list";
 }
