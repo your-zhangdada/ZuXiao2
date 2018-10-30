@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.zuxiao2.zuxiao2.R;
-import com.zuxiao2.zuxiao2.bean.Frist;
 import com.zuxiao2.zuxiao2.bean.Second;
 
 import java.util.List;
