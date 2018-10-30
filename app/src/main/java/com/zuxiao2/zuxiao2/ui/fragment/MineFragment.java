@@ -3,11 +3,14 @@ import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.zuxiao2.zuxiao2.R;
 import com.zuxiao2.zuxiao2.base.BaseFragment;
 import com.zuxiao2.zuxiao2.login.LoginActivity;
+import com.zuxiao2.zuxiao2.ui.fragment.fication.activity.Merchantentry;
+import com.zuxiao2.zuxiao2.ui.fragment.fication.activity.SettingActivity;
 import com.zuxiao2.zuxiao2.ui.fragment.mine.activity.MyorderActivity;
 
 /** 我的页面
@@ -15,7 +18,8 @@ import com.zuxiao2.zuxiao2.ui.fragment.mine.activity.MyorderActivity;
  */
 public class MineFragment extends BaseFragment implements View.OnClickListener {
     TextView user_name;
-    private ImageView im_order,im_equipment,im_re;
+    private ImageView im_order,im_equipment,im_re,im_setting;
+    private RelativeLayout rv_wall;
 
     @Override
     protected int getCreateView() {
@@ -24,6 +28,8 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
 
     @Override
     protected void initView(View view) {
+        im_setting = view.findViewById(R.id.im_setting);
+        im_setting.setOnClickListener(this);
         //点击登录
         user_name = view.findViewById(R.id.user_name);
         user_name.setOnClickListener(this);
@@ -36,7 +42,12 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
         //我的钱包
         im_re = view.findViewById(R.id.im_re);
         im_re.setOnClickListener(this);
+
+        //商家入驻
+        rv_wall = view.findViewById(R.id.rv_wall);
+        rv_wall.setOnClickListener(this);
     }
+
 
     @Override
     protected void initData(View view) {
@@ -64,6 +75,15 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
                 //我的钱包
 //                Intent wallet = new Intent(getContext(), );
 //                startActivity(wallet);
+                break;
+            case R.id.rv_wall:
+                //商家入住
+
+                startActivity(new Intent(getContext(),Merchantentry.class));
+                break;
+            case R.id.im_setting:
+                Intent setting = new Intent(getContext(), SettingActivity.class);
+                startActivity(setting);
                 break;
         }
     }
