@@ -1,10 +1,12 @@
 package com.zuxiao2.zuxiao2.base;
 
+import android.app.Application;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
 
 import com.zhy.autolayout.AutoLayoutActivity;
 import com.zuxiao2.zuxiao2.application.MyApplication;
@@ -16,7 +18,7 @@ import java.lang.reflect.Type;
  * Created by 77 on 2018/5/1.
  */
 
-public abstract class BaseActivity<T extends BasePresenter> extends AutoLayoutActivity {
+public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity {
 
     private Fragment lastFragment;
 

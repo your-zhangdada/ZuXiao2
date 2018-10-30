@@ -30,6 +30,7 @@ import com.zuxiao2.zuxiao2.presenter.FincPresenter;
 import com.zuxiao2.zuxiao2.ui.fragment.fication.adapter.PinPaiRecyclerViewAdapter;
 import com.zuxiao2.zuxiao2.ui.fragment.fication.adapter.SaiXuanRecyclerViewAdapter;
 import com.zuxiao2.zuxiao2.ui.fragment.fication.adapter.ScreeRecyclerAdapter;
+import com.zuxiao2.zuxiao2.ui.hometabftagment.classbase.CommodityActiivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -159,7 +160,16 @@ public class FincActivity extends BaseActivity<FincPresenter> implements View.On
                 refreshlayout.finishLoadmore(2000/*,false*/);//传入false表示加载失败
             }
         });
-
+        screeRecyclerAdapter.getOnClickData(new ScreeRecyclerAdapter.setOnClickData() {
+            @Override
+            public void setOnClickData(View view, int position) {
+                //跳转到商品详情页面
+                Intent intent = new Intent(FincActivity.this,CommodityActiivity.class);
+                int id = list.get(position).getId();
+                intent.putExtra("id",id+"");
+                startActivity(intent);
+            }
+        });
     }
 
     @SuppressLint("ResourceAsColor")

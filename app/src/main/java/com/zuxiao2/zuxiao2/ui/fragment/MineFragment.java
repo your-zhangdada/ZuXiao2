@@ -1,6 +1,7 @@
 package com.zuxiao2.zuxiao2.ui.fragment;
 import android.content.Intent;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -12,6 +13,7 @@ import com.zuxiao2.zuxiao2.login.LoginActivity;
 import com.zuxiao2.zuxiao2.ui.fragment.fication.activity.Merchantentry;
 import com.zuxiao2.zuxiao2.ui.fragment.fication.activity.SettingActivity;
 import com.zuxiao2.zuxiao2.ui.fragment.mine.activity.MyorderActivity;
+import com.zuxiao2.zuxiao2.utils.SpUtils;
 
 /** 我的页面
  * A simple {@link Fragment} subclass.
@@ -32,7 +34,7 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
         im_setting.setOnClickListener(this);
         //点击登录
         user_name = view.findViewById(R.id.user_name);
-        user_name.setOnClickListener(this);
+
         //我的订单
         im_order = view.findViewById(R.id.im_order);
         im_order.setOnClickListener(this);
@@ -52,6 +54,12 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
     @Override
     protected void initData(View view) {
 
+        if (!TextUtils.isEmpty(SpUtils.getNikeName())){
+            user_name.setText(SpUtils.getNikeName());
+        }else {
+            user_name.setText("点击登录");
+            user_name.setOnClickListener(this);
+        }
     }
 
     @Override

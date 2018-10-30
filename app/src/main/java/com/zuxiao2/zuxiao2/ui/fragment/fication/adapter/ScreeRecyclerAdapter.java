@@ -15,7 +15,7 @@ import com.zuxiao2.zuxiao2.bean.FincBean;
 
 import java.util.List;
 
-public class ScreeRecyclerAdapter extends RecyclerView.Adapter<ScreeRecyclerAdapter.Holder> {
+public class ScreeRecyclerAdapter extends RecyclerView.Adapter<ScreeRecyclerAdapter.Holder> implements View.OnClickListener {
     Context context;
     List<FincBean.DataBean.ListBean> itemsBean;
     public ScreeRecyclerAdapter(Context context, List<FincBean.DataBean.ListBean> itemsBean) {
@@ -28,6 +28,7 @@ public class ScreeRecyclerAdapter extends RecyclerView.Adapter<ScreeRecyclerAdap
     public ScreeRecyclerAdapter.Holder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View inflate = LayoutInflater.from(context).inflate(R.layout.finc_item, null, false);
 
+        inflate.setOnClickListener(this);
         return new Holder(inflate);
     }
 
@@ -37,11 +38,19 @@ public class ScreeRecyclerAdapter extends RecyclerView.Adapter<ScreeRecyclerAdap
         holder.tv_jx_iphoneX.setText(itemsBean.get(i).getName());
         holder.tv_myj.setText(itemsBean.get(i).getTag());
         holder.tv_yuezu.setText("日租金： "+itemsBean.get(i).getShowPrice());
+        holder.itemView.setTag(i);
     }
 
     @Override
     public int getItemCount() {
         return itemsBean.size();
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v!=null){
+            setOnClickData.setOnClickData(v,(Integer) v.getTag());
+        }
     }
 
     public class Holder extends RecyclerView.ViewHolder {
@@ -57,6 +66,12 @@ public class ScreeRecyclerAdapter extends RecyclerView.Adapter<ScreeRecyclerAdap
     }
 
     public interface setOnClickData{
+        void setOnClickData(View view ,int position);
+    }
 
+    public setOnClickData setOnClickData;
+
+    public void getOnClickData(setOnClickData setOnClickData){
+        this.setOnClickData = setOnClickData;
     }
 }

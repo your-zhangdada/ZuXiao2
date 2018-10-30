@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.zuxiao2.zuxiao2.MainActivity;
 import com.zuxiao2.zuxiao2.R;
+import com.zuxiao2.zuxiao2.application.MyApplication;
 import com.zuxiao2.zuxiao2.base.BaseActivity;
 import com.zuxiao2.zuxiao2.bean.PassLoginBean;
 import com.zuxiao2.zuxiao2.contract.IPassLoginContract;
@@ -148,16 +149,13 @@ public class PassWordLoginActivity extends BaseActivity<PassLoginPresenter> impl
     public void showPassLoginBean(PassLoginBean passLoginBean) {
         Toast.makeText(this, passLoginBean.getMsg(), Toast.LENGTH_SHORT).show();
         if (passLoginBean.getMsg().equals("ok")){
-            String s = phone.getText().toString();
-            String s1 = password.getText().toString();
-          /*  String userName = SpUtils.getUserName();
-            String userPhone = SpUtils.getUserPhone();*/
-            //if (s==userName&&s1==userPhone){
+          MyApplication.context = this;
+          SpUtils.saveUserId(passLoginBean.getData().getUserId()+"");
+          SpUtils.saveNikeName(passLoginBean.getData().getNickname());
                 Intent intent = new Intent(PassWordLoginActivity.this, MainActivity.class);
                 startActivity(intent);
                 Toast.makeText(this, "登录成功", Toast.LENGTH_SHORT).show();
                 this.finish();
-           // }
         }
     }
 

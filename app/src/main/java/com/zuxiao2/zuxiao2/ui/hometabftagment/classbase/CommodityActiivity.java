@@ -1,6 +1,7 @@
 package com.zuxiao2.zuxiao2.ui.hometabftagment.classbase;
 
 import android.content.Intent;
+import android.graphics.Paint;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
@@ -8,7 +9,9 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,6 +25,9 @@ import com.zuxiao2.zuxiao2.contract.IHomeCommContract;
 import com.zuxiao2.zuxiao2.presenter.IHomeCommPresenter;
 import com.zuxiao2.zuxiao2.ui.activity.Activity_AddDZ;
 import com.zuxiao2.zuxiao2.ui.activity.Activity_xz_day;
+import com.zuxiao2.zuxiao2.ui.hometabftagment.tabfragment.ChangJianFragment;
+import com.zuxiao2.zuxiao2.ui.hometabftagment.tabfragment.ShopMessageFragment;
+import com.zuxiao2.zuxiao2.ui.hometabftagment.tabfragment.UserMessageFragment;
 import com.zuxiao2.zuxiao2.utils.GlideImageLoader;
 
 import java.util.ArrayList;
@@ -57,6 +63,15 @@ public class CommodityActiivity extends BaseActivity<IHomeCommPresenter> impleme
     private List<CommodityBean.DataBean.SkusBean.AttributesJsonBean> attributesJson;
     private String value;
     private String value1;
+    private TextView shop;
+    private TextView user;
+    private TextView cj;
+    private LinearLayout shopmessage;
+    private LinearLayout usermessage;
+    private LinearLayout changjian;
+    private TextView tvshop;
+    private TextView tvuser;
+    private TextView tvchangjian;
 
     @Override
     protected void initTitle() {
@@ -101,10 +116,23 @@ public class CommodityActiivity extends BaseActivity<IHomeCommPresenter> impleme
         btn_jiaru_car = findViewById(R.id.btn_jiaru_car);
         btn_mashang_yy = findViewById(R.id.btn_mashang_yy);
         btn_mashang_yy.setOnClickListener(this);
-        //tablayout  viewpager  绑定
-        shouye_xq_tablayout = findViewById(R.id.shouye_xq_tablayout);
-        shouye_xq_viewpager = findViewById(R.id.shouye_xq_viewpager);
-        shouye_xq_tablayout.setupWithViewPager(shouye_xq_viewpager);
+
+        shopmessage = findViewById(R.id.shopmessage_linear);
+        shopmessage.setOnClickListener(this);
+        usermessage = findViewById(R.id.usermessage_linear);
+        usermessage.setOnClickListener(this);
+        changjian = findViewById(R.id.changjianwenti_linear);
+        changjian.setOnClickListener(this);
+        shop = findViewById(R.id.shopmessage);
+        user = findViewById(R.id.usermessage);
+        cj = findViewById(R.id.changjianwenti);
+        tvshop = findViewById(R.id.shopmessage_tv);
+        tvuser = findViewById(R.id.usermessage_tv);
+        tvchangjian = findViewById(R.id.changjianwenti_tv);
+        setContentView(ShopMessageFragment.class,R.id.shopmessageframelayout);
+        tvshop.setVisibility(View.VISIBLE);
+        tvuser.setVisibility(View.GONE);
+        tvchangjian.setVisibility(View.GONE);
     }
 
     @Override //网络请求
@@ -123,15 +151,35 @@ public class CommodityActiivity extends BaseActivity<IHomeCommPresenter> impleme
 
         tv_iphoneX.setText(data.getName());
         tv_fahuodizhi.setText("发货地："+data.getProvinceName());
-        tv_yuezu.setText("月租￥"+data.getQuality());
-        Log.e("GET",data.toString());
-        Log.d("DD",data.toString());
-        Toast.makeText(getApplicationContext(),data.toString(),Toast.LENGTH_SHORT);
+        tv_yuezu.setText("日租￥"+data.getQuality());
+        tv_chengjialiang.setText("成交量："+data.getCanUseNums());
+        tv_shichangjia.setText("市场价: ¥ "+data.getShowPrice());
     }
  int content = 1;
     @Override
     public void onClick(View v) {
         switch (v.getId()){
+            //商品详情
+            case R.id.shopmessage_linear:
+                setContentView(ShopMessageFragment.class,R.id.shopmessageframelayout);
+                tvshop.setVisibility(View.VISIBLE);
+                tvuser.setVisibility(View.GONE);
+                tvchangjian.setVisibility(View.GONE);
+                break;
+                //用户评价
+            case R.id.usermessage_linear:
+                setContentView(UserMessageFragment.class,R.id.shopmessageframelayout);
+                tvshop.setVisibility(View.GONE);
+                tvuser.setVisibility(View.VISIBLE);
+                tvchangjian.setVisibility(View.GONE);
+                break;
+                //常见问题
+            case R.id.changjianwenti_linear:
+                setContentView(ChangJianFragment.class,R.id.shopmessageframelayout);
+                tvshop.setVisibility(View.GONE);
+                tvuser.setVisibility(View.GONE);
+                tvchangjian.setVisibility(View.VISIBLE);
+                break;
             case R.id.btn_mashang_yy:
                 //立即拥有
                 getPOPCommody();

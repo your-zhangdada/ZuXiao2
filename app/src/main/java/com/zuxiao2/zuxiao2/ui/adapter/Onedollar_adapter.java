@@ -57,7 +57,6 @@ public class Onedollar_adapter extends Adapter<RecyclerView.ViewHolder> {
             ((MyViewHolder)holder).im_liebiao_zuo.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(context, list.get(position)+"左", Toast.LENGTH_SHORT).show();
                     //跳转到商品详情页面
                     Intent intent = new Intent(context,CommodityActiivity.class);
                     int id = list.get(position).getId();
@@ -76,7 +75,6 @@ public class Onedollar_adapter extends Adapter<RecyclerView.ViewHolder> {
             ((TwoViewHolder) holder).im_liebiao_you.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(context, list.get(position)+"右", Toast.LENGTH_SHORT).show();
                     //跳转到商品详情页面
                     Intent intent = new Intent(context,CommodityActiivity.class);
                     int id = list.get(position).getId();

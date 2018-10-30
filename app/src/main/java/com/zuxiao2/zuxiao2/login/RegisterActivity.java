@@ -142,11 +142,6 @@ public class RegisterActivity extends BaseActivity<LoginPresenter> implements IL
         if (phone.length() == 11 && pass.length() > 6) {
             if (codes == code) {
                 Toast.makeText(this, "注册成功！", Toast.LENGTH_SHORT).show();
-                int userId = password.getData().getUserId();
-                String id = String.valueOf(userId);
-                SpUtils.setUserId(id);
-                SpUtils.setUserName(phone);
-                SpUtils.setUserPhone(pass);
                 Intent intent = new Intent(this, PassWordLoginActivity.class);
                 startActivity(intent);
             }

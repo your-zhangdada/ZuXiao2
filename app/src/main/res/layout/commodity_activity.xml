@@ -119,30 +119,33 @@
                 android:layout_marginLeft="@dimen/dp_13"
                 android:layout_marginTop="@dimen/dp_21">
 
-                <TextView
-                    android:id="@+id/tv_phoneYP"
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="手机优品"
-                    android:textColor="@color/back"
-                    android:textSize="@dimen/dp_16" />
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/tv_phoneYP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="手机优品"
+                        android:textColor="@color/back"
+                        android:textSize="@dimen/dp_16" />
 
-                <TextView
-                    android:id="@+id/tv_shengxin"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="4dp"
-                    android:layout_toRightOf="@+id/tv_phoneYP"
-                    android:text="省心省钱买好货"
+                    <TextView
+                        android:id="@+id/tv_shengxin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_toRightOf="@+id/tv_phoneYP"
+                        android:text="省心省钱买好货"
+                        android:textSize="@dimen/dp_11" />
+                </LinearLayout>
 
-                    android:textSize="@dimen/dp_11" />
 
                 <LinearLayout
                     android:id="@+id/linr"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/tv_shengxin"
-                    android:layout_marginTop="@dimen/dp_21">
+                    android:layout_marginTop="30dp">
 
                     <ImageView
                         android:id="@+id/im_threee"
@@ -200,23 +203,97 @@
                 android:layout_below="@id/relat"
                 android:background="@color/view_bg" />
 
-            <android.support.design.widget.TabLayout
-                android:id="@+id/shouye_xq_tablayout"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_51"
-                android:layout_below="@id/view_relat">
-
-            </android.support.design.widget.TabLayout>
-
-            <android.support.v4.view.ViewPager
-                android:id="@+id/shouye_xq_viewpager"
+            <LinearLayout
+                android:id="@+id/linear_linear"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/shouye_xq_tablayout">
+                android:layout_below="@id/view_relat"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3">
 
-            </android.support.v4.view.ViewPager>
+                    <LinearLayout
+                        android:id="@+id/shopmessage_linear"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/shopmessage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="商品详情"
+                            android:textColor="@color/back"
+                            android:textSize="@dimen/sp_22"/>
+                        <TextView
+                            android:id="@+id/shopmessage_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="------------"
+                            android:visibility="gone"/>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/usermessage_linear"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/usermessage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="用户评价"
+                            android:textColor="@color/back"
+                            android:textSize="@dimen/sp_22"/>
+                        <TextView
+                            android:id="@+id/usermessage_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="------------"
+                            android:visibility="gone"/>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/changjianwenti_linear"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/changjianwenti"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="常见问题"
+                            android:textColor="@color/back"
+                            android:textSize="@dimen/sp_22"/>
+                        <TextView
+                            android:id="@+id/changjianwenti_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="------------"
+                            android:visibility="gone"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+                <FrameLayout
+                    android:id="@+id/shopmessageframelayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"></FrameLayout>
+            </LinearLayout>
+
             <RelativeLayout
-                android:layout_below="@+id/shouye_xq_viewpager"
+                android:layout_below="@+id/linear_linear"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_50">
 
