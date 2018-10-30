@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.zuxiao2.zuxiao2.R;
 import com.zuxiao2.zuxiao2.bean.FincBean;
+import com.zuxiao2.zuxiao2.utils.GlideImageLoader;
 
 import java.util.List;
 
@@ -56,8 +57,7 @@ public class ScreeRecyclerAdapter extends RecyclerView.Adapter<ScreeRecyclerAdap
         }
     }
 
-    public interface setOnClickItemData{
-        void setOnClickData();
-        //圣兽
+    public interface setOnClickData{
+
     }
 }
