@@ -6,8 +6,10 @@ import com.zuxiao2.zuxiao2.model.FLService;
 import com.zuxiao2.zuxiao2.model.FincService;
 import com.zuxiao2.zuxiao2.model.HomeService;
 import com.zuxiao2.zuxiao2.model.LoginService;
+import com.zuxiao2.zuxiao2.model.MerchService;
 import com.zuxiao2.zuxiao2.model.MyService;
 import com.zuxiao2.zuxiao2.model.PassLoginService;
+import com.zuxiao2.zuxiao2.model.SouSouService;
 
 import java.util.concurrent.TimeUnit;
 
@@ -63,5 +65,11 @@ public class RetrofitUtils {
     }
     public FincService getFincService(){
         return retrofit.create(FincService.class);
+    }
+    public SouSouService getSouSouService(){
+        return retrofit.create(SouSouService.class);
+    }
+    public MerchService getMerchService(){
+        return retrofit.create(MerchService.class);
     }
 }

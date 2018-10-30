@@ -33,5 +33,8 @@ public class Urls {
     //分类侧滑品牌
     public final static String FINCPINPAI_URL = "brand/find";
 
-
+    //热门搜索
+    public final static String SOUSOU = "hotSearch/list";
+    //商家入住
+    public final static String MY_MERCH = "merchant/save.json";
 }
