@@ -122,7 +122,7 @@
                 <TextView
                     android:id="@+id/tv_phoneYP"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/dp_16"
+                    android:layout_height="wrap_content"
                     android:text="手机优品"
                     android:textColor="@color/back"
                     android:textSize="@dimen/dp_16" />
@@ -130,10 +130,11 @@
                 <TextView
                     android:id="@+id/tv_shengxin"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/dp_11"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
                     android:layout_toRightOf="@+id/tv_phoneYP"
                     android:text="省心省钱买好货"
+
                     android:textSize="@dimen/dp_11" />
 
                 <LinearLayout

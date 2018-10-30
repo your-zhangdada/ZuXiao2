@@ -56,4 +56,8 @@ public class ScreeRecyclerAdapter extends RecyclerView.Adapter<ScreeRecyclerAdap
             tv_yuezu =  itemView.findViewById(R.id.tv_yuezu);
         }
     }
+
+    public interface setOnClickItemData{
+        void setOnClickData();
+    }
 }
