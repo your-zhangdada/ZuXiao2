@@ -40,8 +40,17 @@
         <activity android:name=".ui.guide.HandlerActivity" />
         <activity android:name=".ui.fragment.fication.activity.FincActivity" />
         <activity android:name=".ui.fragment.fication.activity.Merchantentry" />
-        <activity android:name=".ui.fragment.fication.activity.SettingActivity"></activity>
-        <activity android:name=".ui.fragment.mine.activity.MyorderActivity"/>
+        <activity android:name=".ui.fragment.fication.activity.SettingActivity" />
+        <activity android:name=".ui.fragment.mine.activity.MyorderActivity" />
+        <activity android:name=".ui.fragment.mine.activity.ProvinceActivity" />
+        <activity
+            android:name=".ui.fragment.mine.activity.SengfenActivity"
+            android:label="@string/title_activity_sengfen"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.fragment.mine.activity.StudentActivity"
+            android:label="@string/title_activity_student"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

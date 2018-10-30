@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.mine.activity.ProvinceActivity">
+
+    <include
+        android:id="@+id/inv_f"
+        layout="@layout/common_top_white_view" />
+
+    <ImageView
+        android:id="@+id/im_rz_background"
+        android:layout_below="@id/inv_f"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_169"
+        android:src="@mipmap/mineheader"/>
+
+    <RelativeLayout
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_80"
+        android:layout_below="@id/inv_f">
+
+        <ImageView
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_80"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/user_im" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rv_tv"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_below="@id/rv"
+        android:layout_marginLeft="@dimen/dp_40"
+        android:layout_marginRight="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_40"
+        android:background="@color/app_same">
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="@string/tv"
+            android:textSize="@dimen/dp_10" />
+
+        <TextView
+            android:id="@+id/tv_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="@string/tv_"
+            android:textSize="@dimen/dp_10" />
+
+    </RelativeLayout>
+    <android.support.design.widget.TabLayout
+        android:id="@+id/provin_tab"
+        android:layout_below="@+id/rv_tv"
+        android:layout_marginTop="@dimen/dp_18"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginRight="@dimen/dp_20"
+        android:layout_marginLeft="@dimen/dp_20">
+    </android.support.design.widget.TabLayout>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/provin_viewpager"
+        android:layout_below="@+id/provin_tab"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v4.view.ViewPager>
+</RelativeLayout>

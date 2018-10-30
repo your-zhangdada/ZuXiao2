@@ -14,6 +14,7 @@ import com.zuxiao2.zuxiao2.ui.fragment.fication.activity.Merchantentry;
 import com.zuxiao2.zuxiao2.ui.fragment.fication.activity.SettingActivity;
 import com.zuxiao2.zuxiao2.ui.fragment.mine.activity.MyorderActivity;
 import com.zuxiao2.zuxiao2.utils.SpUtils;
+import com.zuxiao2.zuxiao2.ui.fragment.mine.activity.ProvinceActivity;
 
 /** 我的页面
  * A simple {@link Fragment} subclass.
@@ -21,7 +22,7 @@ import com.zuxiao2.zuxiao2.utils.SpUtils;
 public class MineFragment extends BaseFragment implements View.OnClickListener {
     TextView user_name;
     private ImageView im_order,im_equipment,im_re,im_setting;
-    private RelativeLayout rv_wall;
+    private RelativeLayout rv_wall,rv_identity_text;
 
     @Override
     protected int getCreateView() {
@@ -44,7 +45,9 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
         //我的钱包
         im_re = view.findViewById(R.id.im_re);
         im_re.setOnClickListener(this);
-
+        //省份认证
+        rv_identity_text = view.findViewById(R.id.rv_identity_text);
+        rv_identity_text.setOnClickListener(this);
         //商家入驻
         rv_wall = view.findViewById(R.id.rv_wall);
         rv_wall.setOnClickListener(this);
@@ -68,6 +71,9 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
             case R.id.user_name:
                 Intent login = new Intent(getContext(), LoginActivity.class);
                 startActivity(login);
+                break;
+            case R.id.rv_identity_text:
+                startActivity(new Intent(getContext(),ProvinceActivity.class));
                 break;
             case R.id.im_order:
                 //我的订单  先判断是否登录  登录以后才可以点击  否者跳转到登录页面
