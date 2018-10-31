@@ -8,13 +8,14 @@ import android.widget.Button;
 
 import com.zuxiao2.zuxiao2.R;
 import com.zuxiao2.zuxiao2.base.BaseFragment;
+import com.zuxiao2.zuxiao2.ui.fragment.mine.activity.OperateActivity;
 import com.zuxiao2.zuxiao2.ui.fragment.mine.activity.SengfenActivity;
 import com.zuxiao2.zuxiao2.ui.fragment.mine.activity.StudentActivity;
 //学生认证
 /**
  * A simple {@link Fragment} subclass.
  */
-public class StudentFragment extends BaseFragment implements View.OnClickListener {
+public class StudentFragment extends BaseFragment implements  View.OnClickListener {
 
     private Button bt_to_st_id,bt_to_st,bt_to_yuny,bt_to_zhima;
 
@@ -50,8 +51,10 @@ public class StudentFragment extends BaseFragment implements View.OnClickListene
                 startActivity(new Intent(getContext(),StudentActivity.class));
                 break;
             case R.id.bt_to_yuny://运营商认证
+                startActivity(new Intent(getContext(),OperateActivity.class));
                 break;
             case R.id.bt_to_zhima://芝麻信用
+           // startActivity(new Intent(getContext(),));//暂时没有
                 break;
         }
     }

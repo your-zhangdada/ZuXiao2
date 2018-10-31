@@ -12,6 +12,15 @@ public class ApplyBean {
     private String msg;
     private Object data;
 
+    @Override
+    public String toString() {
+        return "ApplyBean{" +
+                "code='" + code + '\'' +
+                ", msg='" + msg + '\'' +
+                ", data=" + data +
+                '}';
+    }
+
     public String getCode() {
         return code;
     }

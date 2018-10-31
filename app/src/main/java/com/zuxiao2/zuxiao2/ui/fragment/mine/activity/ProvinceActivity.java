@@ -13,13 +13,12 @@ import com.zuxiao2.zuxiao2.ui.fragment.mine.fragment.StudentFragment;
 
 import java.util.ArrayList;
 import java.util.List;
-
+// TODO 省份认证
 public class ProvinceActivity extends BaseActivity {
     private TabLayout provin_tab;
     private ViewPager provin_viewpager;
     private List<String> mList = new ArrayList<>();
     private List<Fragment> mFragment = new ArrayList<>();
-    // 省份认证
 
     @Override
     protected void initTitle() {

@@ -62,6 +62,9 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/files_path" />
         </provider>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".ui.fragment.mine.activity.OperateActivity" />
+        <activity android:name=".ui.fragment.mine.activity.SBKActivity"></activity>
     </application>
 
 </manifest>

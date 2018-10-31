@@ -17,7 +17,7 @@ import com.zuxiao2.zuxiao2.ui.fragment.mine.activity.MyorderActivity;
 import com.zuxiao2.zuxiao2.utils.SpUtils;
 import com.zuxiao2.zuxiao2.ui.fragment.mine.activity.ProvinceActivity;
 
-/** 我的页面
+/**   TODO 我的页面
  * A simple {@link Fragment} subclass.
  */
 public class MineFragment extends BaseFragment implements View.OnClickListener {
@@ -72,8 +72,12 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
                 Intent login = new Intent(getContext(), LoginActivity.class);
                 startActivity(login);
                 break;
-            case R.id.rv_identity_text:
-                startActivity(new Intent(getContext(),ProvinceActivity.class));
+            case R.id.rv_identity_text: //身份认证
+                if (SpUtils.getNikeName().isEmpty()){
+                    startActivity(new Intent(getContext(), LoginActivity.class));
+                }else {
+                    startActivity(new Intent(getContext(),ProvinceActivity.class));
+                }
                 break;
             case R.id.im_order:
                 //我的订单  先判断是否登录  登录以后才可以点击  否者跳转到登录页面
@@ -92,7 +96,6 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
                 break;
             case R.id.rv_wall:
                 //商家入住
-
                 startActivity(new Intent(getContext(),Merchantentry.class));
                 break;
             case R.id.im_setting:
