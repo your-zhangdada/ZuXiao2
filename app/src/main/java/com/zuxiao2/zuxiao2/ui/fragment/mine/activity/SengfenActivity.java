@@ -109,7 +109,7 @@ public class SengfenActivity extends BaseActivity<ApplyPresenter> implements App
 //        map.put("companyAddress","");
 //        map.put("entrustPic","");
         map.put("idCardHands",url);//手持身份证
-        if (!SpUtils.getNikeName().isEmpty()){
+        if (!SpUtils.getNikeName(this).isEmpty()){
             presenter.getApplyBean(map);
         }
     }

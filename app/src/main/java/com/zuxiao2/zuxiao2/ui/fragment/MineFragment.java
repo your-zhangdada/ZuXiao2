@@ -8,14 +8,13 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.zuxiao2.zuxiao2.R;
-import com.zuxiao2.zuxiao2.application.MyApplication;
 import com.zuxiao2.zuxiao2.base.BaseFragment;
 import com.zuxiao2.zuxiao2.login.LoginActivity;
 import com.zuxiao2.zuxiao2.ui.fragment.fication.activity.Merchantentry;
 import com.zuxiao2.zuxiao2.ui.fragment.fication.activity.SettingActivity;
 import com.zuxiao2.zuxiao2.ui.fragment.mine.activity.MyorderActivity;
-import com.zuxiao2.zuxiao2.utils.SpUtils;
 import com.zuxiao2.zuxiao2.ui.fragment.mine.activity.ProvinceActivity;
+import com.zuxiao2.zuxiao2.utils.SpUtils;
 
 /**   TODO 我的页面
  * A simple {@link Fragment} subclass.
@@ -73,7 +72,7 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
                 startActivity(login);
                 break;
             case R.id.rv_identity_text: //身份认证
-                if (SpUtils.getNikeName().isEmpty()){
+                if (SpUtils.getNikeName(getContext()).isEmpty()){
                     startActivity(new Intent(getContext(), LoginActivity.class));
                 }else {
                     startActivity(new Intent(getContext(),ProvinceActivity.class));
