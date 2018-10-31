@@ -34,5 +34,10 @@ public class Urls {
     public final static String FINCPINPAI_URL = "brand/find";
     // 认证借口
     public final static String  USER_APPLY="user/applyAuthentication";
+    //商家入驻
+    public final static String MERCHANTENTRY_URL = "merchant/save";
+    //上传图片
+    public final static String COMMITIMG = "common/fileupload";
+
 
 }

@@ -8,6 +8,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.zuxiao2.zuxiao2.R;
+import com.zuxiao2.zuxiao2.application.MyApplication;
 import com.zuxiao2.zuxiao2.base.BaseFragment;
 import com.zuxiao2.zuxiao2.login.LoginActivity;
 import com.zuxiao2.zuxiao2.ui.fragment.fication.activity.Merchantentry;
@@ -56,9 +57,8 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
 
     @Override
     protected void initData(View view) {
-
-        if (!TextUtils.isEmpty(SpUtils.getNikeName())){
-            user_name.setText(SpUtils.getNikeName());
+        if (!TextUtils.isEmpty(SpUtils.getNikeName(getContext()))){
+            user_name.setText(SpUtils.getNikeName(getContext()));
         }else {
             user_name.setText("点击登录");
             user_name.setOnClickListener(this);

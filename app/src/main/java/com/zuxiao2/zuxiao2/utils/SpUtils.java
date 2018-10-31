@@ -44,8 +44,8 @@ public class SpUtils {
         edit.commit();
     }
 
-    public static String getNikeName() {
-        SharedPreferences sharedPreferences = MyApplication.context.getSharedPreferences("UserName", Context.MODE_PRIVATE);
+    public static String getNikeName(Context context) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences("UserName", Context.MODE_PRIVATE);
         String name = sharedPreferences.getString("name", null);
         return name;
     }

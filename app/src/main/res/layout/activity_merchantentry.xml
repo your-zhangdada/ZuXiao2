@@ -460,7 +460,7 @@
             android:id="@+id/tv_xuanzhe"
             android:layout_marginTop="@dimen/dp_20"
             android:layout_marginLeft="@dimen/dp_5"
-            android:layout_toRightOf="@id/im_xuanzhe"
+            android:layout_toRightOf="@id/chechbox_xuanzhe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/dp_10"

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="请选择方式"
+        android:textSize="@dimen/sp_22"
+        android:layout_margin="@dimen/dp_50"
+        android:textColor="@color/back"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:weightSum="2"
+        android:layout_height="match_parent"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/systemcrmera"
+            android:layout_margin="@dimen/dp_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="系统相册"
+            android:textColor="@color/gb_huangse"
+            android:textSize="@dimen/sp_15"
+            android:gravity="center"
+            android:background="@drawable/bg_shapes"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/onclickcamera"
+            android:layout_margin="@dimen/dp_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="点击拍照"
+            android:textColor="@color/lg_pass"
+            android:textSize="@dimen/sp_15"
+            android:gravity="center"
+            android:background="@drawable/bg_shapes"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+</LinearLayout>

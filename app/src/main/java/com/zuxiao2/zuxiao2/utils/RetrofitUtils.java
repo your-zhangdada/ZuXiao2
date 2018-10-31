@@ -2,11 +2,13 @@ package com.zuxiao2.zuxiao2.utils;
 
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import com.zuxiao2.zuxiao2.application.MyApplication;
+import com.zuxiao2.zuxiao2.bean.MerChantentryBean;
 import com.zuxiao2.zuxiao2.model.ApplyService;
 import com.zuxiao2.zuxiao2.model.FLService;
 import com.zuxiao2.zuxiao2.model.FincService;
 import com.zuxiao2.zuxiao2.model.HomeService;
 import com.zuxiao2.zuxiao2.model.LoginService;
+import com.zuxiao2.zuxiao2.model.MerchantentryService;
 import com.zuxiao2.zuxiao2.model.MyService;
 import com.zuxiao2.zuxiao2.model.PassLoginService;
 
@@ -68,5 +70,8 @@ public class RetrofitUtils {
     //认证
     public ApplyService getApplyService(){
         return retrofit.create(ApplyService.class);
+    }
+    public MerchantentryService getMerchantentryService(){
+        return retrofit.create(MerchantentryService.class);
     }
 }
