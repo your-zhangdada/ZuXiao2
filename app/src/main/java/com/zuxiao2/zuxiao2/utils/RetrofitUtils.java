@@ -2,6 +2,7 @@ package com.zuxiao2.zuxiao2.utils;
 
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import com.zuxiao2.zuxiao2.application.MyApplication;
+import com.zuxiao2.zuxiao2.model.ApplyService;
 import com.zuxiao2.zuxiao2.model.FLService;
 import com.zuxiao2.zuxiao2.model.FincService;
 import com.zuxiao2.zuxiao2.model.HomeService;
@@ -63,5 +64,9 @@ public class RetrofitUtils {
     }
     public FincService getFincService(){
         return retrofit.create(FincService.class);
+    }
+    //认证
+    public ApplyService getApplyService(){
+        return retrofit.create(ApplyService.class);
     }
 }

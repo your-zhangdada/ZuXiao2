@@ -227,10 +227,97 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_8"
         android:background="@color/bt_regist_back"></View>
-
+<LinearLayout
+    android:id="@+id/rel"
+    android:orientation="vertical"
+    android:layout_marginLeft="@dimen/dp_16"
+    android:layout_below="@+id/view6"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/dp_15"
+        android:text="填写设备返还地址"
+        android:textColor="@color/back"/>
+    <LinearLayout
+    android:gravity="center_vertical"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_45">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="联系人："
+        android:textSize="@dimen/dp_14"/>
+    <EditText
+        android:id="@+id/ed_name"
+        style="?android:attr/textViewStyle"
+        android:background="@null"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:textSize="@dimen/dp_14"/>
+</LinearLayout>
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="联系电话："
+            android:textSize="@dimen/dp_14"/>
+        <EditText
+            android:id="@+id/ed_name_phone"
+            style="?android:attr/textViewStyle"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:textSize="@dimen/dp_14"/>
+    </LinearLayout>
+    <RelativeLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="选着地址："
+            android:textSize="@dimen/dp_14"/>
+        <TextView
+            android:id="@+id/im_addres"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_width="@dimen/dp_9"
+            android:layout_height="@dimen/dp_16"
+           android:text=">"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="详细地址："
+            android:textSize="@dimen/dp_14"/>
+        <EditText
+            android:id="@+id/ed_xx_adds"
+            style="?android:attr/textViewStyle"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:textSize="@dimen/dp_14"/>
+    </LinearLayout>
+</LinearLayout>
     <RelativeLayout
         android:id="@+id/relative7"
-        android:layout_below="@id/view6"
+        android:layout_below="@id/rel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
@@ -364,14 +451,14 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_218">
         <CheckBox
-            android:id="@+id/im_xuanzhe"
-            android:layout_width="@dimen/dp_11"
-            android:layout_height="@dimen/dp_11"
+            android:id="@+id/chechbox_xuanzhe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dp_23"
             android:layout_marginTop="@dimen/dp_10"/>
         <TextView
             android:id="@+id/tv_xuanzhe"
-            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_20"
             android:layout_marginLeft="@dimen/dp_5"
             android:layout_toRightOf="@id/im_xuanzhe"
             android:layout_width="wrap_content"
@@ -380,7 +467,7 @@
             android:text="已阅读并同意"/>
         <TextView
             android:id="@+id/tv_xieyi"
-            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_20"
             android:layout_toRightOf="@id/tv_xuanzhe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

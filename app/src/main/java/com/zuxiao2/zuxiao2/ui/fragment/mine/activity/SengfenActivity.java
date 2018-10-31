@@ -7,7 +7,7 @@ import android.widget.ImageView;
 
 import com.zuxiao2.zuxiao2.R;
 import com.zuxiao2.zuxiao2.base.BaseActivity;
-
+//省份证认证
 public class SengfenActivity extends BaseActivity implements View.OnClickListener {
 
     private EditText tv_sfname,tv_sfz_hm,tv_sfz_dz;

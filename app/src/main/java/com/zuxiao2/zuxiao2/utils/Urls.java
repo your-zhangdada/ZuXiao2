@@ -32,6 +32,7 @@ public class Urls {
     public final static String FINC_URL = "product/findProduct";
     //分类侧滑品牌
     public final static String FINCPINPAI_URL = "brand/find";
-
+    // 认证借口
+    public final static String  USER_APPLY="user/applyAuthentication";
 
 }
