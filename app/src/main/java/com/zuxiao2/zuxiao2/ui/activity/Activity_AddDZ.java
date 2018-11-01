@@ -51,6 +51,7 @@ public class Activity_AddDZ extends BaseActivity<AddDingDanPresenter> implements
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btn_zf:
+                //下单
                 String str = "{ \"addressId\": 17, \"day\":7, \"postageType\": 1, \"remark\": \"快点发货哈\", \"activityId\":-1, \"skus\": [ { \"insuranceId\": \"14\", \"num\": 1, \"skuId\": 23 } ] }";
                 RequestBody fileBody = RequestBody.create(MediaType.parse("application/json"), str);
                 HashMap<String, String> header = new HashMap<>();
