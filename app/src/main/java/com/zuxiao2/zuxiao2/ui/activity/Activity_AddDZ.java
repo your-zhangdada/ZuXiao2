@@ -35,7 +35,7 @@ public class Activity_AddDZ extends BaseActivity<AddDingDanPresenter> implements
 
     @Override
     protected void initView() {
-
+        // 合并代码
        /* Intent intent = getIntent();
         CommodityBean.DataBean databena = (CommodityBean.DataBean) intent.getSerializableExtra("databena");*/
         Button btn_zf = findViewById(R.id.btn_zf);
