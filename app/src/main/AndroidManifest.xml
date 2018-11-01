@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.zuxiao2.zuxiao2">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -65,6 +66,10 @@
             android:theme="@style/AppTheme" />
         <activity android:name=".ui.fragment.mine.activity.OperateActivity" />
         <activity android:name=".ui.fragment.mine.activity.SBKActivity"></activity>
+        <activity android:name=".ui.activity.Activity_AddDZ"
+            tools:ignore="DuplicateActivity"></activity>
+        <activity android:name=".ui.activity.Activity_Add_DZ"
+            ></activity>
     </application>
 
 </manifest>

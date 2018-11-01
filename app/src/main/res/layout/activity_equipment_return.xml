@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/my_v">
+    android:background="@color/my_v"
+    tools:context=".ui.activity.Activity_AddDZ">
 
     <include
         android:id="@+id/inv_f"
@@ -540,7 +540,7 @@
                     android:textSize="@dimen/dp_11" />
             </RelativeLayout>
 
-            <Viewv
+            <View
                 android:id="@+id/vvvvvv"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_1"

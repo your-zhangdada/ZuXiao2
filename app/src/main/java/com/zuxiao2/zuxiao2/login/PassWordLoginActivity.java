@@ -152,6 +152,7 @@ public class PassWordLoginActivity extends BaseActivity<PassLoginPresenter> impl
           MyApplication.context = this;
           SpUtils.saveUserId(passLoginBean.getData().getUserId()+"");
           SpUtils.saveNikeName(passLoginBean.getData().getNickname());
+          SpUtils.saveUserKey(this,passLoginBean.getData().getKey());
                 Intent intent = new Intent(PassWordLoginActivity.this, MainActivity.class);
                 startActivity(intent);
                 Toast.makeText(this, "登录成功", Toast.LENGTH_SHORT).show();

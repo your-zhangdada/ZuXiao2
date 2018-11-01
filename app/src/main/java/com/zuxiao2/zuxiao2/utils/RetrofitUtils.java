@@ -3,6 +3,7 @@ package com.zuxiao2.zuxiao2.utils;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import com.zuxiao2.zuxiao2.application.MyApplication;
 import com.zuxiao2.zuxiao2.bean.MerChantentryBean;
+import com.zuxiao2.zuxiao2.model.AddDingDanService;
 import com.zuxiao2.zuxiao2.model.ApplyService;
 import com.zuxiao2.zuxiao2.model.FLService;
 import com.zuxiao2.zuxiao2.model.FincService;
@@ -73,5 +74,8 @@ public class RetrofitUtils {
     }
     public MerchantentryService getMerchantentryService(){
         return retrofit.create(MerchantentryService.class);
+    }
+    public AddDingDanService getAddDingDanService(){
+        return retrofit.create(AddDingDanService.class);
     }
 }

@@ -80,4 +80,17 @@ public class SpUtils {
         edit.commit();
     }
 
+    public static void saveUserKey(Context context,String key) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences("UserKey", Context.MODE_PRIVATE);
+        SharedPreferences.Editor edit = sharedPreferences.edit();
+        edit.putString("key", key);
+        edit.commit();
+    }
+
+    public static String getUserKey(Context context) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences("UserKey", Context.MODE_PRIVATE);
+        String id = sharedPreferences.getString("key",null);
+        return id;
+    }
+
 }

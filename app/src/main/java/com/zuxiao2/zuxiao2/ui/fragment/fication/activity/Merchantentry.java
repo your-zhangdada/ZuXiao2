@@ -39,6 +39,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -53,6 +54,7 @@ public class Merchantentry extends BaseActivity<MerchantentryPresenter> implemen
     private CheckBox chechbox_xuanzhe;
     private Bitmap bitmap;
     private String bitmaoStr;
+    private HashMap<String, String> map;
 
     @Override
     protected void initTitle() {
@@ -143,6 +145,34 @@ public class Merchantentry extends BaseActivity<MerchantentryPresenter> implemen
             case R.id.tv_xieyi: //查看协议
                 break;
             case R.id.btn_sc: //上传
+                map = new HashMap<>();
+                String trim = tv_name.getText().toString().trim();
+                String worker = tv_staff_Number.getText().toString().trim();
+                String num = tv_shibie_Number.getText().toString();
+                String name = tv_company_name.getText().toString();
+                String legal = tv_id_number.getText().toString().trim();
+                map.put("name",name);
+                map.put("workersNumber",worker);
+                map.put("taxNumber",num);
+                map.put("legalPerson",trim);
+                map.put("legalPersonIdNo",legal);
+                map.put("idCardFront","");
+                map.put("idCardBehind","");
+                map.put("idCardHandFront","");
+                map.put("idCardHandBehind","");
+                map.put("licenseUrl","");
+                map.put("licenseUrlRepeat","");
+                map.put("businessScope","");
+                map.put("collectProvince","");
+                map.put("collectCity","");
+                map.put("collectCounty","");
+                String dettailadd = ed_xx_adds.getText().toString().trim();
+                map.put("collectDetailAddress",dettailadd);
+                String collectphone = ed_name_phone.getText().toString().trim();
+                map.put("collectPhone",collectphone);
+                String collectname = ed_name.getText().toString().trim();
+                map.put("collectName",collectname);
+                presenter.getMerchantentryBean(map);
                 break;
         }
     }

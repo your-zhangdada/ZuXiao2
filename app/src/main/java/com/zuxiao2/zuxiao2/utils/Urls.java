@@ -38,6 +38,8 @@ public class Urls {
     public final static String MERCHANTENTRY_URL = "merchant/save";
     //上传图片
     public final static String COMMITIMG = "common/fileupload";
+    //下单接口
+    public final static String ADDDINGDAN_URL = "order/save";
 
 
 }

@@ -1,18 +1,20 @@
 package com.zuxiao2.zuxiao2.ui.hometabftagment.classbase;
 
 import android.content.Intent;
-import android.graphics.Paint;
+import android.graphics.Color;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +27,7 @@ import com.zuxiao2.zuxiao2.contract.IHomeCommContract;
 import com.zuxiao2.zuxiao2.presenter.IHomeCommPresenter;
 import com.zuxiao2.zuxiao2.ui.activity.Activity_AddDZ;
 import com.zuxiao2.zuxiao2.ui.activity.Activity_xz_day;
+import com.zuxiao2.zuxiao2.ui.hometabftagment.adapter.CommodityPopRecyclerAdapter;
 import com.zuxiao2.zuxiao2.ui.hometabftagment.tabfragment.ChangJianFragment;
 import com.zuxiao2.zuxiao2.ui.hometabftagment.tabfragment.ShopMessageFragment;
 import com.zuxiao2.zuxiao2.ui.hometabftagment.tabfragment.UserMessageFragment;
@@ -44,15 +47,9 @@ public class CommodityActiivity extends BaseActivity<IHomeCommPresenter> impleme
     private Button btn_jiaru_car, btn_mashang_yy;
     private int sid;
     private String id;
-    CommodityBean.DataBean data;
     private TextView tv_liji_price;
     private TextView tv_liji_yj;
     private TextView tv_liji_zj;
-    private TextView tv_yse1;
-    private TextView tv_yse2;
-    private TextView tv_yse3;
-    private TextView tv_daxiao1;
-    private TextView tv_daxiao2;
     //banner 地址
     List<String> mList = new ArrayList<>();
     private TextView tv_jian;
@@ -60,7 +57,6 @@ public class CommodityActiivity extends BaseActivity<IHomeCommPresenter> impleme
     private TextView tv_jia;
     private TextView tv_daynumb;
     private TextView tv_myj;
-    private List<CommodityBean.DataBean.SkusBean.AttributesJsonBean> attributesJson;
     private String value;
     private String value1;
     private TextView shop;
@@ -72,6 +68,8 @@ public class CommodityActiivity extends BaseActivity<IHomeCommPresenter> impleme
     private TextView tvshop;
     private TextView tvuser;
     private TextView tvchangjian;
+    private RelativeLayout commodity;
+    private CommodityBean.DataBean data;
 
     @Override
     protected void initTitle() {
@@ -111,7 +109,7 @@ public class CommodityActiivity extends BaseActivity<IHomeCommPresenter> impleme
         tv_baoy = findViewById(R.id.tv_baoy);
         tv_kefu = findViewById(R.id.tv_kefu);
         tv_dianpu = findViewById(R.id.tv_dianpu);
-
+        commodity = findViewById(R.id.commodity);
         //button
         btn_jiaru_car = findViewById(R.id.btn_jiaru_car);
         btn_mashang_yy = findViewById(R.id.btn_mashang_yy);
@@ -148,12 +146,11 @@ public class CommodityActiivity extends BaseActivity<IHomeCommPresenter> impleme
         List<String> bannerList = data.getBannerList();
         im_iphoneX_pann.setImages(bannerList);
         im_iphoneX_pann.start();
-
         tv_iphoneX.setText(data.getName());
-        tv_fahuodizhi.setText("发货地："+data.getProvinceName());
-        tv_yuezu.setText("日租￥"+data.getQuality());
-        tv_chengjialiang.setText("成交量："+data.getCanUseNums());
-        tv_shichangjia.setText("市场价: ¥ "+data.getShowPrice());
+        tv_fahuodizhi.setText("发货地："+ data.getProvinceName());
+        tv_yuezu.setText("日租￥"+ data.getQuality());
+        tv_chengjialiang.setText("成交量："+ data.getCanUseNums());
+        tv_shichangjia.setText("市场价: ¥ "+ data.getShowPrice());
     }
  int content = 1;
     @Override
@@ -202,44 +199,56 @@ public class CommodityActiivity extends BaseActivity<IHomeCommPresenter> impleme
     }
 
     private void getPOPCommody() {
-        int deposit = 0;
-        Toast.makeText(this, "弹窗", Toast.LENGTH_SHORT).show();
         //pop 弹窗
         View inflate = LayoutInflater.from(getApplicationContext()).inflate(R.layout.pop_commody, null, false);
+        final PopupWindow popupWindow = new PopupWindow(inflate,ViewPager.LayoutParams.WRAP_CONTENT, ViewPager.LayoutParams.WRAP_CONTENT, true);
         TextView tv_liji_guanbi = inflate.findViewById(R.id.tv_liji_guanbi);
+        tv_liji_guanbi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popupWindow.dismiss();
+            }
+        });
         ImageView im_liji_iphonex = inflate.findViewById(R.id.im_liji_iphonex);
         tv_liji_price = inflate.findViewById(R.id.tv_liji_price);
+        if (data==null){
+            Toast.makeText(this, "没有返回数据", Toast.LENGTH_SHORT).show();
+            return;
+        }
         List<CommodityBean.DataBean.SkusBean> skus = data.getSkus();
-            CommodityBean.DataBean.SkusBean skusBean = skus.get(0);
-            deposit = skusBean.getDeposit();
-        List<CommodityBean.DataBean.SkusBean.AttributesJsonBean> attributesJson = skusBean.getAttributesJson();
-        Log.e("attributes", String.valueOf(attributesJson.get(0)));
-        this.attributesJson = skusBean.getAttributesJson();
-
-            value = this.attributesJson.get(0).getValue();
-
+        if (skus.size()==0){
+            return;
+        }
+        CommodityBean.DataBean.SkusBean skusBean = skus.get(0);
+        ArrayList<CommodityBean.DataBean.SkusBean.AttributesJsonBean> poplist = new ArrayList<>();
+        poplist.clear();
+        for (CommodityBean.DataBean.SkusBean bean : skus) {
+            poplist.addAll(bean.getAttributesJson()) ;
+        }
+        ArrayList<String> strings = new ArrayList<>();
+        for (int i = 0; i < poplist.size(); i++) {
+            StringBuffer stringBuffer = new StringBuffer();
+                stringBuffer.append(poplist.get(0).getValue()).append("/").append(poplist.get(1).getValue());
+                strings.add(stringBuffer.toString());
+        }
+        RecyclerView recyclerView = inflate.findViewById(R.id.pop_recycler);
+        CommodityPopRecyclerAdapter commodityPopRecyclerAdapter = new CommodityPopRecyclerAdapter(this,strings);
+        recyclerView.setLayoutManager(new GridLayoutManager(this,2));
+        recyclerView.setAdapter(commodityPopRecyclerAdapter);
         tv_liji_yj = inflate.findViewById(R.id.tv_liji_yj);
         tv_liji_zj = inflate.findViewById(R.id.tv_liji_zj);
-        tv_yse1 = inflate.findViewById(R.id.tv_yse1);
-        tv_yse1.setText(this.value);
-
-        tv_yse2 = inflate.findViewById(R.id.tv_yse2);
-        tv_yse3 = inflate.findViewById(R.id.tv_yse3);
-        tv_daxiao1 = inflate.findViewById(R.id.tv_daxiao1);
-        tv_daxiao1.setText(value1);
-        tv_daxiao2 = inflate.findViewById(R.id.tv_daxiao2);
         TextView tv_day = inflate.findViewById(R.id.tv_day);
         tv_daynumb = inflate.findViewById(R.id.tv_daynumb);
         TextView tv_day_cont = inflate.findViewById(R.id.tv_day_cont);
         tv_day_cont.setOnClickListener(this);
         tv_myj = inflate.findViewById(R.id.tv_myj);
-        tv_myj.setText("可用免押金额度：￥"+deposit);
+        tv_myj.setText("可用免押金额度：￥"+skusBean.getDeposit());
 
         Button btn_queding = inflate.findViewById(R.id.btn_queding);
         tv_jian = findViewById(R.id.tv_jian);
         tv_taishu = findViewById(R.id.tv_taishu);
         tv_jia = findViewById(R.id.tv_jia);
-        PopupWindow popupWindow = new PopupWindow(inflate,ViewPager.LayoutParams.WRAP_CONTENT, ViewPager.LayoutParams.WRAP_CONTENT, true);
+
         // 设置PopupWindow是否能响应外部点击事件
         popupWindow.setOutsideTouchable(true);
         // 设置PopupWindow是否能响应点击事件
@@ -247,9 +256,12 @@ public class CommodityActiivity extends BaseActivity<IHomeCommPresenter> impleme
         //点击外部消失
         popupWindow.setOutsideTouchable(true);
         popupWindow.setFocusable(true);
+        if (popupWindow.isShowing()){
+            commodity.setBackgroundColor(Color.parseColor("#999999"));
+        }else{
+            commodity.setBackgroundColor(Color.parseColor("#FFFFFF"));
+        }
         // 设置好参数之后再show
-        // 在底部显示
-       //popupWindow.showAsDropDown(inflate);
         popupWindow.showAtLocation(this.getWindow().getDecorView(),Gravity.BOTTOM,0,0);
 
         Glide.with(getApplicationContext()).load(data.getPic()).into(im_liji_iphonex);
@@ -258,21 +270,18 @@ public class CommodityActiivity extends BaseActivity<IHomeCommPresenter> impleme
             @Override
             public void onClick(View v) {
 
-                String s = tv_liji_price.getText().toString();   //每天租金
+              /*  String s = tv_liji_price.getText().toString();   //每天租金
                 String s1 = tv_liji_yj.getText().toString();   //设备押金
                 String s2 = tv_liji_zj.getText().toString(); // 总押金
-                String s3 = tv_yse1.getText().toString(); //颜色1
-                String s4 = tv_yse2.getText().toString(); //颜色2
-                String s5 = tv_yse3.getText().toString(); //颜色3
-                String s6 = tv_daxiao1.getText().toString();//容量 1
-                String s7 = tv_daxiao2.getText().toString();//容量 1
                 String s9 = tv_daynumb.getText().toString(); //天数
                 String s8 = tv_taishu.getText().toString();//台数
-                String s10 = tv_myj.getText().toString();//可用免押金
+                String s10 = tv_myj.getText().toString();//可用免押金*/
 
                 //点击事件
-                Intent intent = new Intent(getApplicationContext(),Activity_AddDZ.class);
-                intent.putExtra("databena",data);
+                Intent intent = new Intent(CommodityActiivity.this,Activity_AddDZ.class);
+                /*if (data!=null){
+                    intent.putExtra("databena",data);
+                }*/
                 startActivity(intent);
             }
         });
