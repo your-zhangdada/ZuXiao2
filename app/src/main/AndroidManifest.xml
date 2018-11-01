@@ -70,6 +70,11 @@
             tools:ignore="DuplicateActivity"></activity>
         <activity android:name=".ui.activity.Activity_Add_DZ"
             ></activity>
+        <activity android:name=".ui.fragment.mine.activity.ZhiCanActivity" />
+        <activity android:name=".ui.fragment.mine.activity.EducationActivity" />
+        <activity android:name=".ui.fragment.mine.activity.CompanyActivity" />
+        <activity android:name=".ui.fragment.mine.activity.LicenseActivity" />
+        <activity android:name=".ui.fragment.mine.activity.EnterpriseActivity"></activity>
     </application>
 
 </manifest>

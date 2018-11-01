@@ -9,8 +9,11 @@ import android.widget.TextView;
 
 import com.zuxiao2.zuxiao2.R;
 import com.zuxiao2.zuxiao2.base.BaseFragment;
+import com.zuxiao2.zuxiao2.ui.fragment.mine.activity.CompanyActivity;
+import com.zuxiao2.zuxiao2.ui.fragment.mine.activity.EducationActivity;
 import com.zuxiao2.zuxiao2.ui.fragment.mine.activity.SBKActivity;
 import com.zuxiao2.zuxiao2.ui.fragment.mine.activity.SengfenActivity;
+import com.zuxiao2.zuxiao2.ui.fragment.mine.activity.ZhiCanActivity;
 
 /**     个人认证
  * A simple {@link Fragment} subclass.
@@ -72,12 +75,15 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
                 startActivity(new Intent(getContext(),SBKActivity.class));
                 break;
             case R.id.tv_zc_rz:  //固定资产
+                startActivity(new Intent(getContext(),ZhiCanActivity.class));
                 break;
             case R.id.tv_zm_rz:  //芝麻信用
                 break;
             case R.id.tv_xl_rz: //学历认证
+                startActivity(new Intent(getContext(),EducationActivity.class));
                 break;
             case R.id.tv_gs_rz: //公司信息认证
+                startActivity(new Intent(getContext(),CompanyActivity.class));
                 break;
         }
     }

@@ -71,7 +71,6 @@ public class SengfenActivity extends BaseActivity<ApplyPresenter> implements App
                 break;
             case R.id.bt_id_au://立即上传
                 getApply();
-
                 break;
         }
     }
@@ -82,32 +81,11 @@ public class SengfenActivity extends BaseActivity<ApplyPresenter> implements App
         Map<String,String> map = new HashMap<>();
         map.put("authType",1+""); //认证大类型 1、学生认证，2、个人认证，3、企业认证
         map.put("authTypeLast",1+"");//认证小类型 1、身份证认证 2、学生证认证 3、运营商认证 4、芝麻信用 5、社保卡认证 6、学历认证 7、公司信息认证 8、固定资产认证、 9法人认证 10、营业执照认证 11、企业信息认证 12、委托人认证 13、委托书认证
-//        map.put("schoolName","");
-//        map.put("schoolRoll","");
-//        map.put("major","");
-//        map.put("schoolRollAddress","");
         map.put("stuCardFront",url);//证件正面-学生证或者身份证
         map.put("stuCardBehind",url);//证件反面
         map.put("idCardName",sfname);//身份证名称
         map.put("idCardNum",sfz_hm);//身份证号码
         map.put("idCardAddress",sfz_dz);//身份证地址
-//        map.put("phone","");
-//        map.put("operator","");
-//        map.put("socialSecurityNum","");
-//        map.put("socialSecurityPic","");
-//        map.put("stuGraduatePic","");
-//        map.put("companyName","");
-//        map.put("companyRole","");
-//        map.put("companyEmail","");
-//        map.put("companyCardPic","");
-//        map.put("employeeCount","");
-//        map.put("fixedMoney","");
-//        map.put("businessLicense","");
-//        map.put("companyAddPact","");
-//        map.put("companyFixedPact","");
-//        map.put("companyPatent","");
-//        map.put("companyAddress","");
-//        map.put("entrustPic","");
         map.put("idCardHands",url);//手持身份证
         if (!SpUtils.getNikeName(this).isEmpty()){
             presenter.getApplyBean(map);

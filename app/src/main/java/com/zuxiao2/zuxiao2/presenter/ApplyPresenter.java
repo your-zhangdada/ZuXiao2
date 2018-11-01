@@ -16,9 +16,11 @@ import io.reactivex.schedulers.Schedulers;
 public class ApplyPresenter  implements ApplyContract.Presenter {
     private ApplyContract.View view;
     private ApplyService applyService;
-    public ApplyPresenter(){
+
+    public ApplyPresenter() {
         applyService = RetrofitUtils.getInstance().getApplyService();
     }
+
     @Override// 省份证认证
     public void getApplyBean(Map<String, String> map) {
         applyService.getApply(map)
@@ -28,13 +30,16 @@ public class ApplyPresenter  implements ApplyContract.Presenter {
                     @Override
                     public void onSubscribe(Disposable d) {
                     }
+
                     @Override
                     public void onNext(ApplyBean applyBean) {
-                    view.showApplyBean(applyBean);
+                        view.showApplyBean(applyBean);
                     }
+
                     @Override
                     public void onError(Throwable e) {
                     }
+
                     @Override
                     public void onComplete() {
                     }
@@ -50,13 +55,16 @@ public class ApplyPresenter  implements ApplyContract.Presenter {
                     @Override
                     public void onSubscribe(Disposable d) {
                     }
+
                     @Override
                     public void onNext(ApplyBean applyBean) {
-                    view.showApplyBean(applyBean);
+                        view.showApplyBean(applyBean);
                     }
+
                     @Override
                     public void onError(Throwable e) {
                     }
+
                     @Override
                     public void onComplete() {
                     }
@@ -72,23 +80,159 @@ public class ApplyPresenter  implements ApplyContract.Presenter {
                     @Override
                     public void onSubscribe(Disposable d) {
                     }
+
                     @Override
                     public void onNext(ApplyBean applyBean) {
                         view.showApplyBean(applyBean);
                     }
+
                     @Override
                     public void onError(Throwable e) {
                     }
+
                     @Override
                     public void onComplete() {
                     }
                 });
     }
 
+    @Override// 社保卡
+    public void getApplyCard(Map<String, String> map) {
+        applyService.getApply(map)
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<ApplyBean>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                    }
+
+                    @Override
+                    public void onNext(ApplyBean applyBean) {
+                        view.showApplyBean(applyBean);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                    }
+
+                    @Override
+                    public void onComplete() {
+                    }
+                });
+    }
+
+    @Override// 固定资产
+    public void getApplyAssets(Map<String, String> map) {
+        applyService.getApply(map)
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<ApplyBean>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                    }
+
+                    @Override
+                    public void onNext(ApplyBean applyBean) {
+                        view.showApplyBean(applyBean);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                    }
+
+                    @Override
+                    public void onComplete() {
+                    }
+                });
+    }
+
+    @Override//学历认证
+    public void getEducationApply(Map<String, String> map) {
+        applyService.getApply(map)
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<ApplyBean>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                    }
+
+                    @Override
+                    public void onNext(ApplyBean applyBean) {
+                        view.showApplyBean(applyBean);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                    }
+
+                    @Override
+                    public void onComplete() {
+                    }
+                });
+    }
+
+    @Override//公司信息认证
+    public void getComApply(Map<String, String> map) {
+        applyService.getApply(map)
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<ApplyBean>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                    }
+
+                    @Override
+                    public void onNext(ApplyBean applyBean) {
+                        view.showApplyBean(applyBean);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                    }
+
+                    @Override
+                    public void onComplete() {
+                    }
+                });
+    }
+
+    @Override//营业执照 认证
+    public void getLicenseApply(Map<String, String> map) {
+        applyService.getApply(map)
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<ApplyBean>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(ApplyBean applyBean) {
+                        view.showApplyBean(applyBean);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
+    @Override//企业信息认证
+    public void getEnterpriseApply(Map<String, String> map) {
+        applyService.getApply(map);
+    }
+
 
     @Override
     public void attachView(ApplyContract.View view) {
-            this.view = view;
+        this.view = view;
     }
 
 

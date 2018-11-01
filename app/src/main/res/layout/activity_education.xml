@@ -4,14 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragment.mine.activity.StudentActivity">
-    <LinearLayout
+    tools:context=".ui.fragment.mine.activity.EducationActivity">
+    <RelativeLayout
         android:id="@+id/lineart"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50">
-
-    </LinearLayout>
+        <Button
+            android:id="@+id/tv_huitui"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginLeft="@dimen/dp_12"
+             android:text="返回"
+            android:textColor="@color/white"
+            android:background="@drawable/bg_shapess"/>
+        <TextView
+            android:layout_marginTop="@dimen/dp_15"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/dp_18"
+            android:textColor="@color/back"
+            android:text="学厉认证"/>
+    </RelativeLayout>
     <ScrollView
         android:layout_below="@id/lineart"
         android:layout_width="match_parent"
@@ -32,7 +46,7 @@
                     android:gravity="center_vertical"
                     android:layout_marginLeft="@dimen/dp_20"
                     android:textSize="@dimen/dp_12"
-                    android:text="您好，您正在进行学生证认证，请根据据示完成认证吧！"/>
+                    android:text="您好，您正在进行学历认证，请根据据示完成认证吧！"/>
                 <View
                     android:id="@+id/school_view"
                     android:layout_below="@id/relative1"
@@ -54,7 +68,7 @@
                         android:text="学校名称:"
                         android:textSize="@dimen/dp_14"/>
                     <EditText
-                        android:id="@+id/tv_school_name"
+                        android:id="@+id/tv_xueli_name"
                         android:layout_marginBottom="@dimen/dp_14"
                         android:layout_marginTop="@dimen/dp_14"
                         android:layout_width="match_parent"
@@ -86,7 +100,7 @@
                         android:text="学籍号码:"
                         android:textSize="@dimen/dp_14"/>
                     <EditText
-                        android:id="@+id/tv_school_xuejihao"
+                        android:id="@+id/tv_xuejihao"
                         android:layout_marginBottom="@dimen/dp_14"
                         android:layout_marginTop="@dimen/dp_14"
                         android:layout_width="match_parent"
@@ -119,7 +133,7 @@
                         android:text="所学专业:"
                         android:textSize="@dimen/dp_14"/>
                     <EditText
-                        android:id="@+id/tv_school_zy"
+                        android:id="@+id/tv_xueli_zy"
                         android:layout_marginBottom="@dimen/dp_14"
                         android:layout_marginTop="@dimen/dp_14"
                         android:layout_width="match_parent"
@@ -151,7 +165,7 @@
                         android:text="学籍地址:"
                         android:textSize="@dimen/dp_14"/>
                     <EditText
-                        android:id="@+id/tv_school_dz"
+                        android:id="@+id/tv_xueli_dz"
                         android:layout_marginBottom="@dimen/dp_14"
                         android:layout_marginTop="@dimen/dp_14"
                         android:layout_width="match_parent"
@@ -182,49 +196,36 @@
                     android:id="@+id/tv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/tv_student"
+                    android:text="请上传您的毕业证书照片"
                     android:textSize="@dimen/dp_10" />
 
 
             </RelativeLayout>
 
             <ImageView
-                android:id="@+id/im"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_158"
+                android:id="@+id/im_xueli"
+                android:layout_width="@dimen/dp_219"
+                android:layout_height="@dimen/dp_159"
                 android:layout_below="@id/rv_tv"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="@dimen/dp_40"
                 android:layout_marginRight="@dimen/dp_40"
                 android:layout_marginTop="@dimen/dp_20"
-                android:src="@mipmap/student" />
-
-            <ImageView
-                android:id="@+id/student_im"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_158"
-                android:layout_below="@id/im"
-                android:layout_centerHorizontal="true"
-                android:layout_marginLeft="@dimen/dp_40"
-                android:layout_marginRight="@dimen/dp_40"
-                android:layout_marginTop="@dimen/dp_20"
-                android:src="@mipmap/student_im" />
+                android:src="@mipmap/addphotooen" />
 
             <Button
                 android:id="@+id/bt_upload_immediately"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/student_im"
+                android:layout_below="@+id/im_xueli"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/dp_40"
                 android:layout_marginBottom="@dimen/dp_40"
                 android:layout_marginLeft="@dimen/dp_20"
                 android:layout_marginRight="@dimen/dp_20"
                 android:background="@drawable/present_record_shape"
-                android:text="@string/upload_immediately"
+                android:text="提交认证"
                 android:textColor="@color/white" />
         </RelativeLayout>
     </ScrollView>
-
-
 </RelativeLayout>
