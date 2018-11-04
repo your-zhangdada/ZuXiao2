@@ -20,7 +20,7 @@
             android:textSize="@dimen/dp_14" />
 
         <TextView
-            android:id="@+id/tv_finish"
+            android:id="@+id/myorder_recy_item_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -42,7 +42,7 @@
         android:background="@color/bt_regist_back">
 
         <ImageView
-            android:id="@+id/im"
+            android:id="@+id/myorder_recy_item_orderphoto"
             android:layout_width="@dimen/dp_80"
             android:layout_height="@dimen/dp_80"
             android:layout_alignParentLeft="true"
@@ -57,8 +57,8 @@
             android:layout_marginBottom="@dimen/dp_10"
             android:layout_marginLeft="@dimen/dp_15"
             android:layout_marginTop="@dimen/dp_10"
-            android:layout_toEndOf="@id/im"
-            android:layout_toRightOf="@id/im">
+            android:layout_toEndOf="@id/myorder_recy_item_orderphoto"
+            android:layout_toRightOf="@id/myorder_recy_item_orderphoto">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -66,7 +66,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/tv_product_name"
+                    android:id="@+id/myorder_recy_item_ordername"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -77,7 +77,7 @@
                     android:id="@+id/rv_product_info"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/tv_product_name"
+                    android:layout_below="@id/myorder_recy_item_ordername"
                     android:layout_marginTop="@dimen/dp_5"
                     android:layout_weight="1">
 
@@ -90,7 +90,7 @@
                         android:textSize="@dimen/dp_8" />
 
                     <TextView
-                        android:id="@+id/tv_product_info_tv"
+                        android:id="@+id/myorder_recy_item_guige"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_toEndOf="@id/tv_product_info"
@@ -116,7 +116,7 @@
                         android:textSize="@dimen/dp_8" />
 
                     <TextView
-                        android:id="@+id/tv_lease_time"
+                        android:id="@+id/myorder_recy_item_ordertime"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_toEndOf="@id/tv_lease_term"
@@ -137,11 +137,11 @@
                         android:id="@+id/tv_lease_mons"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/tv_lease_mons"
+                        android:text="押金:"
                         android:textSize="@dimen/dp_8" />
 
                     <TextView
-                        android:id="@+id/tv_lease_mons_tv"
+                        android:id="@+id/myorder_recy_item_yajin"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_toEndOf="@id/tv_lease_mons"
@@ -157,7 +157,7 @@
 
     </RelativeLayout>
     <TextView
-        android:id="@+id/tv_je"
+        android:id="@+id/myorder_recy_item_allmoney"
         android:text="总计：2467:00"
         android:gravity="center"
         android:layout_width="wrap_content"
@@ -167,7 +167,7 @@
         android:layout_below="@+id/rv"/>
     <View
         android:id="@+id/v"
-        android:layout_below="@+id/tv_je"
+        android:layout_below="@+id/myorder_recy_item_allmoney"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_0_1"
         android:background="@color/bt_regist_back"></View>

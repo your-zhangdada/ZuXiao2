@@ -21,8 +21,9 @@ import com.zuxiao2.zuxiao2.utils.SpUtils;
  */
 public class MineFragment extends BaseFragment implements View.OnClickListener {
     TextView user_name;
-    private ImageView im_order,im_equipment,im_re,im_setting;
+    private ImageView im_equipment,im_re,im_setting;
     private RelativeLayout rv_wall,rv_identity_text;
+    private RelativeLayout myorder;
 
     @Override
     protected int getCreateView() {
@@ -37,8 +38,8 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
         user_name = view.findViewById(R.id.user_name);
 
         //我的订单
-        im_order = view.findViewById(R.id.im_order);
-        im_order.setOnClickListener(this);
+        myorder = view.findViewById(R.id.myorder);
+        myorder.setOnClickListener(this);
         //我的设备
         im_equipment = view.findViewById(R.id.im_equipment);
         im_equipment.setOnClickListener(this);
@@ -51,6 +52,7 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
         //商家入驻
         rv_wall = view.findViewById(R.id.rv_wall);
         rv_wall.setOnClickListener(this);
+
     }
 
 
@@ -78,7 +80,7 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
                     startActivity(new Intent(getContext(),ProvinceActivity.class));
                 }
                 break;
-            case R.id.im_order:
+            case R.id.myorder:
                 //我的订单  先判断是否登录  登录以后才可以点击  否者跳转到登录页面
                 Intent Order = new Intent(getContext(),MyorderActivity.class);
                 startActivity(Order);

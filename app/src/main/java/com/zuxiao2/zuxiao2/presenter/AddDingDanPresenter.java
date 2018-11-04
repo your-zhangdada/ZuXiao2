@@ -2,6 +2,7 @@ package com.zuxiao2.zuxiao2.presenter;
 
 import com.zuxiao2.zuxiao2.bean.MerChantentryBean;
 import com.zuxiao2.zuxiao2.bean.PassLoginBean;
+import com.zuxiao2.zuxiao2.bean.WXPayBean;
 import com.zuxiao2.zuxiao2.contract.IAddDingDanContract;
 import com.zuxiao2.zuxiao2.model.AddDingDanService;
 import com.zuxiao2.zuxiao2.utils.RetrofitUtils;
@@ -16,6 +17,7 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
+import okhttp3.ResponseBody;
 
 public class AddDingDanPresenter implements IAddDingDanContract.Presenter {
 
@@ -34,6 +36,18 @@ public class AddDingDanPresenter implements IAddDingDanContract.Presenter {
                     @Override
                     public void accept(MerChantentryBean merChantentryBean) throws Exception {
                         view.showMerChantentryBean(merChantentryBean);
+                    }
+                });
+    }
+
+    @Override
+    public void getWXPayBean(Map<String, String> headers, Map<String, String> params) {
+        addDingDanService.getWxPayBean(headers,params).subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<WXPayBean>() {
+                    @Override
+                    public void accept(WXPayBean wxPayBean) throws Exception {
+                        view.showWXPayBean(wxPayBean);
                     }
                 });
     }

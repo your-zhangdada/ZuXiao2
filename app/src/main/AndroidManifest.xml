@@ -7,6 +7,9 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <application
         android:name=".application.MyApplication"
         android:allowBackup="true"
@@ -63,7 +66,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/files_path" />
         </provider>
-            android:theme="@style/AppTheme" />
         <activity android:name=".ui.fragment.mine.activity.OperateActivity" />
         <activity android:name=".ui.fragment.mine.activity.SBKActivity"></activity>
         <activity android:name=".ui.activity.Activity_AddDZ"
@@ -75,6 +77,19 @@
         <activity android:name=".ui.fragment.mine.activity.CompanyActivity" />
         <activity android:name=".ui.fragment.mine.activity.LicenseActivity" />
         <activity android:name=".ui.fragment.mine.activity.EnterpriseActivity"></activity>
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="wx4c9a02ded1109d75"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
