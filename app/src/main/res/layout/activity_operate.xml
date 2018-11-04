@@ -6,17 +6,28 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ui.fragment.mine.activity.OperateActivity">
-    <LinearLayout
-        android:gravity="center"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50">
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="运营商认证"
-    android:textSize="@dimen/dp_18"
-    android:textColor="@color/back"/>
-    </LinearLayout>
+        <ImageView
+            android:id="@+id/im_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:src="@mipmap/back_left_blank" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="运营商认证"
+            android:textColor="@color/back"
+            android:textSize="@dimen/dp_18" />
+
+
+    </RelativeLayout>
     <View
         android:background="@color/huise"
         android:layout_width="match_parent"

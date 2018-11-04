@@ -3,11 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 <!--分类-->
-
-
-    <include
+    <TextView
         android:id="@+id/inv_setting"
-        layout="@layout/common_top_white_view" />
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:text="分类"
+        android:gravity="center"
+        android:textColor="@color/back"
+        android:textSize="@dimen/dp_18"/>
 
     <LinearLayout
         android:layout_width="match_parent"

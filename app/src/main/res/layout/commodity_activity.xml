@@ -4,10 +4,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <!--商品详情-->
-
-    <include
+    <RelativeLayout
         android:id="@+id/inv_comm"
-        layout="@layout/commodity_details_title" />
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/fisch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/back_left_blank" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="产品详情"
+            android:textColor="@color/back"
+            android:textSize="@dimen/dp_18" />
+
+        <ImageView
+            android:id="@+id/im_sher"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_21"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_13"
+            android:background="@android:drawable/ic_menu_share" />
+    </RelativeLayout>
 
     <ScrollView
         android:id="@+id/scroll"
@@ -26,12 +50,12 @@
                 android:src="@mipmap/shouji" />
 
             <RelativeLayout
-                android:layout_marginTop="@dimen/dp_16"
                 android:id="@+id/relativ_iphonex"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/im_iphoneX_bann"
-                android:layout_marginLeft="@dimen/dp_13">
+                android:layout_marginLeft="@dimen/dp_13"
+                android:layout_marginTop="@dimen/dp_16">
 
                 <TextView
                     android:id="@+id/tv_iphoneX"
@@ -123,6 +147,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
+
                     <TextView
                         android:id="@+id/tv_phoneYP"
                         android:layout_width="wrap_content"
@@ -210,6 +235,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/view_relat"
                 android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -222,19 +248,21 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="vertical">
+
                         <TextView
                             android:id="@+id/shopmessage"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="商品详情"
                             android:textColor="@color/back"
-                            android:textSize="@dimen/sp_22"/>
+                            android:textSize="@dimen/sp_22" />
+
                         <TextView
                             android:id="@+id/shopmessage_tv"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="------------"
-                            android:visibility="gone"/>
+                            android:visibility="gone" />
                     </LinearLayout>
 
 
@@ -245,6 +273,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="vertical">
+
                         <TextView
                             android:id="@+id/usermessage"
                             android:layout_width="wrap_content"
@@ -252,13 +281,14 @@
                             android:gravity="center"
                             android:text="用户评价"
                             android:textColor="@color/back"
-                            android:textSize="@dimen/sp_22"/>
+                            android:textSize="@dimen/sp_22" />
+
                         <TextView
                             android:id="@+id/usermessage_tv"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="------------"
-                            android:visibility="gone"/>
+                            android:visibility="gone" />
                     </LinearLayout>
 
 
@@ -276,16 +306,18 @@
                             android:layout_height="wrap_content"
                             android:text="常见问题"
                             android:textColor="@color/back"
-                            android:textSize="@dimen/sp_22"/>
+                            android:textSize="@dimen/sp_22" />
+
                         <TextView
                             android:id="@+id/changjianwenti_tv"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="------------"
-                            android:visibility="gone"/>
+                            android:visibility="gone" />
                     </LinearLayout>
 
                 </LinearLayout>
+
                 <FrameLayout
                     android:id="@+id/shopmessageframelayout"
                     android:layout_width="match_parent"
@@ -294,9 +326,9 @@
             </LinearLayout>
 
             <RelativeLayout
-                android:layout_below="@+id/linear_linear"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_50">
+                android:layout_height="@dimen/dp_50"
+                android:layout_below="@+id/linear_linear">
 
                 <ImageView
                     android:id="@+id/im_kefu"

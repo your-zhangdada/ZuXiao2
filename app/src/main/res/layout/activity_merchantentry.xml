@@ -6,9 +6,26 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ui.fragment.fication.activity.Merchantentry">
-    <include
-        android:id="@+id/inv_f"
-        layout="@layout/common_top_view" />
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/dp_50">
+       <ImageView
+           android:id="@+id/im_back"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_centerVertical="true"
+           android:layout_marginLeft="@dimen/dp_20"
+           android:src="@mipmap/back_left_blank" />
+
+       <TextView
+           android:id="@+id/title"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_centerInParent="true"
+           android:text="商家入驻"
+           android:textColor="@color/back"
+           android:textSize="@dimen/dp_18" />
+   </RelativeLayout>
 
     <View
         android:layout_width="match_parent"

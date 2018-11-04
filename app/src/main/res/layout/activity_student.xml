@@ -5,13 +5,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragment.mine.activity.StudentActivity">
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/lineart"
-        android:orientation="horizontal"
+
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50">
+        <ImageView
+            android:id="@+id/im_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:src="@mipmap/back_left_blank" />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="学生证认证"
+            android:textColor="@color/back"
+            android:textSize="@dimen/dp_18" />
+
+    </RelativeLayout>
     <ScrollView
         android:layout_below="@id/lineart"
         android:layout_width="match_parent"

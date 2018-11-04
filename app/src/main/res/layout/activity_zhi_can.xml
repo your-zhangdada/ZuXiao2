@@ -7,17 +7,26 @@
     android:orientation="vertical"
     tools:context=".ui.fragment.mine.activity.ZhiCanActivity">
 
-    <LinearLayout
-        android:gravity="center"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_70">
-        <TextView
+        android:layout_height="@dimen/dp_50">
+        <ImageView
+            android:id="@+id/im_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:src="@mipmap/back_left_blank" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="固定资产认证"
             android:textColor="@color/back"
-            android:textSize="@dimen/dp_18"
-            android:text="固定资产认证"/>
-    </LinearLayout>
+            android:textSize="@dimen/dp_18" />
+    </RelativeLayout>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

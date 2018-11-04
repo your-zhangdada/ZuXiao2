@@ -30,10 +30,14 @@ public class Urls {
     public final static String HOME_DZ = "address/list";
     //分类列表
     public final static String FINC_URL = "product/findProduct";
+    //热门搜索列表
+    public final static String HOT_LIST = "hotSearch/list";
     //分类侧滑品牌
     public final static String FINCPINPAI_URL = "brand/find";
     // 认证借口
     public final static String  USER_APPLY="user/applyAuthentication";
+    //   0是申请中，1是审核通过，-1审核失败
+    public final static String APPLY_LIST = "user/authenticationList";
     //商家入驻
     public final static String MERCHANTENTRY_URL = "merchant/save";
     //上传图片
@@ -46,5 +50,7 @@ public class Urls {
     public final static String GETORDERTAB_URL = "order/getOrderStatus";
     //我的订单接口
     public final static String GETMYORDER_URL = "order/find";
+    //我的设备
+    public final static String MY_EQUIP = "order/findMyOrder";
 
 }

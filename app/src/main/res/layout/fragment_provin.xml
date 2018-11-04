@@ -36,9 +36,10 @@
                 android:layout_below="@id/tv_id"
                 android:layout_marginTop="@dimen/dp_10"
                 android:layout_centerHorizontal="true"
-                android:background="@drawable/present_record_shape"
                 android:text="@string/go_audit"
-                android:textColor="@color/white" />
+                android:background="@drawable/present_record_shape"
+
+                android:textColor="@color/back" />
 
         </RelativeLayout>
         <RelativeLayout
@@ -65,10 +66,10 @@
                 android:layout_height="@dimen/dp_24"
                 android:layout_below="@id/tv_st"
                 android:layout_marginTop="@dimen/dp_10"
+                android:text="@string/go_audit"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/present_record_shape"
-                android:text="@string/go_audit"
-                android:textColor="@color/white" />
+                android:textColor="@color/back" />
 
         </RelativeLayout>
         <RelativeLayout
@@ -95,10 +96,10 @@
                 android:layout_height="@dimen/dp_24"
                 android:layout_below="@id/tv_yuny"
                 android:layout_marginTop="@dimen/dp_10"
+                android:text="@string/go_audit"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/present_record_shape"
-                android:text="@string/go_audit"
-                android:textColor="@color/white" />
+                android:textColor="@color/back" />
 
         </RelativeLayout>
 
@@ -132,10 +133,10 @@
                 android:layout_height="@dimen/dp_24"
                 android:layout_below="@id/tv_zhima"
                 android:layout_marginTop="@dimen/dp_10"
+                android:text="@string/go_audit"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/present_record_shape"
-                android:text="@string/go_audit"
-                android:textColor="@color/white" />
+                android:textColor="@color/back" />
 
         </RelativeLayout>
         <RelativeLayout

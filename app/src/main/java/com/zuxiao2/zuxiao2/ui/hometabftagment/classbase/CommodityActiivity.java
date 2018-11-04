@@ -5,7 +5,6 @@ import android.graphics.Color;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -70,6 +69,8 @@ public class CommodityActiivity extends BaseActivity<IHomeCommPresenter> impleme
     private TextView tvchangjian;
     private RelativeLayout commodity;
     private CommodityBean.DataBean data;
+    private ImageView fisch;
+    private ImageView im_sher;
 
     @Override
     protected void initTitle() {
@@ -84,6 +85,10 @@ public class CommodityActiivity extends BaseActivity<IHomeCommPresenter> impleme
         Intent intent = getIntent();
         id = intent.getStringExtra("id");
         sid = Integer.parseInt(id);
+        fisch = findViewById(R.id.fisch);
+        fisch.setOnClickListener(this);//返回
+        im_sher = findViewById(R.id.im_sher);
+        im_sher.setOnClickListener(this);//分享
         //Banner
         im_iphoneX_pann = findViewById(R.id.im_iphoneX_bann);
         //图片加载器
@@ -194,6 +199,16 @@ public class CommodityActiivity extends BaseActivity<IHomeCommPresenter> impleme
                 //选择台数 ++
                 content++;
                 tv_taishu.setText(content+"");
+                break;
+            case R.id.fisch:
+                finish();
+                break;
+            case R.id.im_sher:
+                //分享
+                Intent textIntent = new Intent(Intent.ACTION_SEND);
+                textIntent.setType("text/plain");
+                textIntent.putExtra(Intent.EXTRA_TEXT, "这是一段分享的文字");
+                startActivity(Intent.createChooser(textIntent, "分享"));
                 break;
         }
     }

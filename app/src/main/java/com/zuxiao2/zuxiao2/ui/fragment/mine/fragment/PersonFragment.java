@@ -6,21 +6,32 @@ import android.support.v4.app.Fragment;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.zuxiao2.zuxiao2.R;
 import com.zuxiao2.zuxiao2.base.BaseFragment;
+import com.zuxiao2.zuxiao2.bean.ApplyListBean;
+import com.zuxiao2.zuxiao2.contract.ApplyListContract;
+import com.zuxiao2.zuxiao2.presenter.ApplyListPresenter;
 import com.zuxiao2.zuxiao2.ui.fragment.mine.activity.CompanyActivity;
 import com.zuxiao2.zuxiao2.ui.fragment.mine.activity.EducationActivity;
 import com.zuxiao2.zuxiao2.ui.fragment.mine.activity.SBKActivity;
 import com.zuxiao2.zuxiao2.ui.fragment.mine.activity.SengfenActivity;
 import com.zuxiao2.zuxiao2.ui.fragment.mine.activity.ZhiCanActivity;
+import com.zuxiao2.zuxiao2.utils.SpUtils;
+
+import java.util.HashMap;
+import java.util.List;
 
 /**     个人认证
  * A simple {@link Fragment} subclass.
  */
-public class PersonFragment extends BaseFragment implements View.OnClickListener {
+public class PersonFragment extends BaseFragment<ApplyListPresenter> implements ApplyListContract.View,View.OnClickListener {
  private ImageView im_sfz,im_sbk,im_zc,im_zm,im_xl,im_gs;
  private TextView tv_sfz,tv_sfz_rz,tv_sbk_rz,tv_sbk,tv_zc,tv_zc_rz,tv_zm,tv_zm_rz,tv_xl,tv_xl_rz,tv_gs,tv_gs_rz;
+    private String name;
+    private int status;
+
     @Override
     protected int getCreateView() {
         return R.layout.fragment_person;
@@ -62,7 +73,10 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
 
     @Override
     protected void initData(View view) {
-
+        HashMap<String, String> header = new HashMap<>();
+        header.put("user_login",SpUtils.getUserKey(getContext()));
+        header.put("uuid",SpUtils.getUserId());
+        presenter.getApplyList(header);
     }
 
     @Override
@@ -86,5 +100,87 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
                 startActivity(new Intent(getContext(),CompanyActivity.class));
                 break;
         }
+    }
+
+    @Override
+    public void showApplyListBean(ApplyListBean applyListBean) {
+        //0是申请中，1是审核通过，-1审核失败
+       try {
+           List<ApplyListBean.DataBean.AuthTypeLastBean> authTypeLast = applyListBean.getData().getAuthTypeLast();
+           for (int i = 0; i < authTypeLast.size(); i++) {
+               name = authTypeLast.get(i).getName();
+               status = authTypeLast.get(i).getStatus();
+           }
+           if (name.equals("身份证认证")&&status == 0){
+               tv_sfz_rz.setText("审核中");
+           }
+           if (name.equals("身份证认证")&&status == 1){
+               tv_sfz_rz.setText("审核通过");
+           }
+           if (name.equals("身份证认证")&&status == -1){
+               tv_sfz_rz.setText("审核失败");
+           }
+
+           if (name.equals("社保卡认证")&&status == 0){
+               tv_sbk_rz.setText("审核中");
+           }
+           if (name.equals("社保卡认证")&&status == 1){
+               tv_sbk_rz.setText("审核通过");
+           }
+           if (name.equals("社保卡认证")&&status == -1){
+               tv_sbk_rz.setText("审核失败");
+           }
+
+           if (name.equals("固定资产认证")&&status == 0){
+               tv_zc_rz.setText("审核中");
+           }
+           if (name.equals("固定资产认证")&&status == 1){
+               tv_zc_rz.setText("审核通过");
+           }
+           if (name.equals("固定资产认证")&&status == -1){
+               tv_zc_rz.setText("审核失败");
+           }
+
+           if (name.equals("芝麻信用认证")&&status == 0){
+               tv_zm_rz.setText("审核中");
+           }
+           if (name.equals("芝麻信用认证")&&status == 1){
+               tv_zm_rz.setText("审核通过");
+           }
+           if (name.equals("芝麻信用认证")&&status == -1){
+               tv_zm_rz.setText("审核失败");
+           }
+
+           if (name.equals("学历认证")&&status == 0){
+               tv_xl_rz.setText("审核中");
+           }
+           if (name.equals("学历认证")&&status == 1){
+               tv_xl_rz.setText("审核通过");
+           }
+           if (name.equals("学历认证")&&status == -1){
+               tv_xl_rz.setText("审核失败");
+           }
+
+           if (name.equals("公司信息认证")&&status == 0){
+               tv_gs_rz.setText("审核中");
+           }
+           if (name.equals("公司信息认证")&&status == 1){
+               tv_gs_rz.setText("审核通过");
+           }
+           if (name.equals("公司信息认证")&&status == -1){
+               tv_gs_rz.setText("审核失败");
+           }
+       }catch (Exception e){
+           Toast.makeText(getContext(), "网络异常", Toast.LENGTH_SHORT).show();
+       }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        HashMap<String, String> header = new HashMap<>();
+        header.put("user_login",SpUtils.getUserKey(getContext()));
+        header.put("uuid",SpUtils.getUserId());
+        presenter.getApplyList(header);
     }
 }

@@ -16,7 +16,6 @@ import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -49,7 +48,7 @@ public class Merchantentry extends BaseActivity<MerchantentryPresenter> implemen
 
     private TextView tv_xieyi, im_addres;
     private EditText tv_company_name, tv_staff_Number, tv_shibie_Number, tv_management, tv_name, tv_id_number, ed_name, ed_name_phone, ed_xx_adds;
-    private ImageView im_shengfenzhengoen, im_shengfenzhengtwo, im_addphotooen, im_addphototwo, im_yingyezao1, im_yingyezao2, im_yingyezao3;
+    private ImageView im_shengfenzhengoen, im_shengfenzhengtwo, im_addphotooen, im_back,im_addphototwo, im_yingyezao1, im_yingyezao2, im_yingyezao3;
     private Button btn_sc;
     private CheckBox chechbox_xuanzhe;
     private Bitmap bitmap;
@@ -68,6 +67,8 @@ public class Merchantentry extends BaseActivity<MerchantentryPresenter> implemen
 
     @Override
     protected void initView() {
+        im_back = findViewById(R.id.im_back);
+        im_back.setOnClickListener(this);
         //公司名称
         tv_company_name = findViewById(R.id.tv_company_name);
         //员工人数
@@ -125,6 +126,9 @@ public class Merchantentry extends BaseActivity<MerchantentryPresenter> implemen
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.im_back:
+                finish();
+                break;
             case R.id.im_addres://选着地址
                 break;
             case R.id.im_shengfenzhengoen://正面省份证照 拍照
@@ -326,14 +330,9 @@ public class Merchantentry extends BaseActivity<MerchantentryPresenter> implemen
                         Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver()
                                 .openInputStream(imageUri));
                         im_shengfenzhengoen.setImageBitmap(bitmap);
-                        // HashMap<String, RequestBody> mMap = new HashMap<>();
+
                         RequestBody fileBody = RequestBody.create(MediaType.parse("multipart/form-data"), tempFile);
-                       /* RequestBody requestBody = new MultipartBody.Builder()
-                                .setType(MultipartBody.FORM)
-                                .addFormDataPart("file", "request", fileBody)
-                                .addFormDataPart("imagetype", "jpg")
-                                .build();
-                        mMap.put("request",requestBody);*/
+
                         MultipartBody.Part part = MultipartBody.Part.createFormData("request", tempFile.getName(), fileBody);
                         pcount = 1;
                         presenter.getCommitImgBean(part);

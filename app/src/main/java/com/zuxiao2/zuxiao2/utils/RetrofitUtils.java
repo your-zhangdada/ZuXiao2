@@ -2,14 +2,16 @@ package com.zuxiao2.zuxiao2.utils;
 
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import com.zuxiao2.zuxiao2.application.MyApplication;
-import com.zuxiao2.zuxiao2.bean.MerChantentryBean;
 import com.zuxiao2.zuxiao2.model.AddDingDanService;
+import com.zuxiao2.zuxiao2.model.ApplyListService;
 import com.zuxiao2.zuxiao2.model.ApplyService;
 import com.zuxiao2.zuxiao2.model.FLService;
 import com.zuxiao2.zuxiao2.model.FincService;
 import com.zuxiao2.zuxiao2.model.HomeService;
+import com.zuxiao2.zuxiao2.model.HotListService;
 import com.zuxiao2.zuxiao2.model.LoginService;
 import com.zuxiao2.zuxiao2.model.MerchantentryService;
+import com.zuxiao2.zuxiao2.model.MyEquipentService;
 import com.zuxiao2.zuxiao2.model.MyOrderService;
 import com.zuxiao2.zuxiao2.model.MyService;
 import com.zuxiao2.zuxiao2.model.OrderTabService;
@@ -70,6 +72,10 @@ public class RetrofitUtils {
     public FincService getFincService(){
         return retrofit.create(FincService.class);
     }
+    //认证列表
+    public ApplyListService getApplyListService(){
+        return retrofit.create(ApplyListService.class);
+    }
     //认证
     public ApplyService getApplyService(){
         return retrofit.create(ApplyService.class);
@@ -85,5 +91,13 @@ public class RetrofitUtils {
     }
     public MyOrderService getMyOrderService(){
         return retrofit.create(MyOrderService.class);
+    }
+    //搜索
+    public HotListService getHotListService(){
+        return retrofit.create(HotListService.class);
+    }
+    //我的设备
+    public MyEquipentService getMyEquipSercice(){
+        return retrofit.create(MyEquipentService.class);
     }
 }

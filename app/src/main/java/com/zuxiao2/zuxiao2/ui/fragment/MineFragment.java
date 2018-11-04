@@ -12,6 +12,7 @@ import com.zuxiao2.zuxiao2.base.BaseFragment;
 import com.zuxiao2.zuxiao2.login.LoginActivity;
 import com.zuxiao2.zuxiao2.ui.fragment.fication.activity.Merchantentry;
 import com.zuxiao2.zuxiao2.ui.fragment.fication.activity.SettingActivity;
+import com.zuxiao2.zuxiao2.ui.fragment.mine.activity.EquipmentActivity;
 import com.zuxiao2.zuxiao2.ui.fragment.mine.activity.MyorderActivity;
 import com.zuxiao2.zuxiao2.ui.fragment.mine.activity.ProvinceActivity;
 import com.zuxiao2.zuxiao2.utils.SpUtils;
@@ -74,7 +75,7 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
                 startActivity(login);
                 break;
             case R.id.rv_identity_text: //身份认证
-                if (SpUtils.getNikeName(getContext()).isEmpty()){
+                if (user_name.getText().toString().isEmpty()){
                     startActivity(new Intent(getContext(), LoginActivity.class));
                 }else {
                     startActivity(new Intent(getContext(),ProvinceActivity.class));
@@ -87,8 +88,8 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
                 break;
             case R.id.im_equipment:
                 //我的设备
-               // Intent equipment = new Intent(getContext(), );
-              //  startActivity(equipment);
+               Intent equipment = new Intent(getContext(),EquipmentActivity.class);
+              startActivity(equipment);
                 break;
             case R.id.im_re:
                 //我的钱包

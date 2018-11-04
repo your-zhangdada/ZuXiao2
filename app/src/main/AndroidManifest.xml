@@ -10,6 +10,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
     <application
         android:name=".application.MyApplication"
         android:allowBackup="true"
@@ -56,7 +57,8 @@
         <activity
             android:name=".ui.fragment.mine.activity.StudentActivity"
             android:label="@string/title_activity_student"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.zuxiao2.zuxiao2"
@@ -67,11 +69,11 @@
                 android:resource="@xml/files_path" />
         </provider>
         <activity android:name=".ui.fragment.mine.activity.OperateActivity" />
-        <activity android:name=".ui.fragment.mine.activity.SBKActivity"></activity>
-        <activity android:name=".ui.activity.Activity_AddDZ"
-            tools:ignore="DuplicateActivity"></activity>
-        <activity android:name=".ui.activity.Activity_Add_DZ"
-            ></activity>
+        <activity android:name=".ui.fragment.mine.activity.SBKActivity" />
+        <activity
+            android:name=".ui.activity.Activity_AddDZ"
+            tools:ignore="DuplicateActivity" />
+        <activity android:name=".ui.activity.Activity_Add_DZ" />
         <activity android:name=".ui.fragment.mine.activity.ZhiCanActivity" />
         <activity android:name=".ui.fragment.mine.activity.EducationActivity" />
         <activity android:name=".ui.fragment.mine.activity.CompanyActivity" />
@@ -90,6 +92,8 @@
                 <data android:scheme="wx4c9a02ded1109d75"/>
             </intent-filter>
         </activity>
+        <activity android:name=".ui.fragment.mine.activity.EnterpriseActivity" />
+        <activity android:name=".ui.fragment.mine.activity.EquipmentActivity"></activity>
     </application>
 
 </manifest>

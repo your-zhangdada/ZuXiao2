@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.fragment.mine.activity.EquipmentActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:gravity="center_vertical"
+    android:layout_height="@dimen/dp_50">
+    <ImageView
+        android:id="@+id/im_finsch"
+        android:layout_width="@dimen/dp_9"
+        android:layout_height="@dimen/dp_16"
+        android:src="@mipmap/back_left_blank"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/dp_18"
+        android:textColor="@color/back"
+        android:gravity="center_horizontal"
+        android:text="我的设备"/>
+</LinearLayout>
+    <android.support.design.widget.TabLayout
+        android:id="@+id/my_rquip_tab"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50">
+
+    </android.support.design.widget.TabLayout>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/my_rquip_viewpaoger"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v4.view.ViewPager>
+</LinearLayout>
