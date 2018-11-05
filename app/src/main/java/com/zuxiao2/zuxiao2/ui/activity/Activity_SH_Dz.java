@@ -69,6 +69,7 @@ public class Activity_SH_Dz extends BaseActivity<AddressPresenter> implements Ad
 private  int swihch;
     @Override
     protected void initView() {
+        //上传代码
         Intent intent = getIntent();
         SHDZ_Bean.DataBean data = (SHDZ_Bean.DataBean) intent.getSerializableExtra("data");
         lin_back = findViewById(R.id.lin_back);
