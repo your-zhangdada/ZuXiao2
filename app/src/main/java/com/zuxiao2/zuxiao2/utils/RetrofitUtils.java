@@ -16,6 +16,7 @@ import com.zuxiao2.zuxiao2.model.MyOrderService;
 import com.zuxiao2.zuxiao2.model.MyService;
 import com.zuxiao2.zuxiao2.model.OrderTabService;
 import com.zuxiao2.zuxiao2.model.PassLoginService;
+import com.zuxiao2.zuxiao2.model.WholeAddressService;
 
 import java.util.concurrent.TimeUnit;
 
@@ -99,5 +100,8 @@ public class RetrofitUtils {
     //我的设备
     public MyEquipentService getMyEquipSercice(){
         return retrofit.create(MyEquipentService.class);
+    }
+    public WholeAddressService getAddressService(){
+        return retrofit.create(WholeAddressService.class);
     }
 }

@@ -52,5 +52,6 @@ public class Urls {
     public final static String GETMYORDER_URL = "order/find";
     //我的设备
     public final static String MY_EQUIP = "order/findMyOrder";
-
+    //全部省市地址
+    public final static String ADDRESS ="common/citys";
 }

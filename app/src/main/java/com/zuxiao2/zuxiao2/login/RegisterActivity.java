@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.zuxiao2.zuxiao2.R;
 import com.zuxiao2.zuxiao2.base.BaseActivity;
 import com.zuxiao2.zuxiao2.bean.CodeBean;
@@ -16,7 +17,6 @@ import com.zuxiao2.zuxiao2.bean.LoginCodeBean;
 import com.zuxiao2.zuxiao2.bean.Password;
 import com.zuxiao2.zuxiao2.contract.ILoginContract;
 import com.zuxiao2.zuxiao2.presenter.LoginPresenter;
-import com.zuxiao2.zuxiao2.utils.SpUtils;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -126,7 +126,7 @@ public class RegisterActivity extends BaseActivity<LoginPresenter> implements IL
     @Override
     public void showCodeBean(CodeBean codeBean) {
         code = codeBean.getCode();
-        if (code == "ok") {
+        if (code.equals("ok")) {
             Toast.makeText(this, "获取验证码成功！", Toast.LENGTH_SHORT).show();
         }
     }

@@ -8,7 +8,9 @@ import com.zuxiao2.zuxiao2.bean.SHDZ_Bean;
 import com.zuxiao2.zuxiao2.model.MyService;
 import com.zuxiao2.zuxiao2.ui.adapter.ADD_RecylerAdapter;
 import com.zuxiao2.zuxiao2.utils.RetrofitUtils;
+import com.zuxiao2.zuxiao2.utils.SpUtils;
 
+import java.util.HashMap;
 import java.util.List;
 
 import io.reactivex.Observer;
@@ -42,7 +44,10 @@ public class Activity_Add_DZ extends BaseActivity {
     @Override
     protected void initData() {
         MyService myService = RetrofitUtils.getInstance().getMyService();
-        myService.getHomeAddDZ().subscribeOn(Schedulers.newThread())
+        HashMap<String, String> header = new HashMap<>();
+        header.put("user_login",SpUtils.getUserKey(this));
+        header.put("uuid",SpUtils.getUserId());
+        myService.getHomeAddDZ(header).subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<SHDZ_Bean>() {
                     @Override

@@ -11,6 +11,7 @@ import java.util.Map;
 import io.reactivex.Observable;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.HeaderMap;
 import retrofit2.http.POST;
 
 public interface MyService{
@@ -27,5 +28,5 @@ public interface MyService{
     //首页 添加收货地址
     @FormUrlEncoded
     @POST(Urls.HOME_DZ)
-    Observable<SHDZ_Bean> getHomeAddDZ();
+    Observable<SHDZ_Bean> getHomeAddDZ(@HeaderMap Map<String,String> header);
 }

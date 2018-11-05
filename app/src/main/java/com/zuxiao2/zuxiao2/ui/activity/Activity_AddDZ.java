@@ -1,13 +1,13 @@
 package com.zuxiao2.zuxiao2.ui.activity;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.tencent.mm.opensdk.modelpay.PayReq;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
-import com.zuxiao2.zuxiao2.MainActivity;
 import com.zuxiao2.zuxiao2.R;
 import com.zuxiao2.zuxiao2.base.BaseActivity;
 import com.zuxiao2.zuxiao2.bean.MerChantentryBean;
@@ -17,20 +17,16 @@ import com.zuxiao2.zuxiao2.presenter.AddDingDanPresenter;
 import com.zuxiao2.zuxiao2.utils.SpUtils;
 import com.zuxiao2.zuxiao2.utils.WXPayUtils;
 
-
-import java.io.IOException;
-import java.security.MessageDigest;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
 
 import okhttp3.MediaType;
-import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
-import okhttp3.ResponseBody;
-
+ //确认订单
 public class Activity_AddDZ extends BaseActivity<AddDingDanPresenter> implements View.OnClickListener,IAddDingDanContract.View {
-    @Override
+
+     private TextView tv_s;
+
+     @Override
     protected void initTitle() {
 
     }
@@ -47,6 +43,8 @@ public class Activity_AddDZ extends BaseActivity<AddDingDanPresenter> implements
         CommodityBean.DataBean databena = (CommodityBean.DataBean) intent.getSerializableExtra("databena");*/
         Button btn_zf = findViewById(R.id.btn_zf);
         btn_zf.setOnClickListener(this);
+        tv_s = findViewById(R.id.tv_s);//添加收货地址
+        tv_s.setOnClickListener(this);
     }
 
     @Override
@@ -65,6 +63,9 @@ public class Activity_AddDZ extends BaseActivity<AddDingDanPresenter> implements
                 header.put("user_login",SpUtils.getUserKey(this));
                 header.put("uuid",SpUtils.getUserId());
                 presenter.getMerChantentryBean(header,fileBody);
+                break;
+            case R.id.tv_s:
+                startActivity(new Intent(this,Activity_Add_DZ.class));
                 break;
         }
     }
