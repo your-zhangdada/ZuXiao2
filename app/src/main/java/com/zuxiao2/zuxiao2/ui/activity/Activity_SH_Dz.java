@@ -6,13 +6,15 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 
-import com.lljjcoder.citypickerview.widget.CityPicker;
+import com.bigkoo.pickerview.OptionsPickerView;
 import com.zuxiao2.zuxiao2.R;
 import com.zuxiao2.zuxiao2.base.BaseActivity;
 import com.zuxiao2.zuxiao2.bean.AddressBean;
+import com.zuxiao2.zuxiao2.bean.CitysBean;
 import com.zuxiao2.zuxiao2.bean.SHDZ_Bean;
 import com.zuxiao2.zuxiao2.contract.AddressContract;
 import com.zuxiao2.zuxiao2.presenter.AddressPresenter;
@@ -32,15 +34,28 @@ public class Activity_SH_Dz extends BaseActivity<AddressPresenter> implements Ad
     private String name;
     private String phone;
     private String address;
-    private TextView tv_xz_dz;
     private List<AddressBean.DataBean.ChildrenBeanX> children;
     private List<AddressBean.DataBean.ChildrenBeanX.ChildrenBean> children1;
 
-    //省
-    List<String> mLabel1 = new ArrayList<>();
-    List<String> mLabel2 = new ArrayList<>();
-    List<String> mLabel3 = new ArrayList<>();
-    private TextView tV_add;
+    //  省份
+    ArrayList<String> provinceBeanList = new ArrayList<>();
+    ArrayList<CitysBean> provinceBeanList1 = new ArrayList<>();
+    //  城市
+    ArrayList<String> cities;
+    ArrayList<List<String>> cityList = new ArrayList<>();
+    ArrayList<CitysBean> cities1;
+    ArrayList<List<CitysBean>> cityList1 = new ArrayList<>();
+    //  区/县
+    ArrayList<String> district;
+    ArrayList<List<String>> districts;
+    ArrayList<List<List<String>>> districtList = new ArrayList<>();
+    ArrayList<CitysBean> district1;
+    ArrayList<List<CitysBean>> districts1;
+    ArrayList<List<List<CitysBean>>> districtList1 = new ArrayList<>();
+    private RelativeLayout add_dizhi;
+    private OptionsPickerView pvOptions;
+    private TextView tv_sanji_address;
+    private Map<String, String> map;
 
     @Override
     protected void initTitle() {
@@ -67,12 +82,13 @@ private  int swihch;
 //        //详细地址
 //        et_xh_address = findViewById(R.id.et_xh_address);
     //    et_xh_address.setText(data.getDetailAddress());
-        tv_xz_dz = findViewById(R.id.tv_xz_dz);
-        tv_xz_dz.setOnClickListener(this);
         Switch sw_mr_address = findViewById(R.id.sw_mr_address);
         sw_mr_address.setOnClickListener(this);
         btn_sanchu_dz = findViewById(R.id.btn_sanchu_dz);
         btn_sanchu_dz.setOnClickListener(this);
+        add_dizhi = findViewById(R.id.add_dizhi_rela);
+        add_dizhi.setOnClickListener(this);
+        tv_sanji_address = findViewById(R.id.tv_xz_dz);
         sw_mr_address.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -89,7 +105,11 @@ private  int swihch;
 
     @Override
     protected void initData() {
-
+        map = new HashMap<>();
+        map.put("linkPhone",phone);//联系电话
+        map.put("linkPerson",name);//联系人
+        map.put("hasDefault",swihch+"");//是否默认，0否，1是
+        map.put("detailAddress",address);//详细地址
         presenter.getAddressBean();
     }
 
@@ -99,7 +119,7 @@ private  int swihch;
             case R.id.lin_back:
                 finish();
                 break;
-            case R.id.tv_xz_dz:
+            case R.id.add_dizhi_rela:
                 //弹出 三级联动 地址
                 addressDz();
                 break;
@@ -108,6 +128,8 @@ private  int swihch;
 
                 break;
             case R.id.btn_sanchu_dz:
+
+
                 if (btn_sanchu_dz.getText().toString().equals("删除地址")){
                     // 删除地址
                     et_sh_name.setText("");
@@ -127,52 +149,82 @@ private  int swihch;
     }
 
     private void addressDz() {
-
-        CityPicker build = new CityPicker.Builder(this)
-                .province("北京市")
-                .city("北京市")
-                .district("海淀区")
-                .build();
-
-        build .show();
-        build.setOnCityItemClickListener(new CityPicker.OnCityItemClickListener() {
+        pvOptions = new OptionsPickerView(this);
+        pvOptions.setPicker(provinceBeanList, cityList, districtList, true);
+        //  设置是否循环滚动
+        pvOptions.setCyclic(false, false, false);
+        // 设置默认选中的三级项目
+        pvOptions.setSelectOptions(0, 0, 0);
+        //  监听确定选择按钮
+        pvOptions.setOnoptionsSelectListener(new OptionsPickerView.OnOptionsSelectListener() {
             @Override
-            public void onSelected(String... citySelected) {
-                String s1 = citySelected[0];
-                String s2 = citySelected[1];
-                String s3 = citySelected[2];
-                tv_xz_dz.setText(s1.trim()+"--"+s2.trim()+"--"+s3.trim());
+            public void onOptionsSelect(int options1, int option2, int options3) {
+                //返回的分别是三个级别的选中位置
+                String city = provinceBeanList.get(options1);
+                String address;
+                //  如果是直辖市或者特别行政区只设置市和区/县
+                if ("北京市".equals(city) || "上海市".equals(city) || "天津市".equals(city) || "重庆市".equals(city) || "澳门".equals(city) || "香港".equals(city)) {
+                    address = provinceBeanList.get(options1)
+                            + " " + districtList.get(options1).get(option2).get(options3);
+                    map.put("provinceId","");//省份ID
+                    map.put("cityId",provinceBeanList1.get(options1).getValue());//城市ID
+                    map.put("countyId",districtList1.get(options1).get(option2).get(options3).getValue());//区县ID
+                    map.put("countyName","");//省份
+                    map.put("cityName",provinceBeanList.get(options1));//城市
+                    map.put("provinceName",districtList.get(options1).get(option2).get(options3));//区县
+                } else {
+                    address = provinceBeanList.get(options1)
+                            + " " + cityList.get(options1).get(option2)
+                            + " " + districtList.get(options1).get(option2).get(options3);
+                    map.put("provinceId",provinceBeanList1.get(options1).getValue());//省份ID
+                    map.put("cityId",cityList1.get(options1).get(option2).getValue());//城市ID
+                    map.put("countyId",districtList1.get(options1).get(option2).get(options3).getValue());//区县ID
+                    map.put("countyName",provinceBeanList.get(options1));//省份
+                    map.put("cityName",cityList.get(options1).get(option2));//城市
+                    map.put("provinceName",districtList.get(options1).get(option2).get(options3));//区县
+                }
+                tv_sanji_address.setText(address);
             }
         });
+        pvOptions.show();
     }
     @Override
     public void showAddress(AddressBean addressBean) {
 
         List<AddressBean.DataBean> data = addressBean.getData();
         for (int i = 0; i < data.size(); i++) {
-            mLabel1.add(data.get(i).getLabel());
-            children = data.get(i).getChildren();
-        }
-        for (int i = 0; i < children.size(); i++) {
-            mLabel2.add(children.get(i).getLabel());
-            children1 = this.children.get(i).getChildren();
-        }
-        for (int i = 0; i < children1.size(); i++) {
-            mLabel3.add(children1.get(i).getLabel());
+            provinceBeanList.add(data.get(i).getLabel());
+            provinceBeanList1.add(new CitysBean(data.get(i).getLabel(),data.get(i).getValue()));
+            List<AddressBean.DataBean.ChildrenBeanX> children = data.get(i).getChildren();
+            cities = new ArrayList<>();//   声明存放城市的集合
+            cities1 = new ArrayList<>();
+            districts = new ArrayList<>();//声明存放区县集合的集合
+            districts1 = new ArrayList<>();
+            for (int i1 = 0; i1 < children.size(); i1++) {
+                String label = children.get(i1).getLabel();
+                cities.add(label);
+                cities1.add(new CitysBean(label,children.get(i1).getValue()));
+                district = new ArrayList<>();// 声明存放区县的集合
+                district1 = new ArrayList<>();
+                List<AddressBean.DataBean.ChildrenBeanX.ChildrenBean> children2 = children.get(i1).getChildren();
+                for (int j = 0; j < children2.size(); j++) {
+                    String label1 = children2.get(j).getLabel();
+                    district.add(label1);
+                    district1.add(new CitysBean(label1,children2.get(j).getValue()));
+                }
+                districts.add(district);
+                districts1.add(district1);
+            }
+            //  将存放区县集合的集合放入集合
+            districtList.add(districts);
+            districtList1.add(districts1);
+            //  将存放城市的集合放入集合
+            cityList.add(cities);
+            cityList1.add(cities1);
         }
     }
     private void addAddressPost(String name, String phone, String address) {
-        Map<String,String> map = new HashMap<>();
-        map.put("linkPhone",phone);//联系电话
-        map.put("linkPerson",name);//联系人
-        map.put("hasDefault",swihch+"");//是否默认，0否，1是
-        map.put("detailAddress",address);//详细地址
-//        map.put("provinceId",);//省份ID
-//        map.put("cityId");//城市ID
-//        map.put("countyId");//区县ID
-//        map.put("countyName");//省份
-//        map.put("cityName");//城市
-//        map.put("provinceName");//区县
+
 
     }
 
