@@ -25,6 +25,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
     productFlavors {
     }
 }
@@ -52,6 +56,8 @@ dependencies {
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3'
     //微信支付
     implementation 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
+    //3D地图so及jar
+    implementation 'com.amap.api:3dmap:latest.integration'
     // 城市 三级联动
     implementation 'liji.library.dev:citypickerview:0.7.0'
 }

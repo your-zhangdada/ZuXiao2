@@ -1,6 +1,7 @@
 package com.zuxiao2.zuxiao2.presenter;
 
 import com.zuxiao2.zuxiao2.bean.MyEquipBean;
+import com.zuxiao2.zuxiao2.bean.MyOrederBean;
 import com.zuxiao2.zuxiao2.contract.MyEquipContract;
 import com.zuxiao2.zuxiao2.model.MyEquipentService;
 import com.zuxiao2.zuxiao2.utils.RetrofitUtils;
@@ -23,12 +24,12 @@ public class MyEquipPresenter implements MyEquipContract.Presenter {
         myEquipentService.getMyEquip(mMap)
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<MyEquipBean>() {
+                .subscribe(new Observer<MyOrederBean>() {
                     @Override
                     public void onSubscribe(Disposable d) {
                     }
                     @Override
-                    public void onNext(MyEquipBean myEquipBean) {
+                    public void onNext(MyOrederBean myEquipBean) {
                             view.showMyEquip(myEquipBean);
                     }
                     @Override

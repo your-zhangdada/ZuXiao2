@@ -93,4 +93,17 @@ public class SpUtils {
         return id;
     }
 
+    public static void saveIsFirst(Context context,String key) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences("FirstPut", Context.MODE_PRIVATE);
+        SharedPreferences.Editor edit = sharedPreferences.edit();
+        edit.putString("first", key);
+        edit.commit();
+    }
+
+    public static String getIsFirst(Context context) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences("FirstPut", Context.MODE_PRIVATE);
+        String isfirst = sharedPreferences.getString("first",null);
+        return isfirst;
+    }
+
 }

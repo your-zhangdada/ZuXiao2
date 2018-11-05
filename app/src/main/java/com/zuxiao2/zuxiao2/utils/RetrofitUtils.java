@@ -14,7 +14,6 @@ import com.zuxiao2.zuxiao2.model.MerchantentryService;
 import com.zuxiao2.zuxiao2.model.MyEquipentService;
 import com.zuxiao2.zuxiao2.model.MyOrderService;
 import com.zuxiao2.zuxiao2.model.MyService;
-import com.zuxiao2.zuxiao2.model.OrderTabService;
 import com.zuxiao2.zuxiao2.model.PassLoginService;
 import com.zuxiao2.zuxiao2.model.WholeAddressService;
 
@@ -86,9 +85,6 @@ public class RetrofitUtils {
     }
     public AddDingDanService getAddDingDanService(){
         return retrofit.create(AddDingDanService.class);
-    }
-    public OrderTabService getOrderTabService(){
-        return retrofit.create(OrderTabService.class);
     }
     public MyOrderService getMyOrderService(){
         return retrofit.create(MyOrderService.class);

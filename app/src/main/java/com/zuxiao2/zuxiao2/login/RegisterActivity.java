@@ -60,13 +60,10 @@ public class RegisterActivity extends BaseActivity<LoginPresenter> implements IL
     protected void initView() {
         //手机号
         ed_phone = findViewById(R.id.ed_phone);
-        phone = ed_phone.getText().toString();
         //验证码
         ed_code = findViewById(R.id.ed_code);
-        codes = ed_code.getText().toString();
         // 密码
         ed_pass = findViewById(R.id.ed_pass);
-        pass = ed_pass.getText().toString();
         //获取验证码
         bt_getcode = findViewById(R.id.bt_getcode);
         bt_getcode.setOnClickListener(this);
@@ -98,12 +95,13 @@ public class RegisterActivity extends BaseActivity<LoginPresenter> implements IL
     }
 
     private void getLongin() {
+        phone = ed_phone.getText().toString();
+        pass = ed_pass.getText().toString();
+        codes = ed_code.getText().toString();
         Map<String, String> map = new HashMap<>();
         map.put("mobile", phone);
         map.put("pwd", pass);
         map.put("code", codes);
-        map.put("nickname", "高高");
-        map.put("cityId", 1 + "");
         presenter.getRegister(map);
 //        if (!phone.isEmpty()&& !pass.isEmpty()){
 //            if (ed_code+"" == code+""){
@@ -118,6 +116,7 @@ public class RegisterActivity extends BaseActivity<LoginPresenter> implements IL
     //请求验证码
     private void getCode() {
         Map<String, String> map = new HashMap<>();
+        phone = ed_phone.getText().toString();
         map.put("mobile", phone);
         presenter.getCodeBean(map);
 

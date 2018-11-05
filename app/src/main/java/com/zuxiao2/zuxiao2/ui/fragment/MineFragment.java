@@ -25,6 +25,7 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
     private ImageView im_equipment,im_re,im_setting;
     private RelativeLayout rv_wall,rv_identity_text;
     private RelativeLayout myorder;
+    private RelativeLayout shebei;
 
     @Override
     protected int getCreateView() {
@@ -42,8 +43,8 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
         myorder = view.findViewById(R.id.myorder);
         myorder.setOnClickListener(this);
         //我的设备
-        im_equipment = view.findViewById(R.id.im_equipment);
-        im_equipment.setOnClickListener(this);
+        shebei = view.findViewById(R.id.my_shebei);
+        shebei.setOnClickListener(this);
         //我的钱包
         im_re = view.findViewById(R.id.im_re);
         im_re.setOnClickListener(this);
@@ -86,7 +87,7 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
                 Intent Order = new Intent(getContext(),MyorderActivity.class);
                 startActivity(Order);
                 break;
-            case R.id.im_equipment:
+            case R.id.my_shebei:
                 //我的设备
                Intent equipment = new Intent(getContext(),EquipmentActivity.class);
               startActivity(equipment);

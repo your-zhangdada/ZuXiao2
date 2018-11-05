@@ -9,19 +9,15 @@ import android.widget.ImageView;
 
 import com.zuxiao2.zuxiao2.R;
 import com.zuxiao2.zuxiao2.base.BaseActivity;
-import com.zuxiao2.zuxiao2.bean.OrderTabBean;
-import com.zuxiao2.zuxiao2.contract.IOrderContract;
-import com.zuxiao2.zuxiao2.presenter.OrderTabPresenter;
 import com.zuxiao2.zuxiao2.ui.fragment.mine.adapter.MyordFragmentPagerAdapter;
 import com.zuxiao2.zuxiao2.ui.fragment.mine.fragment.MyFragment_order;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 //我的订单主页
-public class MyorderActivity extends BaseActivity<OrderTabPresenter> implements IOrderContract.View, View.OnClickListener {
+public class MyorderActivity extends BaseActivity implements View.OnClickListener {
     private List<String> mList = Arrays.asList("全部","待付款","待发货","待收货","售后退款");
     private List<Integer> mTitlePosition = Arrays.asList(-1, 0, 1, 2, 3);
     private List<Fragment> mFragment = new ArrayList<>();
@@ -50,11 +46,6 @@ public class MyorderActivity extends BaseActivity<OrderTabPresenter> implements 
 
     @Override
     protected void initData() {
-        presenter.getOrderTabBean();
-    }
-
-    @Override
-    public void showOrderTabBean(OrderTabBean orderTabBean) {
         for (int i = 0; i < mTitlePosition.size(); i++) {
             MyFragment_order myFragment_order = new MyFragment_order();
             mFragment.add(myFragment_order);

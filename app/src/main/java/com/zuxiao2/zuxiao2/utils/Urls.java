@@ -46,8 +46,6 @@ public class Urls {
     public final static String ADDDINGDAN_URL = "order/save";
     //下单接口
     public final static String TOWXPAI_URL = "order/applyPay";
-    //获取我的订单tab
-    public final static String GETORDERTAB_URL = "order/getOrderStatus";
     //我的订单接口
     public final static String GETMYORDER_URL = "order/find";
     //我的设备

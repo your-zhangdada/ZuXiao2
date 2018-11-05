@@ -16,6 +16,7 @@ import android.widget.RelativeLayout;
 import com.youth.banner.transformer.DepthPageTransformer;
 import com.zuxiao2.zuxiao2.MainActivity;
 import com.zuxiao2.zuxiao2.R;
+import com.zuxiao2.zuxiao2.utils.SpUtils;
 
 import java.util.ArrayList;
 
@@ -37,6 +38,17 @@ public class GuideActivity extends AppCompatActivity {
         initView();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        String isFirst = SpUtils.getIsFirst(GuideActivity.this);
+        if (isFirst !=null){
+            Intent intent = new Intent(GuideActivity.this, SplashActivity.class);
+            startActivity(intent);
+            finish();
+        }
+    }
+
     private void initView() {
         mViewPager = (ViewPager) findViewById(R.id.vp_guide);
         llContainer = (LinearLayout) findViewById(R.id.ll_container);
@@ -46,6 +58,7 @@ public class GuideActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+                SpUtils.saveIsFirst(GuideActivity.this,"第一次进入");
                 //点击进入的时候直接跳转到登录界面
                 Intent intent = new Intent(GuideActivity.this, MainActivity.class);
                 startActivity(intent);

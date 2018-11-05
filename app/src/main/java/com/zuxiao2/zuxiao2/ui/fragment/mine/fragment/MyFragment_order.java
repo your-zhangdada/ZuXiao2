@@ -1,18 +1,26 @@
 package com.zuxiao2.zuxiao2.ui.fragment.mine.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.zuxiao2.zuxiao2.R;
+import com.zuxiao2.zuxiao2.application.MyApplication;
 import com.zuxiao2.zuxiao2.base.BaseFragment;
 import com.zuxiao2.zuxiao2.bean.MyOrederBean;
 import com.zuxiao2.zuxiao2.contract.IMyOrderContract;
 import com.zuxiao2.zuxiao2.presenter.MyOrderPresenter;
 import com.zuxiao2.zuxiao2.ui.fragment.mine.adapter.MyOrderAdapter;
+import com.zuxiao2.zuxiao2.ui.myorder.ChaKanWuliuActivity;
 import com.zuxiao2.zuxiao2.utils.SpUtils;
 
 import java.util.ArrayList;
@@ -81,6 +89,31 @@ public class MyFragment_order extends BaseFragment<MyOrderPresenter> implements 
         header.put("user_login",SpUtils.getUserKey(getActivity()));
         header.put("uuid",SpUtils.getUserId());
         presenter.getMyOrederBean(header,fileBody);
+        myOrderAdapter.getCloseOrder(new MyOrderAdapter.setCloseOrder() {
+            @Override
+            public void setonListener(TextView close, int position) {
+                if (close.getText().toString().trim().equals("取消订单")){
+                    close.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            showPopupWindow(R.layout.closeorder_popupwindow);
+                        }
+                    });
+
+                }
+
+                if (close.getText().toString().trim().equals("查看物流")){
+                    close.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            startActivity(new Intent(getActivity(),ChaKanWuliuActivity.class));
+                            getActivity().finish();
+                        }
+                    });
+
+                }
+            }
+        });
     }
 
     @Override
@@ -94,8 +127,36 @@ public class MyFragment_order extends BaseFragment<MyOrderPresenter> implements 
                 tishi.setVisibility(View.GONE);
             }
         }else {
-
             Toast.makeText(getActivity(), myOrederBean.getMsg(), Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void showPopupWindow(int id){
+        View inflate = LayoutInflater.from(getActivity()).inflate(id, null);
+        final PopupWindow popupWindow = new PopupWindow(inflate,ViewPager.LayoutParams.WRAP_CONTENT, ViewPager.LayoutParams.WRAP_CONTENT, true);
+        popupWindow.setOutsideTouchable(true);
+        popupWindow.setTouchable(true);
+        popupWindow.setOutsideTouchable(true);
+        popupWindow.setFocusable(true);
+        TextView quding = inflate.findViewById(R.id.queding);
+        TextView quxiao = inflate.findViewById(R.id.quxiao);
+        CheckBox buxiang = inflate.findViewById(R.id.wobuxiangzule);
+        CheckBox messageerror = inflate.findViewById(R.id.message_error);
+        CheckBox zujintaigui = inflate.findViewById(R.id.zujintaigui);
+        CheckBox qita = inflate.findViewById(R.id.qitayuanyin);
+        quding.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //用户确定取消订单
+                popupWindow.dismiss();
+            }
+        });
+        quxiao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popupWindow.dismiss();
+            }
+        });
+        popupWindow.showAtLocation(getActivity().getWindow().getDecorView(),Gravity.CENTER,0,0);
     }
 }
