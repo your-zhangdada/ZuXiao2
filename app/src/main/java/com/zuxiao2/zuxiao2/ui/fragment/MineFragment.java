@@ -13,6 +13,7 @@ import com.zuxiao2.zuxiao2.login.LoginActivity;
 import com.zuxiao2.zuxiao2.ui.fragment.fication.activity.Merchantentry;
 import com.zuxiao2.zuxiao2.ui.fragment.fication.activity.SettingActivity;
 import com.zuxiao2.zuxiao2.ui.fragment.mine.activity.EquipmentActivity;
+import com.zuxiao2.zuxiao2.ui.fragment.mine.activity.MyWalletActivity;
 import com.zuxiao2.zuxiao2.ui.fragment.mine.activity.MyorderActivity;
 import com.zuxiao2.zuxiao2.ui.fragment.mine.activity.ProvinceActivity;
 import com.zuxiao2.zuxiao2.utils.SpUtils;
@@ -94,8 +95,8 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
                 break;
             case R.id.im_re:
                 //我的钱包
-//                Intent wallet = new Intent(getContext(), );
-//                startActivity(wallet);
+                Intent wallet = new Intent(getContext(),MyWalletActivity.class);
+               startActivity(wallet);
                 break;
             case R.id.rv_wall:
                 //商家入住

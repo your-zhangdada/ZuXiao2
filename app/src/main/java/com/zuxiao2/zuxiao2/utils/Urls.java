@@ -52,4 +52,10 @@ public class Urls {
     public final static String MY_EQUIP = "order/findMyOrder";
     //全部省市地址
     public final static String ADDRESS ="common/citys";
+    //银行卡列表
+    public final static String BANKLIST = "bankcard/list";
+    // 删除银行卡
+    public final static String DELETEBANK = "bankcard/del";
+    //添加银行卡
+    public final static String ADDBANK = "bankcard/add";
 }

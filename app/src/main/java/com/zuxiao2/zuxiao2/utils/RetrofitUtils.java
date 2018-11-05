@@ -2,6 +2,7 @@ package com.zuxiao2.zuxiao2.utils;
 
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import com.zuxiao2.zuxiao2.application.MyApplication;
+import com.zuxiao2.zuxiao2.model.AddBankService;
 import com.zuxiao2.zuxiao2.model.AddDingDanService;
 import com.zuxiao2.zuxiao2.model.ApplyListService;
 import com.zuxiao2.zuxiao2.model.ApplyService;
@@ -99,5 +100,8 @@ public class RetrofitUtils {
     }
     public WholeAddressService getAddressService(){
         return retrofit.create(WholeAddressService.class);
+    }
+    public AddBankService getAddBankService(){
+        return retrofit.create(AddBankService.class);
     }
 }
