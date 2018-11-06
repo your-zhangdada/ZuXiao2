@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ui.fragment.mine.activity.AddBankActivity">
+
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="@dimen/dp_50">
@@ -53,7 +54,8 @@
             android:text="持卡人姓名："
             android:textSize="@dimen/dp_14"
             android:gravity="center"/>
-        <TextView
+        <EditText
+            android:id="@+id/ed_bankname"
             android:hint="输入持卡人姓名"
             android:layout_marginLeft="@dimen/dp_10"
             android:gravity="center_vertical"
@@ -69,15 +71,18 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_44">
         <TextView
+
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="银行卡卡号："
             android:textSize="@dimen/dp_14"
             android:gravity="center"/>
-        <TextView
+        <EditText
+            android:id="@+id/ed_banknuber"
             android:hint="输入卡号"
             android:layout_marginLeft="@dimen/dp_10"
             android:gravity="center_vertical"
+            android:inputType="number"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>

@@ -152,6 +152,7 @@ public class PassWordLoginActivity extends BaseActivity<PassLoginPresenter> impl
           MyApplication.context = this;
           SpUtils.saveUserId(passLoginBean.getData().getUserId()+"");
           SpUtils.saveNikeName(passLoginBean.getData().getNickname());
+          SpUtils.saveUserPhoto(passLoginBean.getData().getPhoneNumber());
           SpUtils.saveUserKey(this,passLoginBean.getData().getKey());
                 Intent intent = new Intent(PassWordLoginActivity.this, MainActivity.class);
                 startActivity(intent);

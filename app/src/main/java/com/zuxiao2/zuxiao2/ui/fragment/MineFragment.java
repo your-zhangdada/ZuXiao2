@@ -13,6 +13,7 @@ import com.zuxiao2.zuxiao2.login.LoginActivity;
 import com.zuxiao2.zuxiao2.ui.fragment.fication.activity.Merchantentry;
 import com.zuxiao2.zuxiao2.ui.fragment.fication.activity.SettingActivity;
 import com.zuxiao2.zuxiao2.ui.fragment.mine.activity.EquipmentActivity;
+import com.zuxiao2.zuxiao2.ui.fragment.mine.activity.FriendsActivity;
 import com.zuxiao2.zuxiao2.ui.fragment.mine.activity.MyWalletActivity;
 import com.zuxiao2.zuxiao2.ui.fragment.mine.activity.MyorderActivity;
 import com.zuxiao2.zuxiao2.ui.fragment.mine.activity.ProvinceActivity;
@@ -23,10 +24,11 @@ import com.zuxiao2.zuxiao2.utils.SpUtils;
  */
 public class MineFragment extends BaseFragment implements View.OnClickListener {
     TextView user_name;
-    private ImageView im_equipment,im_re,im_setting;
+    private ImageView im_equipment,im_re,im_setting,user_im;
     private RelativeLayout rv_wall,rv_identity_text;
     private RelativeLayout myorder;
     private RelativeLayout shebei;
+    private RelativeLayout rv_inviting_friends;
 
     @Override
     protected int getCreateView() {
@@ -35,6 +37,8 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
 
     @Override
     protected void initView(View view) {
+        user_im = view.findViewById(R.id.user_im);//头像
+        user_im.setOnClickListener(this);
         im_setting = view.findViewById(R.id.im_setting);
         im_setting.setOnClickListener(this);
         //点击登录
@@ -55,7 +59,9 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
         //商家入驻
         rv_wall = view.findViewById(R.id.rv_wall);
         rv_wall.setOnClickListener(this);
-
+        //邀请好友
+        rv_inviting_friends = view.findViewById(R.id.rv_inviting_friends);
+        rv_inviting_friends.setOnClickListener(this);
     }
 
 
@@ -72,6 +78,8 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()){
+            case R.id.user_im:// 拍照或 选着相册 设置头像
+                break;
             case R.id.user_name:
                 Intent login = new Intent(getContext(), LoginActivity.class);
                 startActivity(login);
@@ -103,8 +111,13 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
                 startActivity(new Intent(getContext(),Merchantentry.class));
                 break;
             case R.id.im_setting:
+                //设置
                 Intent setting = new Intent(getContext(), SettingActivity.class);
                 startActivity(setting);
+                break;
+                //邀请好友
+            case R.id.rv_inviting_friends:
+            startActivity(new Intent(getContext(),FriendsActivity.class));
                 break;
         }
     }

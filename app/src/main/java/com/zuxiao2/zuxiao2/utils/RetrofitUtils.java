@@ -6,6 +6,7 @@ import com.zuxiao2.zuxiao2.model.AddBankService;
 import com.zuxiao2.zuxiao2.model.AddDingDanService;
 import com.zuxiao2.zuxiao2.model.ApplyListService;
 import com.zuxiao2.zuxiao2.model.ApplyService;
+import com.zuxiao2.zuxiao2.model.BankListService;
 import com.zuxiao2.zuxiao2.model.FLService;
 import com.zuxiao2.zuxiao2.model.FincService;
 import com.zuxiao2.zuxiao2.model.HomeService;
@@ -101,7 +102,10 @@ public class RetrofitUtils {
     public WholeAddressService getAddressService(){
         return retrofit.create(WholeAddressService.class);
     }
-    public AddBankService getAddBankService(){
+    public AddBankService getAddBankService(){ // 添加银行卡
         return retrofit.create(AddBankService.class);
+    }
+    public BankListService getBankListService(){//银行卡列表
+        return retrofit.create(BankListService.class);
     }
 }

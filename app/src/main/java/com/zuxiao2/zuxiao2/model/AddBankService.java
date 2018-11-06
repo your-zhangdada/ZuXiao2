@@ -1,6 +1,6 @@
 package com.zuxiao2.zuxiao2.model;
 
-import com.zuxiao2.zuxiao2.bean.HomeBean;
+import com.zuxiao2.zuxiao2.bean.CodeBean;
 import com.zuxiao2.zuxiao2.utils.Urls;
 
 import java.util.Map;
@@ -13,5 +13,6 @@ import retrofit2.http.POST;
 public interface AddBankService {
     @FormUrlEncoded
     @POST(Urls.ADDBANK)
-    Observable<HomeBean> getAddBank(@FieldMap Map<String,String> map);
+    Observable<CodeBean> getAddBank(@FieldMap Map<String,String> map);
+
 }

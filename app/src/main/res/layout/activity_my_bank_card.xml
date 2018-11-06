@@ -7,11 +7,13 @@
     android:orientation="vertical"
     tools:context=".ui.fragment.mine.activity.MyBankCardActivity">
 
-    <LinearLayout
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerBank"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    </LinearLayout>
+    </android.support.v7.widget.RecyclerView>
     <LinearLayout
         android:gravity="center"
         android:layout_width="match_parent"

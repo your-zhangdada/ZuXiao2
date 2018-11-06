@@ -3,21 +3,19 @@ package com.zuxiao2.zuxiao2.ui.fragment.mine.activity;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.zuxiao2.zuxiao2.R;
 import com.zuxiao2.zuxiao2.base.BaseActivity;
-import com.zuxiao2.zuxiao2.bean.HomeBean;
-import com.zuxiao2.zuxiao2.contract.AddBankContract;
-import com.zuxiao2.zuxiao2.presenter.AddBankPrerenter;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  *   TODO 添加银行卡
  */
-public class AddBankActivity extends BaseActivity<AddBankPrerenter> implements AddBankContract.View,View.OnClickListener {
+public class AddBankActivity extends BaseActivity implements View.OnClickListener {
     private Button btn_xiayibu;
+    private EditText ed_bankname;
+    private EditText ed_banknuber;
+
     @Override
     protected void initTitle() {
     }
@@ -30,7 +28,8 @@ public class AddBankActivity extends BaseActivity<AddBankPrerenter> implements A
         //绑定银行卡
         btn_xiayibu = findViewById(R.id.btn_xiayibu);
         btn_xiayibu.setOnClickListener(this);
-
+        ed_bankname = findViewById(R.id.ed_bankname);
+        ed_banknuber = findViewById(R.id.ed_banknuber);
     }
     @Override
     protected void initData() {
@@ -40,16 +39,14 @@ public class AddBankActivity extends BaseActivity<AddBankPrerenter> implements A
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btn_xiayibu:
-                //请求
-                Map<String,String> map = new HashMap<>();
-                presenter.getAddBanks(map);
-            startActivity(new Intent(this,AddTypeActivity.class));
+                String bankname = ed_bankname.getText().toString();
+                String banknuber = ed_banknuber.getText().toString();
+                Intent intent = new Intent(this, AddTypeActivity.class);
+                intent.putExtra("name",bankname);
+                intent.putExtra("nuber",banknuber+"");
+                startActivity(intent);
                 break;
         }
     }
 
-    @Override
-    public void showAddBank(HomeBean homeBean) {
-
-    }
 }

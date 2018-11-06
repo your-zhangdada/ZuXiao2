@@ -33,6 +33,8 @@ public class MyWalletActivity extends BaseActivity implements View.OnClickListen
 
     @Override
     protected void initView() {
+
+
         //返回
         im_back = findViewById(R.id.im_back);
         im_back.setOnClickListener(this);
@@ -57,6 +59,8 @@ public class MyWalletActivity extends BaseActivity implements View.OnClickListen
         //我的银行卡
         my_present_record = findViewById(R.id.my_present_record);
         my_present_record.setOnClickListener(this);
+
+
     }
 
     @Override
@@ -72,6 +76,10 @@ public class MyWalletActivity extends BaseActivity implements View.OnClickListen
                 break;
             case R.id.btn_tixian:
                 //提现
+                String yue = tv_yue.getText().toString();
+                Intent intent = new Intent(this, PutforwardActivity.class);
+                intent.putExtra("yue",yue);
+                startActivity(intent);
                 break;
             case R.id.tv_tiaozheng:
                 //调整额度

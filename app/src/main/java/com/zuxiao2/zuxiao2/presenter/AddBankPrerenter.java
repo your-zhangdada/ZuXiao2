@@ -1,6 +1,6 @@
 package com.zuxiao2.zuxiao2.presenter;
 
-import com.zuxiao2.zuxiao2.bean.HomeBean;
+import com.zuxiao2.zuxiao2.bean.CodeBean;
 import com.zuxiao2.zuxiao2.contract.AddBankContract;
 import com.zuxiao2.zuxiao2.model.AddBankService;
 import com.zuxiao2.zuxiao2.utils.RetrofitUtils;
@@ -24,15 +24,15 @@ public class AddBankPrerenter implements AddBankContract.Presenter {
         service.getAddBank(mMap)
         .subscribeOn(Schedulers.newThread())
         .observeOn(AndroidSchedulers.mainThread())
-        .subscribe(new Observer<HomeBean>() {
+        .subscribe(new Observer<CodeBean>() {
             @Override
             public void onSubscribe(Disposable d) {
 
             }
 
             @Override
-            public void onNext(HomeBean homeBean) {
-
+            public void onNext(CodeBean codeBean) {
+                view.showAddBank(codeBean);
             }
 
             @Override

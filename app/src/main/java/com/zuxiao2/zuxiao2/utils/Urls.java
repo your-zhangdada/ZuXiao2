@@ -58,4 +58,5 @@ public class Urls {
     public final static String DELETEBANK = "bankcard/del";
     //添加银行卡
     public final static String ADDBANK = "bankcard/add";
+
 }
