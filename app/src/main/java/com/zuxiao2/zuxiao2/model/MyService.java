@@ -26,7 +26,6 @@ public interface MyService{
     Observable<CommodityBean> getHomeCommody(@FieldMap Map<String, String> params);
 
     //首页 添加收货地址
-    @FormUrlEncoded
     @POST(Urls.HOME_DZ)
     Observable<SHDZ_Bean> getHomeAddDZ(@HeaderMap Map<String,String> header);
 }

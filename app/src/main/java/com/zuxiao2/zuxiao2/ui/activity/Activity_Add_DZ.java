@@ -1,5 +1,6 @@
 package com.zuxiao2.zuxiao2.ui.activity;
 
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.zuxiao2.zuxiao2.R;
@@ -10,12 +11,14 @@ import com.zuxiao2.zuxiao2.ui.adapter.ADD_RecylerAdapter;
 import com.zuxiao2.zuxiao2.utils.RetrofitUtils;
 import com.zuxiao2.zuxiao2.utils.SpUtils;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 //收货地址
 
@@ -37,8 +40,30 @@ public class Activity_Add_DZ extends BaseActivity {
 
     @Override
     protected void initView() {
+        data = new ArrayList<>();
         recycler_adddz = findViewById(R.id.recycler_adddz);
         add_recylerAdapter = new ADD_RecylerAdapter(getApplicationContext(),data);
+        recycler_adddz.setLayoutManager(new LinearLayoutManager(this));
+        recycler_adddz.setAdapter(add_recylerAdapter);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MyService myService = RetrofitUtils.getInstance().getMyService();
+        HashMap<String, String> header = new HashMap<>();
+        header.put("user_login",SpUtils.getUserKey(this));
+        header.put("uuid",SpUtils.getUserId());
+        myService.getHomeAddDZ(header).subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<SHDZ_Bean>() {
+                    @Override
+                    public void accept(SHDZ_Bean shdz_bean) throws Exception {
+                        data.clear();
+                        data.addAll(shdz_bean.getData());
+                        add_recylerAdapter.notifyDataSetChanged();
+                    }
+                });
     }
 
     @Override
@@ -57,7 +82,7 @@ public class Activity_Add_DZ extends BaseActivity {
 
                     @Override
                     public void onNext(SHDZ_Bean shdz_bean) {
-                        data = shdz_bean.getData();
+                        data.addAll(shdz_bean.getData());
                         recycler_adddz.setAdapter(add_recylerAdapter);
                         add_recylerAdapter.notifyDataSetChanged();
                     }

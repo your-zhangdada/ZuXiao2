@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import com.zuxiao2.zuxiao2.R;
 import com.zuxiao2.zuxiao2.base.BaseActivity;
@@ -21,7 +22,7 @@ import java.util.List;
  */
 public class EquipmentActivity extends BaseActivity implements View.OnClickListener {
 
-    private ImageView im_finsch;
+    private RelativeLayout im_finsch;
     private TabLayout my_rquip_tab;
     private ViewPager my_rquip_viewpaoger;
     private List<String> mList = Arrays.asList("租赁中","到期提醒","待归还","已完成");

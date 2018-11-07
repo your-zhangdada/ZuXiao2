@@ -86,8 +86,6 @@ public class MyFragment_order extends BaseFragment<MyOrderPresenter> implements 
                 "}";
         RequestBody fileBody = RequestBody.create(MediaType.parse("application/json"), str);
         HashMap<String, String> header = new HashMap<>();
-        header.put("user_login",SpUtils.getUserKey(getActivity()));
-        header.put("uuid",SpUtils.getUserId());
         presenter.getMyOrederBean(header,fileBody);
         myOrderAdapter.getCloseOrder(new MyOrderAdapter.setCloseOrder() {
             @Override

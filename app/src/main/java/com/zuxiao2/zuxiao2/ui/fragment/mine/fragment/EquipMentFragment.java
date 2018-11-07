@@ -14,6 +14,7 @@ import com.zuxiao2.zuxiao2.contract.MyEquipContract;
 import com.zuxiao2.zuxiao2.presenter.MyEquipPresenter;
 import com.zuxiao2.zuxiao2.ui.fragment.mine.adapter.MyOrderAdapter;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -34,7 +35,7 @@ public class EquipMentFragment extends BaseFragment<MyEquipPresenter> implements
 
     @Override
     protected void initView(View view) {
-
+        list = new ArrayList<>();
         tishi = view.findViewById(R.id.myshebeitishi);
         recyclerView = view.findViewById(R.id.myshebei_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));

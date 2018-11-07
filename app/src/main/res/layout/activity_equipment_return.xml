@@ -6,13 +6,40 @@
     android:background="@color/my_v"
     tools:context=".ui.activity.Activity_AddDZ">
 
-    <include
+    <RelativeLayout
         android:id="@+id/inv_f"
-        layout="@layout/common_top_white_view" />
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_54"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/equipment_imgback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:src="@mipmap/back_left_blank"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="确认订单"
+            android:textColor="@color/v_bank"
+            android:textSize="@dimen/dp_20" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/hui"
+        android:layout_below="@id/inv_f"/>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/inv_f">
 
         <RelativeLayout
@@ -23,7 +50,6 @@
                 android:id="@+id/rv_statement"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 android:background="@color/white">
 
                 <TextView
@@ -49,12 +75,11 @@
                 android:id="@+id/rv_info"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_90"
-
                 android:layout_below="@id/rv_statement"
                 android:background="@color/white">
 
                 <ImageView
-                    android:id="@+id/im"
+                    android:id="@+id/equipment_shopphoto"
                     android:layout_width="@dimen/dp_80"
                     android:layout_height="@dimen/dp_80"
                     android:layout_alignParentLeft="true"
@@ -68,11 +93,11 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="@dimen/dp_25"
                     android:layout_marginTop="@dimen/dp_5"
-                    android:layout_toEndOf="@id/im"
-                    android:layout_toRightOf="@id/im">
+                    android:layout_toEndOf="@id/equipment_shopphoto"
+                    android:layout_toRightOf="@id/equipment_shopphoto">
 
                     <TextView
-                        android:id="@+id/tv_product_name"
+                        android:id="@+id/equipment_shopname"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/product_name"
@@ -82,7 +107,7 @@
                         android:id="@+id/rv_lease"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/tv_product_name"
+                        android:layout_below="@id/equipment_shopname"
                         android:layout_marginTop="@dimen/dp_20">
 
 
@@ -94,7 +119,7 @@
                             android:textSize="@dimen/dp_8" />
 
                         <TextView
-                            android:id="@+id/tv_lease_time"
+                            android:id="@+id/equipment_shoptime"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/tv_lease_term"
@@ -119,7 +144,7 @@
                             android:textSize="@dimen/dp_8" />
 
                         <TextView
-                            android:id="@+id/tv_lease_money"
+                            android:id="@+id/equipment_shopmoney"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@id/tv_lease_mon"
@@ -150,7 +175,7 @@
                     android:textSize="@dimen/dp_11" />
 
                 <TextView
-                    android:id="@+id/tv_goods_num"
+                    android:id="@+id/equipment_shopnum"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -207,7 +232,7 @@
                     android:textSize="@dimen/dp_11" />
 
                 <TextView
-                    android:id="@+id/tv_payment_totalslnum"
+                    android:id="@+id/equipment_shopmoney_zujin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -242,7 +267,7 @@
                     android:textSize="@dimen/dp_11" />
 
                 <TextView
-                    android:id="@+id/tv_total_rent_num"
+                    android:id="@+id/equipment_shopallmoney"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -278,7 +303,7 @@
                     android:textSize="@dimen/dp_11" />
 
                 <TextView
-                    android:id="@+id/tv_shipping_method_tv"
+                    android:id="@+id/equipment_shopmethord"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -355,7 +380,7 @@
                     android:textSize="@dimen/dp_11" />
 
                 <TextView
-                    android:id="@+id/tv_payment_of_deposit_tv"
+                    android:id="@+id/equipment_xufuyajin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -372,7 +397,8 @@
                 android:id="@+id/rv_payment_ym"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_30"
-                android:layout_below="@id/rv_payment_of_deposit">
+                android:layout_below="@id/rv_payment_of_deposit"
+                android:background="@color/white">
 
                 <TextView
                     android:id="@+id/tv_payment_ym"
@@ -384,7 +410,7 @@
                     android:textSize="@dimen/dp_11" />
 
                 <TextView
-                    android:id="@+id/tv_payment_ym_tv"
+                    android:id="@+id/equipment_shopyimianyajin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -401,7 +427,8 @@
                 android:id="@+id/rv_payment"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_30"
-                android:layout_below="@id/rv_payment_ym">
+                android:layout_below="@id/rv_payment_ym"
+                android:background="@color/white">
 
                 <TextView
                     android:id="@+id/tv_payment_tv"
@@ -413,7 +440,7 @@
                     android:textSize="@dimen/dp_11" />
 
                 <TextView
-                    android:id="@+id/tv_payment_ymtv"
+                    android:id="@+id/equipment_shopshifuyajin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -442,55 +469,11 @@
                     android:textColor="@color/tb_text"
                     android:textSize="@dimen/dp_11" />
 
-                <RelativeLayout
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/equipment_baoxianrecycler"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/tv_lease_surplus">
-
-                    <TextView
-                        android:id="@+id/tv_pm"
-                        android:layout_width="wrap_content"
-                        android:layout_height="@dimen/dp_44"
-                        android:gravity="center_vertical"
-                        android:text="屏幕：￥23.00" />
-
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignBaseline="@+id/tv_pm"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="15dp" />
-
-                    <TextView
-                        android:id="@+id/tv_dc"
-                        android:layout_width="wrap_content"
-                        android:layout_height="@dimen/dp_44"
-                        android:layout_below="@+id/tv_pm"
-                        android:gravity="center_vertical"
-                        android:text="电池：￥23.00" />
-
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginRight="15dp" />
-
-                    <TextView
-                        android:id="@+id/tv_zb"
-                        android:layout_width="wrap_content"
-                        android:layout_height="@dimen/dp_44"
-                        android:layout_below="@+id/tv_dc"
-                        android:gravity="center_vertical"
-                        android:text="主板：￥23.00" />
-
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignBaseline="@+id/tv_zb"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="15dp" />
-                </RelativeLayout>
+                    android:layout_below="@+id/tv_lease_surplus"></android.support.v7.widget.RecyclerView>
 
 
             </RelativeLayout>
@@ -507,7 +490,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_30"
                 android:layout_below="@id/vvvvv"
-                android:background="@color/white">
+                android:background="@color/hui">
 
                 <TextView
                     android:id="@+id/tv_lease_surplus_"
@@ -550,13 +533,13 @@
             <RelativeLayout
                 android:id="@+id/rv_rv_refundable_amount_"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_30"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/vvvvvv"
                 android:background="@color/white">
 
                 <EditText
-                    android:id="@+id/tv_rv_refundable_amount_"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/equipment_shopliuyan"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="@dimen/dp_11"
@@ -581,41 +564,68 @@
                     android:text="支付方式"
                     android:textColor="@color/huise" />
 
+                <ImageView
+                    android:id="@+id/tv_yezf_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_44"
+                    android:layout_below="@+id/tv_zffs"
+                    android:src="@mipmap/yuepay"/>
                 <TextView
                     android:id="@+id/tv_yezf"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/dp_44"
                     android:layout_below="@+id/tv_zffs"
+                    android:layout_toRightOf="@id/tv_yezf_img"
                     android:gravity="center_vertical"
                     android:text="余额支付" />
 
                 <CheckBox
+                    android:id="@+id/tv_yezf_checkbox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignBaseline="@+id/tv_yezf"
                     android:layout_alignParentRight="true"
-                    android:layout_marginRight="15dp" />
+                    android:layout_marginRight="15dp"
+                    android:button="@null"
+                    android:background="@drawable/baoxian_select"/>
 
+                <ImageView
+                    android:id="@+id/tv_wxzf_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_44"
+                    android:layout_below="@+id/tv_yezf_checkbox"
+                    android:src="@mipmap/weixinpay"/>
                 <TextView
                     android:id="@+id/tv_wxzf"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/dp_44"
-                    android:layout_below="@+id/tv_yezf"
+                    android:layout_below="@+id/tv_yezf_checkbox"
+                    android:layout_toRightOf="@id/tv_wxzf_img"
                     android:gravity="center_vertical"
                     android:text="微信支付" />
 
                 <CheckBox
+                    android:id="@+id/tv_wxzf_checkbox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignBaseline="@+id/tv_wxzf"
                     android:layout_alignParentRight="true"
-                    android:layout_marginRight="15dp" />
+                    android:layout_marginRight="15dp"
+                    android:button="@null"
+                    android:background="@drawable/baoxian_select"/>
 
+                <ImageView
+                    android:id="@+id/tv_zfb_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_44"
+                    android:layout_below="@+id/tv_wxzf_checkbox"
+                    android:src="@mipmap/zfbpay"/>
                 <TextView
                     android:id="@+id/tv_zfb"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/dp_44"
-                    android:layout_below="@+id/tv_wxzf"
+                    android:layout_below="@+id/tv_wxzf_checkbox"
+                    android:layout_toRightOf="@id/tv_zfb_img"
                     android:gravity="center_vertical"
                     android:text="支付宝支付" />
 
@@ -625,7 +635,9 @@
                     android:layout_alignBaseline="@+id/tv_zfb"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="17dp"
-                    tools:ignore="UnknownId" />
+                    tools:ignore="UnknownId"
+                    android:button="@null"
+                    android:background="@drawable/baoxian_select"/>
 
             </RelativeLayout>
 
@@ -638,17 +650,23 @@
 
                 <CheckBox
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:button="@null"
+                    android:background="@drawable/baoxian_select"
+                    android:layout_margin="@dimen/dp_10"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_10"
                     android:text="我以同意" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="《租小二用户协议》" />
+                    android:layout_margin="@dimen/dp_10"
+                    android:text="《租小二用户协议》"
+                    android:textColor="@color/red"/>
 
 
             </LinearLayout>
@@ -669,7 +687,8 @@
                     android:layout_width="@dimen/dp_125"
                     android:layout_height="match_parent"
                     android:layout_alignParentRight="true"
-                    android:text="立即支付" />
+                    android:text="立即支付"
+                    android:background="@color/chrd"/>
             </RelativeLayout>
         </RelativeLayout>
     </ScrollView>

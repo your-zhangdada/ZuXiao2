@@ -2,7 +2,11 @@ package com.zuxiao2.zuxiao2.ui.hometabftagment.classbase;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -132,10 +136,7 @@ public class CommodityActiivity extends BaseActivity<IHomeCommPresenter> impleme
         tvshop = findViewById(R.id.shopmessage_tv);
         tvuser = findViewById(R.id.usermessage_tv);
         tvchangjian = findViewById(R.id.changjianwenti_tv);
-        setContentView(ShopMessageFragment.class,R.id.shopmessageframelayout);
-        tvshop.setVisibility(View.VISIBLE);
-        tvuser.setVisibility(View.GONE);
-        tvchangjian.setVisibility(View.GONE);
+
     }
 
     @Override //网络请求
@@ -156,6 +157,14 @@ public class CommodityActiivity extends BaseActivity<IHomeCommPresenter> impleme
         tv_yuezu.setText("日租￥"+ data.getQuality());
         tv_chengjialiang.setText("成交量："+ data.getCanUseNums());
         tv_shichangjia.setText("市场价: ¥ "+ data.getShowPrice());
+        ShopMessageFragment shopMessageFragment = new ShopMessageFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("contentUrl",data.getContentUrl());
+        shopMessageFragment.setArguments(bundle);
+        releast(R.id.shopmessageframelayout,shopMessageFragment);
+        tvshop.setVisibility(View.VISIBLE);
+        tvuser.setVisibility(View.GONE);
+        tvchangjian.setVisibility(View.GONE);
     }
  int content = 1;
     @Override
@@ -163,24 +172,30 @@ public class CommodityActiivity extends BaseActivity<IHomeCommPresenter> impleme
         switch (v.getId()){
             //商品详情
             case R.id.shopmessage_linear:
-                setContentView(ShopMessageFragment.class,R.id.shopmessageframelayout);
                 tvshop.setVisibility(View.VISIBLE);
                 tvuser.setVisibility(View.GONE);
                 tvchangjian.setVisibility(View.GONE);
+                ShopMessageFragment shopMessageFragment = new ShopMessageFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("contentUrl",data.getContentUrl());
+                shopMessageFragment.setArguments(bundle);
+                releast(R.id.shopmessageframelayout,shopMessageFragment);
                 break;
                 //用户评价
             case R.id.usermessage_linear:
-                setContentView(UserMessageFragment.class,R.id.shopmessageframelayout);
                 tvshop.setVisibility(View.GONE);
                 tvuser.setVisibility(View.VISIBLE);
                 tvchangjian.setVisibility(View.GONE);
+                UserMessageFragment userMessageFragment = new UserMessageFragment();
+                releast(R.id.shopmessageframelayout,userMessageFragment);
                 break;
                 //常见问题
             case R.id.changjianwenti_linear:
-                setContentView(ChangJianFragment.class,R.id.shopmessageframelayout);
                 tvshop.setVisibility(View.GONE);
                 tvuser.setVisibility(View.GONE);
                 tvchangjian.setVisibility(View.VISIBLE);
+                ChangJianFragment changJianFragment = new ChangJianFragment();
+                releast(R.id.shopmessageframelayout,changJianFragment);
                 break;
             case R.id.btn_mashang_yy:
                 //立即拥有
@@ -216,7 +231,7 @@ public class CommodityActiivity extends BaseActivity<IHomeCommPresenter> impleme
     private void getPOPCommody() {
         //pop 弹窗
         View inflate = LayoutInflater.from(getApplicationContext()).inflate(R.layout.pop_commody, null, false);
-        final PopupWindow popupWindow = new PopupWindow(inflate,ViewPager.LayoutParams.WRAP_CONTENT, ViewPager.LayoutParams.WRAP_CONTENT, true);
+        final PopupWindow popupWindow = new PopupWindow(inflate,ViewPager.LayoutParams.MATCH_PARENT, ViewPager.LayoutParams.WRAP_CONTENT, true);
         TextView tv_liji_guanbi = inflate.findViewById(R.id.tv_liji_guanbi);
         tv_liji_guanbi.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -243,8 +258,8 @@ public class CommodityActiivity extends BaseActivity<IHomeCommPresenter> impleme
         ArrayList<String> strings = new ArrayList<>();
         for (int i = 0; i < poplist.size(); i++) {
             StringBuffer stringBuffer = new StringBuffer();
-                stringBuffer.append(poplist.get(0).getValue()).append("/").append(poplist.get(1).getValue());
-                strings.add(stringBuffer.toString());
+            stringBuffer.append(poplist.get(0).getValue()).append("/").append(poplist.get(0).getKey());
+            strings.add(stringBuffer.toString());
         }
         RecyclerView recyclerView = inflate.findViewById(R.id.pop_recycler);
         CommodityPopRecyclerAdapter commodityPopRecyclerAdapter = new CommodityPopRecyclerAdapter(this,strings);
@@ -261,8 +276,10 @@ public class CommodityActiivity extends BaseActivity<IHomeCommPresenter> impleme
 
         Button btn_queding = inflate.findViewById(R.id.btn_queding);
         tv_jian = findViewById(R.id.tv_jian);
+        //tv_jian.setOnClickListener(this);
         tv_taishu = findViewById(R.id.tv_taishu);
         tv_jia = findViewById(R.id.tv_jia);
+        //tv_jia.setOnClickListener(this);
 
         // 设置PopupWindow是否能响应外部点击事件
         popupWindow.setOutsideTouchable(true);
@@ -294,12 +311,20 @@ public class CommodityActiivity extends BaseActivity<IHomeCommPresenter> impleme
 
                 //点击事件
                 Intent intent = new Intent(CommodityActiivity.this,Activity_AddDZ.class);
-                /*if (data!=null){
+                if (data!=null){
                     intent.putExtra("databena",data);
-                }*/
+                }
                 startActivity(intent);
+                finish();
             }
         });
 
+    }
+
+    private void releast(int id, Fragment fragment){
+        FragmentManager supportFragmentManager = this.getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = supportFragmentManager.beginTransaction();
+        fragmentTransaction.replace(id,fragment);
+        fragmentTransaction.commit();
     }
 }

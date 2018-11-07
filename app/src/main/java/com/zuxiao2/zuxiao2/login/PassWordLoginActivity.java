@@ -151,6 +151,7 @@ public class PassWordLoginActivity extends BaseActivity<PassLoginPresenter> impl
         if (passLoginBean.getMsg().equals("ok")){
           MyApplication.context = this;
           SpUtils.saveUserId(passLoginBean.getData().getUserId()+"");
+          SpUtils.saveNikeName(passLoginBean.getData().getPhoneNumber());
           SpUtils.saveNikeName(passLoginBean.getData().getNickname());
           SpUtils.saveUserPhoto(passLoginBean.getData().getPhoneNumber());
           SpUtils.saveUserKey(this,passLoginBean.getData().getKey());

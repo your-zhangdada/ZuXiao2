@@ -93,7 +93,6 @@
 
     </RelativeLayout>
     <EditText
-        android:layout_marginTop="@dimen/dp_30"
         android:id="@+id/et_xh_address"
         android:layout_below="@+id/add_dizhi_rela"
         android:layout_width="match_parent"

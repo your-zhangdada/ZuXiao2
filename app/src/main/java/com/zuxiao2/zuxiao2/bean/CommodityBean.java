@@ -511,7 +511,7 @@ public class CommodityBean implements Serializable{
             this.skus = skus;
         }
 
-        public static class InsuranceListBean {
+        public static class InsuranceListBean implements Serializable {
             /**
              * id : 8
              * productId : 14
@@ -607,7 +607,7 @@ public class CommodityBean implements Serializable{
             }
         }
 
-        public static class SkusBean {
+        public static class SkusBean implements Serializable {
             @Override
             public String toString() {
                 return "SkusBean{" +
@@ -739,7 +739,7 @@ public class CommodityBean implements Serializable{
                 this.attributesJson = attributesJson;
             }
 
-            public static class AttributesJsonBean {
+            public static class AttributesJsonBean implements Serializable {
                 /**
                  * key : 颜色
                  * value : 白色

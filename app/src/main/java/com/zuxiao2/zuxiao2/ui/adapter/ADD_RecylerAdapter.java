@@ -35,11 +35,11 @@ public class ADD_RecylerAdapter extends RecyclerView.Adapter<ADD_RecylerAdapter.
         viewHolder.tv_name.setText(data.get(i).getLinkPerson());
         viewHolder.tv_phone.setText(data.get(i).getLinkPhone());
         viewHolder.tv_address.setText(data.get(i).getDetailAddress());
-        String s = viewHolder.tv_name.getText().toString();
+      /*  String s = viewHolder.tv_name.getText().toString();
         for (int j = 0; j < s.length(); j++) {
             char c = s.charAt(i);
         viewHolder.im_hand.setText(c);
-        }
+        }*/
 
         viewHolder.tv_bianji.setOnClickListener(new View.OnClickListener() {
             @Override
